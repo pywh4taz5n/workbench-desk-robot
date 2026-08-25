@@ -12,8 +12,8 @@ python hardware/pcb/tools/electrical_checks.py
 
 The report is written to `generated/electrical_report.json`. Open
 `kicad/controller.kicad_pro` with KiCad 10. The detailed EVT companion board has
-110 controlled electrical components, four M3 NPTH mounting holes (114 total
-footprints), eight SMT test pads, 1,250 track/via items, 31 filled copper zones,
+117 controlled electrical components, four M3 NPTH mounting holes (121 total
+footprints), fifteen SMT test pads, more than 1,300 track/via items, 31 filled copper zones,
 eight copper layers, and a physical 8 mm primary/secondary isolation region.
 Reproduce the controlled sources with:
 
@@ -36,25 +36,23 @@ the PCB remains blocked. Use `--stage evt` for prototype-order gating or
 
 `kicad/controller.ses` is the checked Freerouting 2.3.0 routing session. The
 board generator validates every footprint position against that session before
-importing 1,039 routed segments and 137 vias. Deterministic cleanup and local
-supplements produce the final 1,070 segments, 180 vias, and 31 copper zones. A
+importing the checked routing branches. Deterministic cleanup and local
+supplements preserve more than 1,000 segments while adding the U2/U7 and fixture-pad migration. A
 stale session cannot silently attach to moved footprints.
 Generated schematic UUIDs use a resettable deterministic sequence. Board output
 UUIDs are normalized after KiCad saves the file, preserving repeated references
 while removing run-to-run UUID noise; routing tie-breakers use stable reference,
 pad, and coordinate keys rather than process memory addresses.
 
-The layout audit hard-gates the current U2 `12V_ISO` source and `GND` return with
-separate eight-via rings on 3 x 3, 1.5 mm-pitch grids around the THT pads. These
-rings are a spatial and current-path concept check only: U2 remains
-`TBD_36_60V_TO_12V_240W_ISOLATED`, with no frozen MPN or land pattern. The
-selected converter requires an ECO that replaces the footprint and placement,
-rebuilds routing and planes, reruns DRC/connectivity, and repeats the thermal
-review. The audit also requires top-layer, zero-via
+The layout audit hard-gates the Q36SR U2 input, return, `12V_ISO` source and
+`GND` return with separate eight-via rings on 3 x 3, 1.5 mm-pitch grids around
+the THT pads, along with nominal-width coverage and bounded package escapes.
+The exact 20 A manufacturer revision, lifecycle, quote, heat-spreader and AVL
+remain procurement and thermal gates. The audit also requires top-layer, zero-via
 oscillator routing, matched CAN via counts, and an `In1.Cu` `GND_CAN_ISO` zone
-declaration. U7 has an all-eight-layer no-track/no-via/no-pour corridor across
-its 5.87 mm board pad gap; this preserves the available geometry but does not
-repair the candidate module's 2 mm creepage/clearance or 200 Vrms working rating.
+declaration. NXF1 U7 has an all-eight-layer no-track/no-via/no-pour corridor
+across its 4.08 mm board pad-edge gap; this does not satisfy the 8 mm system
+target or replace Safety Owner review.
 CAN coupling, branch/stub geometry, reference-plane continuity, and 120 ohm field
 solving remain explicit manual or supplier risks rather than being inferred from
 aggregate route lengths. The report now includes per-net graph metrics, declared
@@ -69,9 +67,9 @@ CAN connectors. This keeps secondary probes out of the primary test area and
 avoids long CAN test stubs.
 `fixture-access-plan.csv` controls the additional safety, power-good, fault,
 current-monitor, and domain-reference access required by the EVT fixture. Existing
-connector access is cross-checked against `connector-pinout.csv`; seven missing
-dedicated pads remain explicit `ECO_REQUIRED` items and every row remains
-fail-closed until physical fixture evidence is attached.
+connector access is cross-checked against `connector-pinout.csv`; TP9-TP15 are
+implemented as dedicated pads while every row remains fail-closed until physical
+fixture evidence is attached.
 
 The checked-in ERC and DRC reports contain zero violations and zero unconnected
 items. Gerbers, drills, IPC-D-356, position data, drawings, statistics, and a
@@ -93,17 +91,15 @@ regulated 36-60 V-to-12 V 240 W-class module, followed by a protected 12 V / 5 A
 branch to the Jetson developer-kit DC
 input, and a 12-to-3.3 V 20 W synchronous buck. It deliberately does not
 back-power the developer kit through a 5 V header. Design candidates are listed
-in the fabrication BOM; purchase
-requires the system owner's AVL sign-off because component selection is outside
-issue #19's ownership boundary.
+in the fabrication BOM; purchase requires all independent Electrical,
+Procurement, Safety and other roles named in the approval registers. System
+Owner authorization alone does not create an AVL.
 
-U2 has no orderable design candidate. `DCM3623T50M31C2T00` is explicitly excluded: the
-official Vicor PDF specifies 16-50 V input, 28 V output, and a nine-terminal
-through-hole ChiP package, so it cannot meet the 36-60 V-to-12 V requirement and
-its land pattern is incompatible with the checked layout. The Vicor source in
-`source-baseline.json` is exclusion evidence only. Until a real MPN and vendor
-land pattern are frozen, the checked schematic, BOM, PCB and routing session use
-a consistent `NOT FOR PRODUCTION` placeholder that must not be assembled or ordered.
+U2 is the `Q36SR12020NRFH` design candidate. Distributor evidence identifies
+18-75 V input, 12 V/20 A and 240 W, and the checked eight-pin footprint follows
+the Q36SR family mechanical drawing. The local Delta PDF is for the 12 V/19 A
+variant and cannot close exact 20 A procurement evidence. `DCM3623T50M31C2T00`
+remains excluded by its 16-50 V input, 28 V output and incompatible package.
 
 The board is a companion/control board for the NVIDIA developer kit, not a raw
 260-pin Jetson module carrier. See `interface-control.md` and
@@ -126,16 +122,18 @@ inrush, regeneration and fault-current analysis is approved.
 `component-selection-matrix.csv` tracks every active module, the source-backed
 candidate or class, verification method, owner and procurement status.
 Every matrix `source_id` must resolve to a complete HTTPS source entry in
-`source-baseline.json`; exclusion evidence may be used only by the U2 TBD row.
-`fabrication/bom.csv` contains 77 grouped lines covering every board component.
-`component-approval-register.csv` defines the required approver roles for every
-one of the 68 procurement-controlled groups. `component-approval-signatures.csv`
+`source-baseline.json`; excluded-source records are retained as history and may
+not back a design candidate.
+`fabrication/bom.csv` covers every board component and its grouped lines are
+recomputed deterministically. `component-approval-register.csv` defines the
+required approver roles for every procurement-controlled group.
+`component-approval-signatures.csv`
 contains one independent row per required role, bound to the EVT revision and
 fabrication-BOM SHA-256. No group is approved until every role records an
 orderable MPN, datasheet revision, identity, date, and evidence reference.
 Changing a summary `decision` to `APPROVED` is insufficient.
 `expected-connectivity.json` and `generated/connectivity_report.json` independently
-check 458 physical pads across all 110 controlled components, plus input-protection, CAN
+check the physical pads across all 117 controlled components, plus input-protection, CAN
 isolation, current-sense and dual-channel safety invariants.
 `testpoint-coverage.csv` defines the measurement, limit, instrument and required
 evidence for every physical test pad.
@@ -145,17 +143,15 @@ discrepancy, CAN FD, and a four-hour closed-enclosure thermal soak. These are
 controlled test definitions, not completed physical evidence.
 
 Run `python hardware/pcb/tools/release_readiness.py` before sharing an order
-package. The checked-in schematic is component-level (110 symbols and 366 wired
-net labels) and has clean ERC. EVT prototype ordering remains blocked by AVL,
-safety design, supplier DFM, U2/U7, and test-access ECO gates. Physical bring-up,
+package. The checked-in schematic is component-level and has clean ERC. EVT
+prototype ordering remains blocked by AVL, safety design, supplier DFM and U2/U7
+external evidence. Physical bring-up,
 measured safety timing, harness execution, and verified fixture access are
 separate production-release gates so prototype evidence is not a circular EVT
 ordering prerequisite.
-The release audit also fails closed if the excluded U2 MPN or footprint appears
-in any controlled schematic, PCB, library, routing, netlist, BOM or position
-artifact, and it keeps
-`isolated_power_mpn_and_land_pattern_frozen` false until the required ECO is
-complete.
+The release audit fails closed if stale U2 placeholder or excluded-part markers
+appear in controlled artifacts, and separately reports whether exact manufacturer
+evidence and AVL have closed.
 Do not order a populated board from engineering completeness alone.
 
 ## Release status

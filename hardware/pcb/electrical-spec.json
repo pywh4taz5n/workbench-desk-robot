@@ -1,7 +1,7 @@
 {
   "input": {"nominal_v": 48, "minimum_v": 36, "maximum_v": 60, "continuous_a": 8, "fuse_a": 10},
   "rails": [
-    {"name": "12V_ISO", "voltage_v": 12, "rated_a": 20, "continuous_a": 20, "peak_a": 20, "efficiency": 0.93, "topology": "isolated DC/DC module", "upstream": null, "avl_status": "OWNER_APPROVAL_REQUIRED"},
+    {"name": "12V_ISO", "voltage_v": 12, "rated_a": 20, "continuous_a": 20, "peak_a": 20, "efficiency": 0.93, "topology": "isolated DC/DC module", "upstream": null, "design_candidate": "Q36SR12020NRFH", "avl_status": "EXACT_MANUFACTURER_DATASHEET_LIFECYCLE_QUOTE_AND_AVL_REQUIRED"},
     {"name": "JETSON_12V", "voltage_v": 12, "rated_a": 6, "continuous_a": 5, "peak_a": 6, "efficiency": 0.995, "topology": "protected e-fuse branch", "upstream": "12V_ISO", "avl_status": "OWNER_APPROVAL_REQUIRED"},
     {"name": "3V3_LOGIC", "voltage_v": 3.3, "rated_a": 6, "continuous_a": 5, "peak_a": 6, "efficiency": 0.9, "topology": "12 V synchronous buck", "upstream": "12V_ISO", "avl_status": "OWNER_APPROVAL_REQUIRED"}
   ],
@@ -17,7 +17,7 @@
     {"name": "sensors", "rail": "3V3_LOGIC", "maximum_w": 1},
     {"name": "motor driver auxiliaries", "rail": "12V_ISO", "maximum_w": 120}
   ],
-  "can": {"transceiver_class": "reinforced isolated CAN FD", "isolation_vrms": 5000, "bus_fault_v": 70, "termination_ohm": 120, "common_mode_choke": true, "tvs": "bidirectional CAN-rated", "u6_board_copper_clearance_mm": 8.1, "u6_all_copper_keepout_required": true, "u7_board_pad_edge_clearance_mm": 5.87, "u7_all_copper_keepout_required": true, "u7_candidate_safety_suitability_open": true, "isolated_power_creepage_review_required": true},
+  "can": {"transceiver_class": "reinforced isolated CAN FD", "isolation_vrms": 5000, "bus_fault_v": 70, "termination_ohm": 120, "common_mode_choke": true, "tvs": "bidirectional CAN-rated", "u6_board_copper_clearance_mm": 8.1, "u6_all_copper_keepout_required": true, "u7_candidate": "NXF1S0305MC-R7", "u7_board_pad_edge_clearance_mm": 4.08, "u7_all_copper_keepout_required": true, "u7_system_target_clearance_mm": 8.0, "u7_candidate_safety_suitability_open": true, "isolated_power_creepage_review_required": true},
   "protection": {"input_tvs_standoff_v": 58, "ov_trip_v": 62, "uv_trip_v": 34, "inrush_limit_a": 8, "reverse_polarity": "back-to-back 150 V MOSFET", "input_net_sequence": ["VBAT_RAW", "VBAT_FUSED", "VBAT_PROTECTED"], "estop": "dual-channel loop into independent safety gate; MOTOR_ENABLE_REQ cannot drive MOTOR_ENABLE_SAFE directly"},
   "stackup": [
     {"layer": "L1", "kicad_layer": "F.Cu", "function": "components and high-current input", "copper_oz": 2, "dielectric_to_next_mm": 0.10, "impedance_control": "CAN field solve required"},

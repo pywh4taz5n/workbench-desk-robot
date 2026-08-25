@@ -67,12 +67,19 @@ TP5,1,test_access,GND; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1
 TP6,1,test_access,CANH; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
 TP7,1,test_access,CANL; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
 TP8,1,test_access,MCU_RESET; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP9,1,test_access,5V_CAN_ISO; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP10,1,test_access,3V3_PGOOD; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP11,1,test_access,JETSON_PGOOD; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP12,1,test_access,JETSON_FAULT_N; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP13,1,test_access,U3_IMON; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP14,1,test_access,ESTOP_A_MON; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
+TP15,1,test_access,ESTOP_B_MON; TestPoint:TestPoint_Pad_D1.5mm,TestPoint:TestPoint_Pad_D1.5mm,APPROVED
 U1,1,input_protection,LTC4368HMS-2#PBF,Package_SO:MSOP-10_3x3mm_P0.5mm,OWNER_APPROVAL_REQUIRED
-U2,1,isolated_power,TBD_36_60V_TO_12V_240W_ISOLATED,WB:Isolated_48V_12V_240W_TBD,OWNER_APPROVAL_REQUIRED
+U2,1,isolated_power,Q36SR12020NRFH,WB:Delta_Q36SR_QuarterBrick,OWNER_APPROVAL_REQUIRED
 U3,1,jetson_efuse,Texas Instruments TPS26633RGER,WB:TPS26633_RGE24,OWNER_APPROVAL_REQUIRED
 U4,1,3v3_power,RECOM RPL-5.0-R,WB:RPL-5.0_QFN24,OWNER_APPROVAL_REQUIRED
 U5,1,mcu_and_backplane,WCH CH32V307VCT6,Package_QFP:LQFP-100_14x14mm_P0.5mm,OWNER_APPROVAL_REQUIRED
 U6,1,isolated_can_fd,Texas Instruments ISO1042DWR,WB:ISO1042_DW16_HV,OWNER_APPROVAL_REQUIRED
-U7,1,isolated_can_fd,Murata MEJ1S0305SC,Converter_DCDC:Converter_DCDC_muRata_MEJ1SxxxxSC_THT,OWNER_APPROVAL_REQUIRED
+U7,1,isolated_can_fd,NXF1S0305MC-R7,WB:Murata_NXF1_MC,OWNER_APPROVAL_REQUIRED
 U8,1,hardwired_estop,"Toshiba TLP293-4(GB,E)",Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,OWNER_APPROVAL_REQUIRED
 Y1,1,mcu_and_backplane,Abracon ABM8-8.000MHZ-B2-T,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm,OWNER_APPROVAL_REQUIRED

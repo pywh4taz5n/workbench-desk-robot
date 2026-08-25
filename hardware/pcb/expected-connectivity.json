@@ -453,6 +453,27 @@
   "TP8": {
     "1": "MCU_RESET"
   },
+  "TP9": {
+    "1": "5V_CAN_ISO"
+  },
+  "TP10": {
+    "1": "3V3_PGOOD"
+  },
+  "TP11": {
+    "1": "JETSON_PGOOD"
+  },
+  "TP12": {
+    "1": "JETSON_FAULT_N"
+  },
+  "TP13": {
+    "1": "U3_IMON"
+  },
+  "TP14": {
+    "1": "ESTOP_A_MON"
+  },
+  "TP15": {
+    "1": "ESTOP_B_MON"
+  },
   "U1": {
     "1": "GND_PWR",
     "2": "GND_PWR",
@@ -468,13 +489,12 @@
   "U2": {
     "1": "VBAT_PROTECTED",
     "2": "GND_PWR",
-    "3": null,
-    "4": "12V_ISO",
+    "3": "GND_PWR",
+    "4": "GND",
     "5": "GND",
     "6": null,
-    "7": null,
-    "8": null,
-    "9": null
+    "7": "12V_ISO",
+    "8": "12V_ISO"
   },
   "U3": {
     "1": "12V_ISO",
@@ -650,10 +670,11 @@
     "16": "5V_CAN_ISO"
   },
   "U7": {
-    "1": "3V3_LOGIC",
-    "2": "GND",
-    "5": "GND_CAN_ISO",
-    "7": "5V_CAN_ISO"
+    "1": "GND",
+    "3": "3V3_LOGIC",
+    "7": "GND_CAN_ISO",
+    "8": "5V_CAN_ISO",
+    "14": null
   },
   "U8": {
     "1": "ESTOP_CH_A_RETURN",

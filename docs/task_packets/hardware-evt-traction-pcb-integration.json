@@ -19,6 +19,7 @@
     "hardware/motor_driver/**",
     "hardware/pcb/**",
     "hardware/procurement/bom.csv",
+    "hardware/procurement/quote-register.csv",
     "hardware/release/**",
     "tests/hardware/**"
   ],
@@ -33,7 +34,7 @@
   "acceptance": [
     "the detailed controller schematic, eight-layer board, controlled stackup, routed session, fabrication outputs, and connectivity/layout reports are reproducible",
     "the controller keeps procurement, safety, supplier, and physical bring-up gates fail-closed",
-    "J2 contact capability is separated from the controlled 10 A aggregate system limit and U2 remains explicitly DNP until its approved MPN and land pattern ECO",
+    "J2 contact capability is separated from the controlled 10 A aggregate system limit; the U2 design candidate and land pattern are implemented while exact manufacturer evidence, lifecycle, thermal configuration, quote, and AVL remain order-blocking",
     "CAN testpoint branches are machine-checked for short same-layer paired geometry while U7 system-isolation suitability remains release-blocking",
     "the chassis package declares four wheel envelopes, two traction motor envelopes, a battery reservation, motor brackets, and a serviceable childboard support",
     "the traction package distinguishes chassis motors from the fourteen joints in two vendor-controlled seven-axis arms and preserves independent hardware safety gating",

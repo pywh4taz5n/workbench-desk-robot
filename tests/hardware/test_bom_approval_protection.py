@@ -32,6 +32,32 @@ def load_signature_initializer():
     return module
 
 
+def load_eco_migrator():
+    sys.path.insert(0, str(TOOLS))
+    try:
+        path = TOOLS / "migrate_approval_eco.py"
+        spec = importlib.util.spec_from_file_location("approval_eco_migrator", path)
+        assert spec and spec.loader
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+    finally:
+        sys.path.remove(str(TOOLS))
+
+
+def load_role_approval_recorder():
+    sys.path.insert(0, str(TOOLS))
+    try:
+        path = TOOLS / "record_role_approval.py"
+        spec = importlib.util.spec_from_file_location("role_approval_recorder", path)
+        assert spec and spec.loader
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+    finally:
+        sys.path.remove(str(TOOLS))
+
+
 def write_rows(path: Path, rows: list[dict[str, str]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
@@ -204,3 +230,164 @@ def test_initialize_refuses_signed_or_manually_changed_hash_migrations(tmp_path:
         assert "signed or modified" in str(exc)
     else:
         raise AssertionError("manually changed row was silently rebound")
+
+
+def test_explicit_eco_migrates_only_pristine_pending_candidates_and_hashes() -> None:
+    module = load_eco_migrator()
+    expected_approval = {
+        "reference": "U1",
+        "candidate": "NEW-CANDIDATE",
+        "required_approver": "Electrical Owner",
+        "decision": "PENDING",
+        "approved_mpn": "",
+        "datasheet_revision": "",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_ref": "",
+    }
+    existing_approval = {**expected_approval, "candidate": "OLD-CANDIDATE"}
+    existing_signature = {
+        "reference": "U1",
+        "candidate": "OLD-CANDIDATE",
+        "role": "Electrical Owner",
+        "decision": "PENDING",
+        "signed_by": "",
+        "signed_at": "",
+        "evidence_ref": "",
+        "hardware_revision": "EVT1",
+        "bom_sha256": "old-hash",
+    }
+
+    approvals, signatures, changes = module.plan_migration(
+        [expected_approval], [existing_approval], [existing_signature], "EVT1", "new-hash"
+    )
+
+    assert approvals[0]["candidate"] == "NEW-CANDIDATE"
+    assert signatures[0]["candidate"] == "NEW-CANDIDATE"
+    assert signatures[0]["bom_sha256"] == "new-hash"
+    assert {change["role"] for change in changes} == {"SELECTION_REGISTER", "Electrical Owner"}
+
+
+def test_explicit_eco_refuses_any_signed_role_or_selection() -> None:
+    module = load_eco_migrator()
+    approval = {
+        "reference": "U1",
+        "candidate": "CANDIDATE",
+        "required_approver": "Electrical Owner",
+        "decision": "PENDING",
+        "approved_mpn": "",
+        "datasheet_revision": "",
+        "approved_by": "",
+        "approved_at": "",
+        "evidence_ref": "",
+    }
+    signature = {
+        "reference": "U1",
+        "candidate": "CANDIDATE",
+        "role": "Electrical Owner",
+        "decision": "APPROVED",
+        "signed_by": "Owner",
+        "signed_at": "2026-08-25",
+        "evidence_ref": "evidence.txt",
+        "hardware_revision": "EVT1",
+        "bom_sha256": "old-hash",
+    }
+    try:
+        module.plan_migration([approval], [approval], [signature], "EVT1", "new-hash")
+    except module.ApprovalMigrationError as exc:
+        assert "signed or modified" in str(exc)
+    else:
+        raise AssertionError("signed role row was migrated")
+
+    signed_selection = {**approval, "decision": "APPROVED", "approved_mpn": "CANDIDATE"}
+    pending_signature = {**signature, "decision": "PENDING", "signed_by": "", "signed_at": "", "evidence_ref": ""}
+    try:
+        module.plan_migration([approval], [signed_selection], [pending_signature], "EVT1", "new-hash")
+    except module.ApprovalMigrationError as exc:
+        assert "signed or modified" in str(exc)
+    else:
+        raise AssertionError("signed selection row was migrated")
+
+
+def test_role_approval_records_only_the_requested_owner_against_current_bom(tmp_path: Path) -> None:
+    initializer = load_signature_initializer()
+    module = load_role_approval_recorder()
+    source_path = tmp_path / "component-approval-register.csv"
+    signature_path = tmp_path / "component-approval-signatures.csv"
+    bom_path = tmp_path / "bom.csv"
+    board_path = tmp_path / "controller.kicad_pcb"
+    evidence_path = tmp_path / "system-owner-authorization.md"
+    source_rows = [{"reference": "J1", "candidate": "CONNECTOR", "required_approver": "System Owner"}]
+    bom_path.write_text("reference,quantity\nJ1,1\n", encoding="utf-8")
+    board_path.write_text('(kicad_pcb\n  (rev "EVT1")\n)\n', encoding="utf-8")
+    evidence_path.write_text("System Owner authorization\n", encoding="utf-8")
+    write_rows(source_path, source_rows)
+    signature_rows = initializer.expected_signature_rows(
+        source_rows,
+        "EVT1",
+        initializer.sha256_file(bom_path),
+    )
+    write_rows(signature_path, signature_rows)
+
+    report = module.record_role_approval(
+        ["J1"],
+        "System Owner",
+        "Quchaosheng",
+        "2026-08-25",
+        evidence_path.name,
+        source_path=source_path,
+        signature_path=signature_path,
+        bom_path=bom_path,
+        board_path=board_path,
+        repo_root=tmp_path,
+    )
+
+    assert report["approved_role_rows"] == 1
+    recorded = list(csv.DictReader(signature_path.open(newline="", encoding="utf-8")))
+    assert recorded[0]["decision"] == "APPROVED"
+    assert recorded[0]["signed_by"] == "Quchaosheng"
+    assert recorded[0]["bom_sha256"] == initializer.sha256_file(bom_path)
+
+
+def test_role_approval_rejects_unlisted_or_already_signed_roles(tmp_path: Path) -> None:
+    initializer = load_signature_initializer()
+    module = load_role_approval_recorder()
+    source_path = tmp_path / "component-approval-register.csv"
+    signature_path = tmp_path / "component-approval-signatures.csv"
+    bom_path = tmp_path / "bom.csv"
+    board_path = tmp_path / "controller.kicad_pcb"
+    evidence_path = tmp_path / "authorization.md"
+    source_rows = [{"reference": "J1", "candidate": "CONNECTOR", "required_approver": "System Owner"}]
+    bom_path.write_text("reference,quantity\nJ1,1\n", encoding="utf-8")
+    board_path.write_text('(kicad_pcb\n  (rev "EVT1")\n)\n', encoding="utf-8")
+    evidence_path.write_text("authorization\n", encoding="utf-8")
+    write_rows(source_path, source_rows)
+    write_rows(
+        signature_path,
+        initializer.expected_signature_rows(source_rows, "EVT1", initializer.sha256_file(bom_path)),
+    )
+    arguments = {
+        "signed_by": "Quchaosheng",
+        "signed_at": "2026-08-25",
+        "evidence_ref": evidence_path.name,
+        "source_path": source_path,
+        "signature_path": signature_path,
+        "bom_path": bom_path,
+        "board_path": board_path,
+        "repo_root": tmp_path,
+    }
+
+    try:
+        module.record_role_approval(["J1"], "Electrical Owner", **arguments)
+    except module.RoleApprovalError as exc:
+        assert "required role rows are missing" in str(exc)
+    else:
+        raise AssertionError("an unlisted role was approved")
+
+    module.record_role_approval(["J1"], "System Owner", **arguments)
+    try:
+        module.record_role_approval(["J1"], "System Owner", **arguments)
+    except module.RoleApprovalError as exc:
+        assert "already contains a decision or evidence" in str(exc)
+    else:
+        raise AssertionError("an approved role was signed twice")

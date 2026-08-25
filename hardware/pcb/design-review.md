@@ -6,7 +6,7 @@
 48 V battery
   -> 10 A fuse -> reverse-polarity MOSFET -> 58 V TVS
   -> hot-swap/inrush controller (UV 34 V, OV 62 V, 8 A limit)
-  -> TBD isolated regulated 36-60 V-to-12 V / 240 W-class module
+  -> Q36SR12020NRFH 18-75 V-to-12 V / 20 A isolated design candidate
        -> protected 12 V motor auxiliary output
        -> protected 12 V / 5 A branch -> Jetson developer-kit DC input
        -> 3.3 V / 5 A synchronous buck -> MCU, sensors, isolated CAN logic
@@ -26,11 +26,14 @@ U8 remains an interface carrier: order release is blocked until the Safety Owner
 freezes the safety architecture, diagnostic coverage, reset circuit, implementation,
 and failure-mode analysis.
 
-U2 is an unresolved requirement envelope, not a selected component.
-`DCM3623T50M31C2T00` is excluded by its official datasheet because its 16-50 V
-input, 28 V output and nine-terminal through-hole package do not satisfy this
-design. The required U2 state is `TBD_36_60V_TO_12V_240W_ISOLATED`; both the
-orderable MPN and vendor land pattern remain unfrozen.
+U2 is implemented as the `Q36SR12020NRFH` design candidate with the Q36SR
+eight-pin quarter-brick family land pattern. Authorized-distributor records list
+18-75 V input, 12 V/20 A and 240 W. The local Delta manufacturer PDF is for the
+12 V/19 A family variant, so it is mechanical-family evidence rather than the
+exact 20 A electrical release source. Exact manufacturer revision, lifecycle,
+authorized-channel quote, heat-spreader choice and AVL remain procurement gates.
+`DCM3623T50M31C2T00` remains excluded by its 16-50 V input, 28 V output and
+incompatible nine-terminal package.
 
 ## Signal integrity and grounding
 
@@ -53,10 +56,11 @@ orderable MPN and vendor land pattern remain unfrozen.
 - The custom DRC rules enforce 8 mm copper clearance between primary and
   secondary domains. Finished-board creepage and contamination class still
   require supplier and safety review.
-- U7's logic/field pad rows have a 5.87 mm board-copper gap protected by an
-  all-eight-layer no-track/no-via/no-pour rule area. The MEJ1S0305SC candidate
-  itself remains unsuitable evidence for reinforced isolation because its
-  documented creepage/clearance is 2 mm and its working rating is 200 Vrms.
+- U7 is `NXF1S0305MC-R7`, a regulated 3.3 V-input to 5 V/200 mA, 1 W SMD
+  module documented by KDC_NXF1.C01. Its implemented logic/field pad-edge gap
+  is 4.08 mm and is protected by an all-eight-layer no-track/no-via/no-pour
+  rule area. Component dielectric test voltage and board geometry do not by
+  themselves close the 8 mm system target; Safety Owner review remains open.
 
 Controlled impedance values must be recalculated from the selected fabricator's
 actual dielectric table. No generic trace width is released as an impedance guarantee.
@@ -66,15 +70,14 @@ actual dielectric table. No generic trace width is released as an impedance guar
 The 15 W, 25 W and conservative 40 W Jetson load cases are external to this board;
 the protected 12 V branch and harness are screened at 5 A continuous. The Jetson
 thermal solution conducts to the chassis and is validated separately from the PCB.
-Power distribution uses 2 oz copper on L1/L3/L6/L8. The current U2 concept has
-separate eight-via source and return rings on 3 x 3, 1.5 mm-pitch grids around
-the THT pads, using 0.8 mm vias with 0.4 mm drills. This geometry proves only
-that a candidate current-transfer scheme
-can fit; it is not a released footprint or thermal solution. After the real MPN
-and land pattern are frozen, an ECO must redo the footprint, placement, routing,
-planes, clearances, DRC, connectivity audit and thermal analysis. Filling or
-capping remains subject to the selected assembly process. Copper-area adequacy is
-a thermal-review item, not inferred from DRC. Thermal acceptance is converter
+Power distribution uses 2 oz copper on L1/L3/L6/L8. The implemented Q36SR
+candidate has separate eight-via rings on 3 x 3, 1.5 mm-pitch grids around its
+input, input-return, output and output-return transfer pads, using 0.8 mm vias
+with 0.4 mm drills and nominal-width current-sharing spokes. This geometry and
+the passing neckdown audit establish the checked current-transfer layout, not
+thermal adequacy or the exact 20 A module revision. Heat-spreader selection,
+airflow/derating, copper-area adequacy and supplier process remain review items.
+Thermal acceptance is converter
 junction below 110 C and Jetson module below 80 C at 35 C ambient, measured with
 the production enclosure closed.
 
@@ -101,4 +104,4 @@ voiding controls remain a supplier DFM gate rather than a DRC inference.
 4. Export BOM with manufacturer part numbers and AVL state; no `HOLD` line may be ordered.
 5. Export centroid, assembly drawings, paste layers, and polarity drawing.
 6. Independently compare Gerber-to-PCB nets and inspect all planes, clearances, labels, and pin 1 marks.
-7. Freeze the U2 orderable MPN and vendor land pattern, complete its layout/thermal ECO, and prove the excluded DCM3623 data is absent from every released artifact.
+7. Obtain the exact Q36SR12020NRFH manufacturer datasheet, lifecycle and quote evidence; approve its heat-spreader/thermal plan and AVL before ordering.

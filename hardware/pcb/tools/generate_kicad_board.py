@@ -121,7 +121,7 @@ FIXED_POSITIONS = {
     "D1": (32.0, 10.5, 0.0),
     "Q1": (22.0, 21.0, 180.0),
     "Q2": (30.0, 21.0, 0.0),
-    "RS1": (39.5, 21.0, 0.0),
+    "RS1": (39.5, 43.0, 0.0),
     "U1": (34.5, 27.7, 0.0),
     "RG1": (22.0, 26.5, 0.0),
     "CG1": (25.5, 26.5, 0.0),
@@ -130,9 +130,9 @@ FIXED_POSITIONS = {
     "RUV3": (18.0, 30.5, 0.0),
     "RSH1": (36.0, 34.0, 0.0),
     "C1": (31.0, 36.0, 0.0),
-    "U2": (66.0, 27.0, 0.0),
-    "C2": (42.0, 31.5, 270.0),
-    "C3": (93.0, 27.0, 90.0),
+    "U2": (68.0, 26.0, 0.0),
+    "C2": (42.0, 51.0, 270.0),
+    "C3": (105.0, 39.0, 90.0),
     "C6": (92.0, 43.5, 0.0),
     "C7": (87.5, 56.5, 0.0),
     "C8": (93.0, 56.5, 0.0),
@@ -178,12 +178,12 @@ FIXED_POSITIONS = {
     "C16": (100.25, 93.0, 0.0),
     "C17": (108.0, 91.5, 0.0),
     "U6": (135.0, 40.0, 0.0),
-    "U7": (132.0, 24.0, 0.0),
+    "U7": (135.5, 24.0, 0.0),
     "C40": (127.75, 36.2, 90.0),
     "C41": (142.25, 36.2, 90.0),
     "C44": (142.25, 42.55, 90.0),
-    "C42": (133.25, 18.0, 0.0),
-    "C43": (144.7, 18.0, 0.0),
+    "C42": (132.5, 14.5, 180.0),
+    "C43": (144.7, 14.0, 0.0),
     "L1": (144.0, 48.0, 0.0),
     "D2": (150.0, 53.0, 0.0),
     "R58": (138.0, 79.5, 90.0),
@@ -191,7 +191,7 @@ FIXED_POSITIONS = {
     "J5": (149.5, 64.0, 0.0),
     "J6": (149.5, 76.0, 0.0),
     "J2": (118.0, 76.0, 0.0),
-    "J3": (102.39, 10.775, 0.0),
+    "J3": (117.5, 32.5, 0.0),
     "U3": (111.825, 11.825, 0.0),
     "C4": (110.5, 6.5, 0.0),
     "C5": (119.0, 20.5, 0.0),
@@ -209,7 +209,26 @@ FIXED_POSITIONS = {
     "TP6": (147.0, 87.5, 0.0),
     "TP7": (152.0, 87.5, 0.0),
     "TP8": (104.0, 82.0, 0.0),
+    "TP9": (151.0, 12.0, 0.0),
+    "TP10": (101.0, 62.0, 0.0),
+    "TP11": (102.0, 3.0, 0.0),
+    "TP12": (108.0, 3.0, 0.0),
+    "TP13": (121.0, 3.0, 0.0),
+    "TP14": (48.0, 82.0, 0.0),
+    "TP15": (54.0, 82.0, 0.0),
+    # Preserve the checked routing session for unaffected packed blocks.
+    "U4": (88.825, 49.825, 0.0),
+    "RFB1": (94.005, 46.755, 0.0),
+    "RFB2": (98.005, 46.755, 0.0),
+    "R46": (102.005, 46.755, 0.0),
+    "CSS4": (106.005, 46.755, 0.0),
+    "C20": (110.005, 46.755, 0.0),
+    "RPG3": (87.505, 6.755, 0.0),
+    "R47": (91.505, 6.755, 0.0),
+    "R51": (115.005, 6.755, 0.0),
 }
+
+BOTTOM_SIDE_REFERENCES = {"RS1", "RSH1", "C2", "C6", "R47", "R51", "RPG3"}
 
 
 TRACK_WIDTHS = {
@@ -343,7 +362,7 @@ def add_u6_isolation_keepout(board, footprints: dict[str, object]):
 
 
 def add_u7_isolation_keepout(board, footprints: dict[str, object]):
-    add_isolation_keepout(board, footprints, "U7", ("1", "2"), ("5", "7"))
+    add_isolation_keepout(board, footprints, "U7", ("1", "3"), ("7", "8"))
 
 
 def add_silk_text(board, text: str, x: float, y: float, size: float = 1.0):
@@ -385,8 +404,8 @@ def add_board_markings(board):
     add_silk_text(board, "48V PRIMARY", 24, 78, 0.9)
     add_silk_text(board, "12V / LOGIC SECONDARY", 92, 78, 0.9)
     add_silk_text(board, "ISOLATED CAN FD", 148, 94, 0.8)
-    add_silk_text(board, "U2 LAND PATTERN TBD", 66, 23.5, 0.8)
-    add_silk_text(board, "DO NOT FIT", 66, 30.5, 0.8)
+    add_silk_text(board, "U2 Q36SR 12V / 20A", 68, 4.8, 0.8)
+    add_silk_text(board, "VERIFY EXACT DATASHEET + AVL", 68, 48.5, 0.8)
     add_silk_text(board, "DO NOT ORDER WITHOUT RELEASE APPROVAL", 80, 127, 0.8)
     add_fab_text(board, "FAB: U3 HDI 9x 0.45/0.15 FILL/CAP/PLANARIZE", 80, 63, 0.7)
     add_fab_text(board, "FAB: ENIG | THK 1.60 +/- 0.16 MM (MASK EXCL)", 80, 66, 0.7)
@@ -532,6 +551,10 @@ def place_footprints(board) -> dict[str, object]:
         )
     for _, footprint in loaded.values():
         board.Add(footprint)
+    for reference in BOTTOM_SIDE_REFERENCES:
+        footprint = loaded[reference][1]
+        footprint.Flip(footprint.GetPosition(), pcbnew.FLIP_DIRECTION_LEFT_RIGHT)
+        footprint.SetOrientationDegrees(FIXED_POSITIONS[reference][2])
     return {reference: footprint for reference, (_, footprint) in loaded.items()}
 
 
@@ -620,12 +643,111 @@ def add_polyline(board, net, vertices: list[object], width: float, layer: int = 
         add_track(board, net, start, end, layer, width)
 
 
-def add_via_ring(board, net, center, pitch: float = 1.5):
+def add_via_ring(board, net, center, plane_layer: int, track_width: float, pitch: float = 1.5):
     for dx in (-pitch, 0.0, pitch):
         for dy in (-pitch, 0.0, pitch):
             if dx == 0.0 and dy == 0.0:
                 continue
-            add_via(board, net, point(mm(center.x) + dx, mm(center.y) + dy), 0.8, 0.4)
+            via_position = point(mm(center.x) + dx, mm(center.y) + dy)
+            add_via(board, net, via_position, 0.8, 0.4)
+            add_track(board, net, center, via_position, pcbnew.F_Cu, track_width)
+            add_track(board, net, center, via_position, plane_layer, track_width)
+
+
+def add_bottom_power_transfers(board, nets: dict[str, object], footprints: dict[str, object]):
+    """Join selected bottom-side power parts to their preserved top-side routes."""
+    for net_name, first, second in (
+        ("VBAT_PROTECTED", (43.5, 21.0), (46.3512, 21.0)),
+        ("VBAT_PROTECTED", (40.4984, 30.4516), (42.0, 28.95)),
+        ("GND_PWR", (43.05, 33.0), (42.0, 34.05)),
+        ("GND_PWR", (42.0, 34.05), (42.8186, 33.2314)),
+    ):
+        remove_segment(board, net_name, first, second)
+
+    rs1_input = pad_by_number(footprints, "RS1", "1").GetPosition()
+    rs1_output = pad_by_number(footprints, "RS1", "2").GetPosition()
+    c2_input = pad_by_number(footprints, "C2", "1").GetPosition()
+    c2_return = pad_by_number(footprints, "C2", "2").GetPosition()
+    u2_input = pad_by_number(footprints, "U2", "1").GetPosition()
+    u2_input_return = pad_by_number(footprints, "U2", "3").GetPosition()
+
+    input_transfer_points = [point(32.0, 20.4), point(32.0, 21.6)]
+    for transfer in input_transfer_points:
+        add_via(board, nets["INPUT_SENSE"], transfer, 0.8, 0.4)
+    add_polyline(
+        board,
+        nets["INPUT_SENSE"],
+        [
+            rs1_input,
+            point(24.0, mm(rs1_input.y)),
+            point(24.0, mm(input_transfer_points[0].y)),
+            input_transfer_points[0],
+        ],
+        2.5,
+        pcbnew.B_Cu,
+    )
+    add_track(board, nets["INPUT_SENSE"], input_transfer_points[0], input_transfer_points[1], pcbnew.B_Cu, 2.5)
+
+    add_polyline(
+        board,
+        nets["VBAT_PROTECTED"],
+        [rs1_output, point(48.5, mm(rs1_output.y)), point(48.5, mm(u2_input.y)), u2_input],
+        2.5,
+        pcbnew.B_Cu,
+    )
+    add_polyline(
+        board,
+        nets["VBAT_PROTECTED"],
+        [c2_input, point(48.5, mm(c2_input.y)), point(48.5, mm(rs1_output.y))],
+        2.5,
+        pcbnew.B_Cu,
+    )
+    add_polyline(
+        board,
+        nets["GND_PWR"],
+        [c2_return, point(53.0, mm(c2_return.y)), point(53.0, mm(u2_input_return.y)), u2_input_return],
+        2.5,
+        pcbnew.In1_Cu,
+    )
+    add_via(board, nets["GND_PWR"], c2_return, 0.8, 0.4)
+    for net_name, first, second in (
+        ("12V_ISO", (90.525, 43.5), (90.525, 29.475)),
+        ("12V_ISO", (90.525, 43.6496), (90.525, 43.5)),
+        ("12V_ISO", (89.175, 44.9996), (90.525, 43.6496)),
+        ("12V_ISO", (89.175, 46.775), (89.175, 44.9996)),
+        ("GND", (93.475, 43.5), (94.8084, 43.5)),
+    ):
+        remove_segment(board, net_name, first, second)
+    c6_input = pad_by_number(footprints, "C6", "1").GetPosition()
+    c6_return = pad_by_number(footprints, "C6", "2").GetPosition()
+    c3_input = pad_by_number(footprints, "C3", "1").GetPosition()
+    c3_return = pad_by_number(footprints, "C3", "2").GetPosition()
+    add_polyline(
+        board,
+        nets["12V_ISO"],
+        [c6_input, point(88.0, mm(c6_input.y)), point(88.0, mm(c3_input.y)), c3_input],
+        2.5,
+        pcbnew.B_Cu,
+    )
+    add_polyline(
+        board,
+        nets["GND"],
+        [
+            c6_return,
+            point(mm(c6_return.x), 52.0),
+            point(111.0, 52.0),
+            point(111.0, mm(c3_return.y)),
+            c3_return,
+        ],
+        0.8,
+        pcbnew.In4_Cu,
+    )
+    add_via(board, nets["GND"], c6_return, 0.8, 0.4)
+    for pad in footprints["RSH1"].Pads():
+        add_via(board, nets[pad.GetNetname()], pad.GetPosition(), 0.6, 0.3)
+    for reference in ("R47", "R51", "RPG3"):
+        for pad in footprints[reference].Pads():
+            add_via(board, nets[pad.GetNetname()], pad.GetPosition(), 0.6, 0.3)
 
 
 def remove_net_tracks(board, net_names: set[str]):
@@ -880,33 +1002,92 @@ def add_post_route_supplements(board, nets: dict[str, object], footprints: dict[
     add_track(board, nets["VBAT_FUSED"], fused_escape, fused_anchor, pcbnew.In6_Cu, 0.2)
 
     u1_sense = pad_by_number(footprints, "U1", "9").GetPosition()
-    sense_escape = point(38.5, 24.5)
+    sense_escape = point(37.5, 23.5)
     sense_anchor = point(33.5, 23.5)
-    rs1_sense = pad_by_number(footprints, "RS1", "1").GetPosition()
-    add_polyline(board, nets["INPUT_SENSE"], [u1_sense, point(38.5, mm(u1_sense.y)), sense_escape], 0.2)
+    add_polyline(
+        board,
+        nets["INPUT_SENSE"],
+        [u1_sense, point(38.0, mm(u1_sense.y)), point(38.0, 25.0), sense_escape],
+        0.2,
+    )
     add_via(board, nets["INPUT_SENSE"], sense_escape, 0.6, 0.3)
     add_track(board, nets["INPUT_SENSE"], sense_escape, sense_anchor, pcbnew.In6_Cu, 0.2)
     add_via(board, nets["INPUT_SENSE"], sense_anchor, 0.6, 0.3)
-    add_track(board, nets["INPUT_SENSE"], sense_anchor, rs1_sense, pcbnew.F_Cu, 0.2)
+    add_track(board, nets["INPUT_SENSE"], sense_anchor, point(35.5, 21.0), pcbnew.F_Cu, 0.2)
 
     u1_protected = pad_by_number(footprints, "U1", "8").GetPosition()
-    protected_escape = point(40.5, 29.5)
-    protected_anchor = point(40.4984, 30.4516)
-    add_polyline(board, nets["VBAT_PROTECTED"], [u1_protected, point(40.5, mm(u1_protected.y)), protected_escape], 0.2)
+    protected_escape = point(38.5, 27.7)
+    add_polyline(
+        board,
+        nets["VBAT_PROTECTED"],
+        [u1_protected, protected_escape],
+        0.2,
+    )
     add_via(board, nets["VBAT_PROTECTED"], protected_escape, 0.6, 0.3)
-    add_track(board, nets["VBAT_PROTECTED"], protected_escape, protected_anchor, pcbnew.In6_Cu, 0.2)
+    add_polyline(
+        board,
+        nets["VBAT_PROTECTED"],
+        [
+            protected_escape,
+            point(39.5, mm(protected_escape.y)),
+            point(39.5, mm(pad_by_number(footprints, "U2", "1").GetPosition().y)),
+            pad_by_number(footprints, "U2", "1").GetPosition(),
+        ],
+        2.5,
+        pcbnew.In2_Cu,
+    )
+    c1_input = pad_by_number(footprints, "C1", "1").GetPosition()
+    add_via(board, nets["VBAT_PROTECTED"], c1_input, 0.8, 0.4)
+    add_polyline(
+        board,
+        nets["VBAT_PROTECTED"],
+        [
+            c1_input,
+            point(mm(c1_input.x), 40.5),
+            point(39.0, 40.5),
+            point(39.0, mm(protected_escape.y)),
+            protected_escape,
+        ],
+        2.5,
+        pcbnew.In2_Cu,
+    )
+
 
 
 def add_isolated_power_via_arrays(board, nets: dict[str, object], footprints: dict[str, object]):
+    normalized_j2_segments = 0
+    for item in board.GetTracks():
+        if (
+            not isinstance(item, pcbnew.PCB_VIA)
+            and item.GetNetname() == "12V_ISO"
+            and abs(mm(item.GetWidth()) - 2.3998) < 0.001
+        ):
+            item.SetWidth(pcbnew.FromMM(2.5))
+            normalized_j2_segments += 1
+    if normalized_j2_segments != 2:
+        raise ValueError(f"expected two J2 12V route segments to normalize, found {normalized_j2_segments}")
+
     remove_segment(board, "JETSON_12V", (100.89, 9.275), (79.7662, 30.3988))
     remove_segment(board, "JETSON_12V", (79.7662, 30.3988), (79.7662, 82.0))
+    remove_segment(board, "JETSON_12V", (103.89, 9.275), (100.89, 9.275))
+    remove_segment(board, "JETSON_12V", (104.7898, 10.1748), (103.89, 9.275))
+    remove_segment(board, "JETSON_12V", (104.7898, 10.1749), (104.7898, 10.1748))
+    remove_segment(board, "JETSON_12V", (109.512, 10.1749), (104.7898, 10.1749))
+    remove_segment(board, "JETSON_12V", (110.4829, 11.1457), (109.512, 10.1749))
+    remove_segment(board, "GND", (103.89, 12.275), (100.89, 12.275))
+    j3_power_1 = pad_by_number(footprints, "J3", "1").GetPosition()
+    j3_power_2 = pad_by_number(footprints, "J3", "2").GetPosition()
+    j3_ground_1 = pad_by_number(footprints, "J3", "3").GetPosition()
+    j3_ground_2 = pad_by_number(footprints, "J3", "4").GetPosition()
+    add_track(board, nets["JETSON_12V"], j3_power_1, j3_power_2, pcbnew.In3_Cu, 1.5)
+    add_track(board, nets["GND"], j3_ground_1, j3_ground_2, pcbnew.In1_Cu, 0.8)
     add_polyline(
         board,
         nets["JETSON_12V"],
         [
-            point(100.89, 9.275),
-            point(97.5, 9.275),
-            point(97.5, 37.0),
+            j3_power_1,
+            point(100.5, mm(j3_power_1.y)),
+            point(100.5, 37.0),
             point(77.5, 37.0),
             point(77.5, 82.0),
             point(79.7662, 82.0),
@@ -914,8 +1095,246 @@ def add_isolated_power_via_arrays(board, nets: dict[str, object], footprints: di
         1.5,
         pcbnew.In3_Cu,
     )
-    add_via_ring(board, nets["12V_ISO"], pad_by_number(footprints, "U2", "4").GetPosition())
-    add_via_ring(board, nets["GND"], pad_by_number(footprints, "U2", "5").GetPosition())
+    for net_name, first, second in (
+        ("VBAT_PROTECTED", (46.3512, 21.0), (51.0, 21.0)),
+        ("VBAT_PROTECTED", (46.3512, 21.0), (40.4984, 26.8528)),
+        ("VBAT_PROTECTED", (40.4984, 26.8528), (40.4984, 30.4516)),
+        ("VBAT_PROTECTED", (40.4984, 30.4516), (36.3913, 34.5587)),
+        ("VBAT_PROTECTED", (36.3913, 34.5587), (28.0837, 34.5587)),
+        ("GND_PWR", (51.0, 33.0), (43.05, 33.0)),
+        ("GND_PWR", (42.8186, 33.2314), (53.7449, 33.2314)),
+        ("GND_PWR", (53.7449, 33.2314), (54.477, 33.9635)),
+        ("GND_PWR", (54.477, 33.9635), (54.477, 35.0737)),
+        ("GND_PWR", (54.477, 35.0737), (53.1029, 36.4478)),
+        ("GND_PWR", (53.1029, 36.4478), (32.9228, 36.4478)),
+        ("12V_ISO", (82.0928, 22.0928), (81.0, 21.0)),
+        ("12V_ISO", (83.9029, 22.0928), (82.0928, 22.0928)),
+        ("12V_ISO", (83.9029, 22.0928), (88.8101, 27.0)),
+        ("12V_ISO", (88.8101, 27.0), (93.0, 27.0)),
+        ("12V_ISO", (88.8101, 33.7384), (88.8101, 27.0)),
+        ("12V_ISO", (84.2292, 38.3193), (88.8101, 33.7384)),
+        ("12V_ISO", (93.0, 27.0), (100.83, 27.0)),
+        ("12V_ISO", (100.83, 27.0), (100.83, 46.405)),
+        ("12V_ISO", (100.83, 27.0), (102.3758, 25.4542)),
+        ("12V_ISO", (100.83, 46.405), (101.18, 46.755)),
+        ("12V_ISO", (90.525, 29.475), (93.0, 27.0)),
+        ("GND", (83.4593, 33.9292), (81.9292, 33.9292)),
+        ("GND", (81.9292, 33.9292), (81.0, 33.0)),
+        ("GND", (83.4593, 33.9292), (87.2617, 33.9292)),
+        ("GND", (87.2617, 33.9292), (87.2617, 27.7383)),
+        ("GND", (87.2617, 27.7383), (93.0, 22.0)),
+        ("GND", (93.0, 22.0), (93.0, 20.165)),
+        ("GND", (93.0, 20.165), (100.89, 12.275)),
+        ("GND", (94.8084, 43.5), (96.5535, 45.2451)),
+    ):
+        remove_segment(board, net_name, first, second)
+
+    for net_name, via_position in (
+        ("VBAT_PROTECTED", (46.3512, 21.0)),
+        ("VBAT_PROTECTED", (40.4984, 30.4516)),
+        ("12V_ISO", (83.9029, 22.0928)),
+    ):
+        matches = [
+            item
+            for item in board.GetTracks()
+            if isinstance(item, pcbnew.PCB_VIA)
+            and item.GetNetname() == net_name
+            and item.GetPosition() == point(*via_position)
+        ]
+        if len(matches) != 1:
+            raise ValueError(f"expected one {net_name} via at {via_position}, found {len(matches)}")
+        board.Remove(matches[0])
+
+    add_via(board, nets["12V_ISO"], point(102.3758, 25.4542), 0.8, 0.4)
+    r46_supply = pad_by_number(footprints, "R46", "1").GetPosition()
+    r46_escape = point(100.7, 46.45)
+    add_track(board, nets["12V_ISO"], r46_supply, r46_escape, pcbnew.F_Cu, 0.5)
+    add_via(board, nets["12V_ISO"], r46_escape, 0.6, 0.3)
+
+    u2_on_off = pad_by_number(footprints, "U2", "2").GetPosition()
+    u2_vin_return = pad_by_number(footprints, "U2", "3").GetPosition()
+    u2_vout_return = pad_by_number(footprints, "U2", "4").GetPosition()
+    u2_sense_return = pad_by_number(footprints, "U2", "5").GetPosition()
+    u2_sense_output = pad_by_number(footprints, "U2", "7").GetPosition()
+    u2_vout = pad_by_number(footprints, "U2", "8").GetPosition()
+
+    add_polyline(
+        board,
+        nets["GND_PWR"],
+        [u2_vin_return, point(42.0, mm(u2_vin_return.y)), point(43.05, 33.0)],
+        2.5,
+    )
+    add_polyline(
+        board,
+        nets["GND_PWR"],
+        [u2_on_off, point(49.0, mm(u2_on_off.y)), point(49.0, mm(u2_vin_return.y)), u2_vin_return],
+        2.0,
+        pcbnew.In1_Cu,
+    )
+    add_track(board, nets["12V_ISO"], u2_sense_output, u2_vout, pcbnew.F_Cu, 2.5)
+    add_track(board, nets["GND"], u2_sense_return, u2_vout_return, pcbnew.F_Cu, 0.5)
+
+    c3_output = pad_by_number(footprints, "C3", "1").GetPosition()
+    c3_return = pad_by_number(footprints, "C3", "2").GetPosition()
+    add_polyline(
+        board,
+        nets["12V_ISO"],
+        [u2_vout, point(97.5, mm(u2_vout.y)), point(97.5, mm(c3_output.y)), c3_output],
+        2.5,
+        pcbnew.In2_Cu,
+    )
+    add_polyline(
+        board,
+        nets["GND"],
+        [u2_vout_return, point(97.0, mm(u2_vout_return.y)), point(97.0, mm(c3_return.y)), c3_return],
+        0.8,
+        pcbnew.In1_Cu,
+    )
+    u4_input = pad_by_number(footprints, "U4", "22").GetPosition()
+    c6_input = pad_by_number(footprints, "C6", "1").GetPosition()
+    add_via(board, nets["12V_ISO"], c6_input, 0.8, 0.4)
+    u4_input_escape = point(mm(u4_input.x), 44.8)
+    add_polyline(board, nets["12V_ISO"], [u4_input, u4_input_escape, c6_input], 0.8)
+
+    for pad_number, net_name, plane_layer, track_width in (
+        ("1", "VBAT_PROTECTED", pcbnew.In2_Cu, 2.5),
+        ("3", "GND_PWR", pcbnew.In1_Cu, 2.0),
+        ("4", "GND", pcbnew.In1_Cu, 0.8),
+        ("8", "12V_ISO", pcbnew.In2_Cu, 2.5),
+    ):
+        add_via_ring(
+            board,
+            nets[net_name],
+            pad_by_number(footprints, "U2", pad_number).GetPosition(),
+            plane_layer,
+            track_width,
+        )
+
+
+def add_fixture_testpoint_routes(board, nets: dict[str, object], footprints: dict[str, object]):
+    """Route the seven ECO fixture pads without changing the checked SES network."""
+
+    add_via(board, nets["3V3_LOGIC"], point(91.525, 56.5), 0.8, 0.4)
+
+    tp9 = pad_by_number(footprints, "TP9", "1").GetPosition()
+    c43_power = pad_by_number(footprints, "C43", "1").GetPosition()
+    add_polyline(
+        board,
+        nets["5V_CAN_ISO"],
+        [tp9, point(mm(c43_power.x), mm(tp9.y)), c43_power],
+        0.5,
+    )
+
+    tp10 = pad_by_number(footprints, "TP10", "1").GetPosition()
+    u4_pgood = pad_by_number(footprints, "U4", "20").GetPosition()
+    tp10_transfer = point(101.0, 59.5)
+    u4_pgood_escape = point(90.875, 44.5)
+    add_track(board, nets["3V3_PGOOD"], u4_pgood, u4_pgood_escape, pcbnew.F_Cu, 0.25)
+    add_blind_via(board, nets["3V3_PGOOD"], u4_pgood_escape, pcbnew.F_Cu, pcbnew.In1_Cu)
+    add_via(board, nets["3V3_PGOOD"], tp10_transfer, 0.6, 0.3)
+    add_polyline(
+        board,
+        nets["3V3_PGOOD"],
+        [u4_pgood_escape, point(95.5, 54.5), tp10_transfer],
+        0.25,
+        pcbnew.In1_Cu,
+    )
+    add_track(board, nets["3V3_PGOOD"], tp10_transfer, tp10, pcbnew.F_Cu, 0.25)
+
+    add_polyline(
+        board,
+        nets["JETSON_PGOOD"],
+        [
+            pad_by_number(footprints, "TP11", "1").GetPosition(),
+            point(102.0, 5.0),
+        ],
+        0.25,
+    )
+    tp11_transfer = point(102.0, 8.0)
+    add_track(
+        board,
+        nets["JETSON_PGOOD"],
+        point(102.0, 5.0),
+        tp11_transfer,
+        pcbnew.F_Cu,
+        0.25,
+    )
+    add_via(board, nets["JETSON_PGOOD"], tp11_transfer, 0.6, 0.3)
+    add_polyline(
+        board,
+        nets["JETSON_PGOOD"],
+        [tp11_transfer, point(102.0, 10.0), point(88.33, 10.0), pad_by_number(footprints, "RPG3", "2").GetPosition()],
+        0.25,
+        pcbnew.In6_Cu,
+    )
+    add_polyline(
+        board,
+        nets["JETSON_FAULT_N"],
+        [
+            pad_by_number(footprints, "TP12", "1").GetPosition(),
+            point(108.0, 5.0),
+        ],
+        0.25,
+    )
+    tp12_transfer = point(108.0, 5.0)
+    add_via(board, nets["JETSON_FAULT_N"], tp12_transfer, 0.6, 0.3)
+    add_track(
+        board,
+        nets["JETSON_FAULT_N"],
+        tp12_transfer,
+        pad_by_number(footprints, "R47", "2").GetPosition(),
+        pcbnew.In6_Cu,
+        0.25,
+    )
+    add_polyline(
+        board,
+        nets["U3_IMON"],
+        [
+            pad_by_number(footprints, "TP13", "1").GetPosition(),
+            point(121.0, 5.0),
+        ],
+        0.25,
+    )
+    tp13_transfer = point(121.0, 5.0)
+    add_via(board, nets["U3_IMON"], tp13_transfer, 0.6, 0.3)
+    add_polyline(
+        board,
+        nets["U3_IMON"],
+        [tp13_transfer, point(114.18, 5.0), pad_by_number(footprints, "R51", "1").GetPosition()],
+        0.25,
+        pcbnew.In6_Cu,
+    )
+
+    estop_a_source = pad_by_number(footprints, "R49", "2").GetPosition()
+    estop_b_source = pad_by_number(footprints, "R50", "2").GetPosition()
+    tp14 = pad_by_number(footprints, "TP14", "1").GetPosition()
+    tp15 = pad_by_number(footprints, "TP15", "1").GetPosition()
+    tp14_transfer = point(48.0, 84.0)
+    tp15_transfer = point(54.0, 84.0)
+    estop_a_escape = point(53.33, 96.5)
+    estop_b_escape = point(57.33, 96.5)
+    add_track(board, nets["ESTOP_A_MON"], estop_a_source, estop_a_escape, pcbnew.F_Cu, 0.25)
+    add_track(board, nets["ESTOP_B_MON"], estop_b_source, estop_b_escape, pcbnew.F_Cu, 0.25)
+    add_via(board, nets["ESTOP_A_MON"], estop_a_escape, 0.6, 0.3)
+    add_via(board, nets["ESTOP_B_MON"], estop_b_escape, 0.6, 0.3)
+    add_via(board, nets["ESTOP_A_MON"], tp14_transfer, 0.6, 0.3)
+    add_via(board, nets["ESTOP_B_MON"], tp15_transfer, 0.6, 0.3)
+    add_polyline(
+        board,
+        nets["ESTOP_A_MON"],
+        [estop_a_escape, point(48.0, 92.0), tp14_transfer],
+        0.25,
+        pcbnew.In6_Cu,
+    )
+    add_polyline(
+        board,
+        nets["ESTOP_B_MON"],
+        [estop_b_escape, point(56.0, 92.0), tp15_transfer],
+        0.25,
+        pcbnew.In6_Cu,
+    )
+    add_track(board, nets["ESTOP_A_MON"], tp14_transfer, tp14, pcbnew.F_Cu, 0.25)
+    add_track(board, nets["ESTOP_B_MON"], tp15_transfer, tp15, pcbnew.F_Cu, 0.25)
 
 
 def replace_u3_output_transfer(board, nets: dict[str, object]):
@@ -1123,22 +1542,36 @@ def reroute_u6_isolation_domains(board, nets: dict[str, object], footprints: dic
         ((132.0, 24.0), (132.0, 25.4267)),
         ((132.0, 25.4267), (134.0, 27.4267)),
         ((134.0, 27.4267), (134.0, 115.5)),
+        ((132.0, 24.0), (132.0, 22.5733)),
+        ((132.0, 22.5733), (132.3, 22.2733)),
+        ((132.3, 22.2733), (132.3, 18.0)),
+        ((130.9792, 16.6792), (132.3, 18.0)),
+        ((114.1109, 16.6792), (130.9792, 16.6792)),
     ):
         remove_segment(board, "3V3_LOGIC", first, second)
-    u7_logic_power = pad_by_number(footprints, "U7", "1").GetPosition()
+    u7_logic_power = pad_by_number(footprints, "U7", "3").GetPosition()
     u6_logic_power = pad_by_number(footprints, "U6", "1").GetPosition()
     add_polyline(
         board,
         nets["3V3_LOGIC"],
-        [u7_logic_power, point(129.0, 27.0), point(129.0, mm(u6_logic_power.y)), u6_logic_power],
+        [u7_logic_power, point(mm(u7_logic_power.x), 33.0), point(mm(u6_logic_power.x), 33.0), u6_logic_power],
         0.8,
     )
+    add_via(board, nets["3V3_LOGIC"], point(mm(u6_logic_power.x), 33.0), 0.8, 0.4)
     add_polyline(
         board,
         nets["3V3_LOGIC"],
-        [u7_logic_power, point(130.0, 26.0), point(130.0, 48.0), point(134.0, 52.0), point(134.0, 115.5)],
+        [point(114.1109, 16.6792), point(120.0, 14.0), point(124.5, 14.0)],
         0.8,
         pcbnew.In5_Cu,
+    )
+    add_track(
+        board,
+        nets["3V3_LOGIC"],
+        point(122.0, 45.0),
+        point(124.5, 42.0),
+        pcbnew.In5_Cu,
+        0.8,
     )
 
     for first, second in (
@@ -1148,10 +1581,24 @@ def reroute_u6_isolation_domains(board, nets: dict[str, object], footprints: dic
         ((128.6, 37.5192), (131.6515, 40.1224)),
         ((134.54, 24.0), (134.54, 32.0275)),
         ((134.54, 32.0275), (128.6, 37.5192)),
+        ((134.54, 24.0), (134.54, 18.34)),
+        ((133.3339, 17.1339), (134.2, 18.0)),
+        ((129.9678, 20.5), (133.3339, 17.1339)),
+        ((124.0, 20.5), (129.9678, 20.5)),
     ):
         remove_segment(board, "GND", first, second)
+    for item in list(board.GetTracks()):
+        if (
+            isinstance(item, pcbnew.PCB_VIA)
+            and item.GetNetname() == "GND"
+            and item.GetPosition() == point(133.3339, 17.1339)
+        ):
+            board.Remove(item)
+            break
+    else:
+        raise ValueError("expected GND via at (133.3339, 17.1339)")
     relocate_via_and_connected_ends(board, "GND", (131.6515, 43.7508), (127.2, 44.445), 1)
-    u7_logic_ground = pad_by_number(footprints, "U7", "2").GetPosition()
+    u7_logic_ground = pad_by_number(footprints, "U7", "1").GetPosition()
     u6_logic_ground_bottom = pad_by_number(footprints, "U6", "8").GetPosition()
     add_track(board, nets["GND"], u6_logic_ground_bottom, point(127.2, 44.445), pcbnew.F_Cu, 0.25)
     add_polyline(
@@ -1161,12 +1608,21 @@ def reroute_u6_isolation_domains(board, nets: dict[str, object], footprints: dic
         0.25,
         pcbnew.In4_Cu,
     )
+    c42_power = pad_by_number(footprints, "C42", "1").GetPosition()
+    c42_ground = pad_by_number(footprints, "C42", "2").GetPosition()
+    add_polyline(
+        board,
+        nets["3V3_LOGIC"],
+        [c42_power, point(mm(u7_logic_power.x), mm(c42_power.y)), u7_logic_power],
+        0.8,
+    )
+    logic_ground_via = point(130.0, mm(c42_ground.y))
+    add_via(board, nets["GND"], logic_ground_via, 0.6, 0.3)
     add_polyline(
         board,
         nets["GND"],
-        [u7_logic_ground, point(128.0, 30.54), point(128.0, 37.0), point(128.6, 37.5192)],
+        [logic_ground_via, c42_ground, point(mm(u7_logic_ground.x), mm(c42_ground.y)), u7_logic_ground],
         0.25,
-        pcbnew.In1_Cu,
     )
 
     for first, second in (
@@ -1237,6 +1693,31 @@ def reroute_u6_isolation_domains(board, nets: dict[str, object], footprints: dic
         0.25,
         pcbnew.In2_Cu,
     )
+
+    u7_field_ground = pad_by_number(footprints, "U7", "7").GetPosition()
+    old_u7_field_ground = point(142.16, 24.0)
+    add_polyline(
+        board,
+        nets["GND_CAN_ISO"],
+        [u7_field_ground, point(140.5, mm(u7_field_ground.y)), old_u7_field_ground],
+        0.5,
+    )
+    add_via(board, nets["GND_CAN_ISO"], old_u7_field_ground, 0.6, 0.3)
+
+    u7_field_power = pad_by_number(footprints, "U7", "8").GetPosition()
+    old_u7_field_power = point(147.24, 24.0)
+    add_polyline(
+        board,
+        nets["5V_CAN_ISO"],
+        [u7_field_power, point(140.0, mm(u7_field_power.y)), old_u7_field_power],
+        0.5,
+    )
+    add_via(board, nets["5V_CAN_ISO"], old_u7_field_power, 0.6, 0.3)
+
+    c43_power = pad_by_number(footprints, "C43", "1").GetPosition()
+    c43_ground = pad_by_number(footprints, "C43", "2").GetPosition()
+    add_track(board, nets["5V_CAN_ISO"], c43_power, point(143.75, 18.0), pcbnew.F_Cu, 0.5)
+    add_track(board, nets["GND_CAN_ISO"], c43_ground, point(145.65, 18.0), pcbnew.F_Cu, 0.25)
 
 
 def add_plane_zones(board, nets: dict[str, object]):
@@ -1741,10 +2222,12 @@ def build_board(session_path: Path = ROUTING_SESSION, output_path: Path = OUTPUT
     relocate_u6_logic_vias(board)
     footprints = {footprint.GetReference(): footprint for footprint in board.GetFootprints()}
     reroute_u6_isolation_domains(board, nets, footprints)
+    add_bottom_power_transfers(board, nets, footprints)
     add_post_route_supplements(board, nets, footprints)
     replace_local_oscillator_routing(board, nets, footprints)
     replace_field_can_routing(board, nets, footprints)
     add_isolated_power_via_arrays(board, nets, footprints)
+    add_fixture_testpoint_routes(board, nets, footprints)
     replace_u3_output_transfer(board, nets)
     add_u3_exposed_pad_thermal_vias(board, nets, footprints)
     add_u6_isolation_keepout(board, footprints)

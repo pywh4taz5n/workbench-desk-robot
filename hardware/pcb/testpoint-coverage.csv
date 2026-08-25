@@ -7,3 +7,10 @@ TP5,GND,logic reference,below 50mV offset to fixture reference,four-wire meter,f
 TP6,CANH,CAN dominant and recessive levels,ISO1042 datasheet limits at 1Mbps and 5Mbps FD,oscilloscope and CAN analyser,CAN log
 TP7,CANL,CAN dominant and recessive levels,ISO1042 datasheet limits at 1Mbps and 5Mbps FD,oscilloscope and CAN analyser,CAN log
 TP8,MCU_RESET,reset pulse and release,low pulse detected then stable 3.3V release,logic analyser,logic capture
+TP9,5V_CAN_ISO,isolated CAN supply ripple and load regulation,4.75V to 5.25V under rated CAN-side load,DMM and oscilloscope,scope capture
+TP10,3V3_PGOOD,logic regulator power-good timing,asserts only after 3V3_LOGIC is within limits,oscilloscope,sequence capture
+TP11,JETSON_PGOOD,Jetson eFuse power-good timing,asserts only after JETSON_12V is within limits,oscilloscope,sequence capture
+TP12,JETSON_FAULT_N,Jetson eFuse fault indication,asserts low for controlled branch fault and recovers per latch policy,oscilloscope and electronic load,fault capture
+TP13,U3_IMON,Jetson branch current monitor,calibrated response agrees with electronic load across the approved range,DMM oscilloscope and electronic load,calibration record
+TP14,ESTOP_A_MON,isolated E-stop channel A diagnostic,independently follows channel A open closed and discrepancy cases,logic analyser,truth-table capture
+TP15,ESTOP_B_MON,isolated E-stop channel B diagnostic,independently follows channel B open closed and discrepancy cases,logic analyser,truth-table capture

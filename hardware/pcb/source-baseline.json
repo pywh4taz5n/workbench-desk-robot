@@ -54,13 +54,13 @@
       "owner": "Electrical Owner"
     },
     {
-      "id": "SRC-MURATA-MEJ1S",
+      "id": "SRC-MURATA-NXF1",
       "vendor": "Murata",
-      "title": "MEJ1S0305SC 1 W isolated DC-DC converter",
-      "url": "https://www.murata.com/en-us/products/productdetail?partno=MEJ1S0305SC",
-      "claim": "The candidate is production-tested at 5.2 kVDC but specifies 2 mm creepage/clearance and 200 Vrms working voltage; it cannot close an 8 mm reinforced system-isolation claim without safety and vendor review.",
+      "title": "NXF1 series isolated 1 W regulated DC-DC converter datasheet KDC_NXF1.C01",
+      "url": "https://www.murata.com/en-us/products/productdetail?partno=NXF1S0305MC-R7",
+      "claim": "KDC_NXF1.C01 lists NXF1S0305MC as a regulated 3.3 V-input, 5 V/200 mA, 1 W SMD converter and -R7 as an orderable reel suffix. Its 3 kVDC production test is not a substitute for system creepage, clearance, working-voltage, or reinforced-insulation approval; the implemented board pad-edge gap is 4.08 mm against an 8 mm system target.",
       "confidence": "OFFICIAL_PRIMARY",
-      "freeze_status": "VENDOR_AND_SAFETY_REVIEW_REQUIRED",
+      "freeze_status": "SAFETY_AND_PROCUREMENT_REVIEW_REQUIRED",
       "owner": "Electrical and Safety Owners"
     },
     {
@@ -91,6 +91,16 @@
       "claim": "The official datasheet specifies a 16-50 V input range, 28 V output and nine-terminal through-hole ChiP package. DCM3623T50M31C2T00 is excluded because it cannot satisfy the required 36-60 V input and regulated 12 V output; this source is not candidate evidence.",
       "confidence": "OFFICIAL_PRIMARY",
       "freeze_status": "EXCLUDED_NOT_A_CANDIDATE",
+      "owner": "Electrical and Procurement Owners"
+    },
+    {
+      "id": "SRC-DELTA-Q36SR12020-DISTRIBUTOR",
+      "vendor": "Delta Electronics",
+      "title": "Q36SR12020NRFH authorized-distributor catalog record",
+      "url": "https://www.digikey.com/en/products/detail/delta-electronics/Q36SR12020NRFH/7681593",
+      "claim": "The authorized-distributor catalog identifies the exact Q36SR12020NRFH candidate as an 18-75 V input, 12 V/20 A, 240 W isolated quarter-brick. The checked 58.4 x 36.8 mm eight-pin land pattern is based on the Q36SR family mechanical drawing. The local DS_Q36SR12019 family PDF is a 12 V/19 A document and is not exact 20 A manufacturer evidence; lifecycle, authorized-channel quote, heat-spreader option, and AVL remain open.",
+      "confidence": "AUTHORIZED_DISTRIBUTOR_EXACT_MPN_PLUS_FAMILY_MECHANICAL_DRAWING",
+      "freeze_status": "EXACT_MANUFACTURER_DATASHEET_LIFECYCLE_QUOTE_AND_AVL_REQUIRED",
       "owner": "Electrical and Procurement Owners"
     },
     {
@@ -198,9 +208,9 @@
     },
     {
       "interface": "isolated_dc_dc",
-      "envelope": "36-60 V input, regulated 12 V, 240 W class",
-      "confidence": "ENGINEERING_ENVELOPE",
-      "freeze_status": "MPN_AND_LAND_PATTERN_REQUIRED",
+      "envelope": "36-60 V system input, regulated 12 V/20 A; Q36SR12020NRFH design candidate",
+      "confidence": "DESIGN_CANDIDATE_WITH_DISTRIBUTOR_EVIDENCE",
+      "freeze_status": "EXACT_MANUFACTURER_DATASHEET_LIFECYCLE_QUOTE_AND_AVL_REQUIRED",
       "owner": "Electrical and Procurement Owners"
     },
     {

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\qucha\Documents\Codex\2026-08-18\pcb-48v-12v-jetson-12v-5a\work\workbench-desk-robot\hardware\pcb\kicad\controller.kicad_sch</source>
-    <date>2026-08-21T23:45:37</date>
+    <date>2026-08-25T17:45:03</date>
     <tool>Eeschema 10.0.5</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -38,7 +38,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>085d35c9-f86e-4f19-9df8-bfecac228421</tstamps>
+      <tstamps>299bd6c0-e5d0-5f02-b614-66170914349e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -62,7 +62,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1696801d-a13c-4e66-86db-224aa359f123</tstamps>
+      <tstamps>5dfa8a3e-2480-54dd-a66a-e847f186632d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -86,7 +86,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>577a9443-1f06-46fd-ac54-fdd18140ac54</tstamps>
+      <tstamps>0f741a69-1c69-5a6f-bca0-659c75eddf6b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -110,7 +110,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d6d4659b-ffad-4348-8e28-e50742c76ebe</tstamps>
+      <tstamps>f729d50f-e45c-5e3b-a675-73ee88ba501f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -134,7 +134,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1e1737c0-a9d4-4acb-a681-c45e4bca78ef</tstamps>
+      <tstamps>5c771365-f5ec-5c23-93fa-5495183a84d0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -158,7 +158,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1db1dd08-f97e-41b9-b511-47a324c850f1</tstamps>
+      <tstamps>8d4fee13-0724-54d2-8055-5a36fc449f4a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -182,7 +182,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ce32c41-6714-45aa-848b-a97894cd4092</tstamps>
+      <tstamps>2dde9251-036d-5089-a259-54ca504313f7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -206,7 +206,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3d6ade12-9f5f-4713-a4fb-f610f724568e</tstamps>
+      <tstamps>2777928b-696f-5c2d-93e3-dbc3e4718c96</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -230,7 +230,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fa229f8d-5e08-477d-910b-4ab09c78b699</tstamps>
+      <tstamps>38c56699-a259-5a3f-80e2-097f547d8350</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -254,7 +254,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0cc2e05d-b5cb-4357-9c78-1a76f145991a</tstamps>
+      <tstamps>18753b1f-15fc-5b48-919a-973dd5db2d4e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -278,7 +278,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c0538df4-b161-445f-8d4c-79d6f01669f1</tstamps>
+      <tstamps>e3fdc376-5bf5-5f59-ab74-826120e476ce</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -302,7 +302,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>43c0cdcc-80a6-4622-8ab3-a6081dc4165e</tstamps>
+      <tstamps>72a999ea-cdd9-59f4-bc49-4aa5a4dede7d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -326,7 +326,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b845cf34-d832-456c-9eb6-71e3203c041a</tstamps>
+      <tstamps>2ddbd2d6-6b3a-5237-8ba6-656f2485078f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -350,7 +350,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>022aa9f8-07e2-43e6-87b9-6a1f0810f186</tstamps>
+      <tstamps>c90f04d4-b6bb-56ef-bde3-d1a8a5ba70bd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -374,7 +374,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f677992a-ef83-49ff-b025-8522a36f250f</tstamps>
+      <tstamps>e708d72c-e77c-57f0-9298-4cec3fc7936e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -398,7 +398,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2448a3fe-e067-4768-b124-9c38bb6dcec0</tstamps>
+      <tstamps>7d22df47-ffc4-5ee7-89fe-c058af10dee3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -422,7 +422,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cf438748-6f7b-4446-95bb-bf9a09a7104a</tstamps>
+      <tstamps>994f1fdc-3af4-5897-a109-5c3fded1fe44</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -446,7 +446,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1234662c-ebea-4565-91d5-964b4dc3b67d</tstamps>
+      <tstamps>8c9bc351-8170-5b6a-a972-f4e14aa1ad27</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -470,7 +470,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ece341e-f43e-4ac3-af27-787dbd201ed3</tstamps>
+      <tstamps>f1cdac68-891b-5db2-b0b8-0d942465d486</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -494,7 +494,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>233eaefa-5e33-4c0d-810d-c8d8e31df864</tstamps>
+      <tstamps>b6db4832-cbb7-5a7e-ab19-564c62405ef5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -518,7 +518,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d3b31d18-ad35-4f7d-b86b-90f17503bebe</tstamps>
+      <tstamps>9a418881-67e5-5d7b-a0e2-2b8b42b24b93</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -542,7 +542,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>50738a3e-e955-467e-9c9f-3b82d61b44f2</tstamps>
+      <tstamps>142b4478-e51a-5ebb-8809-629ede1ebc6f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -566,7 +566,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b1bf76fe-7514-43f6-ac8e-c749c10355b6</tstamps>
+      <tstamps>127948c1-a748-5ec4-8458-17dc58630fdc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -590,7 +590,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8fbc8825-4626-43c4-a11b-0e0a6ff9cb24</tstamps>
+      <tstamps>d6381888-f7c0-5308-989e-d6d89f5bfb1b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -614,7 +614,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>29a991df-2a75-474c-9b14-1d2cebfc5ec7</tstamps>
+      <tstamps>953548ce-3b80-5f99-8888-a775b4aec61d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -638,7 +638,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ec2a1216-a11c-4651-95b8-0a531dae2559</tstamps>
+      <tstamps>20464fae-2d88-5662-9e9f-762c0ad950e7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -662,7 +662,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>14daa13f-d006-4e7f-aa79-79838443cca6</tstamps>
+      <tstamps>74b0e62f-5e7f-5336-8e25-b1c1f00f510c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -686,7 +686,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>622d64db-1b8b-4c33-8fee-75ddf5d8064f</tstamps>
+      <tstamps>b17c52e4-a5d2-52ae-9736-bc1c175d4394</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -710,7 +710,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>df4ad664-f117-4c52-8b8b-853770d77b95</tstamps>
+      <tstamps>95860627-8000-51b1-b98d-40c022987dfc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -734,7 +734,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ea43a98d-aa2f-43d3-a1a2-bd497603cc3a</tstamps>
+      <tstamps>afdba2f9-4ade-5172-beec-18f5d2426661</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -758,7 +758,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fcadeda7-44b3-4310-9514-3646f37644cb</tstamps>
+      <tstamps>9cfe2b64-455e-5c13-a759-528206869050</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -784,7 +784,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>86cbe047-afc7-47d5-856b-f1949e92ba8e</tstamps>
+      <tstamps>98dedefd-11a8-5bd9-a0eb-a6dd11fbcde3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -808,7 +808,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d8ac2978-0a90-4de9-b55b-92141c90d395</tstamps>
+      <tstamps>a9a504bf-538b-53c1-9ecc-11bc2581a1d8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -832,7 +832,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>389b9d70-7fcb-49d3-8115-553c1e49d1ed</tstamps>
+      <tstamps>73e02383-17e1-5210-878f-af9625752cf7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -856,7 +856,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e49a6a93-1a0d-4007-9e47-19a78ddc5e95</tstamps>
+      <tstamps>f24c744e-1f6a-5719-b333-e61f4161cc57</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -880,7 +880,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>42a7fe12-cc98-47b9-958e-27cf4a72778d</tstamps>
+      <tstamps>f53b9a0f-5414-581a-861b-47015a725d54</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -906,7 +906,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a0cf133f-5eab-4dac-8ae3-b7604f759bce</tstamps>
+      <tstamps>df4ce359-3757-56d8-914e-38536c899b56</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -932,7 +932,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c157845d-2f43-4c6c-8ac7-fc382036755c</tstamps>
+      <tstamps>d999a248-e7df-5fde-ba53-fdce4817a297</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -958,7 +958,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>833e0b25-4a9e-4205-823a-4746bd535e92</tstamps>
+      <tstamps>1b4b6058-bbe6-59fd-8631-a77e2c57f6a3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1000,7 +1000,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>faf3610b-0cb4-4749-a06d-453649fa8eb5</tstamps>
+      <tstamps>b85b3c77-50c6-58f4-b0bb-ffd2790b363c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1026,7 +1026,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4085968c-c6fd-4102-b9b7-ac290d98d2ce</tstamps>
+      <tstamps>c01ab105-7e9e-5e9a-9a6c-49bb894c94bc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1052,7 +1052,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>502dc658-9c34-42b4-928a-fb4b50976947</tstamps>
+      <tstamps>91d23d0b-3de8-5973-ba74-ee73ec0d9822</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1078,7 +1078,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c119590f-4a41-46fc-92da-87acc7b723b0</tstamps>
+      <tstamps>ba01d96a-8730-5d11-96e1-206220b7d1a5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1104,7 +1104,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1d8258d4-c5c7-4c4d-88a9-d0b9265750dd</tstamps>
+      <tstamps>503602a9-3872-5089-9f91-da31143faf5b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1130,7 +1130,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e11139ed-25bd-4216-a8d2-d698c35146f3</tstamps>
+      <tstamps>d26b572b-3c49-57d2-862a-174dc912d3b0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1156,7 +1156,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>81cf5583-e74c-48d5-963d-31e04aae4490</tstamps>
+      <tstamps>1b558972-ce0c-5c35-b53d-b12ec27af430</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1181,7 +1181,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>419d8150-ccc5-44d8-bb69-dfd9a82e3955</tstamps>
+      <tstamps>59c3e0bf-9f69-5448-9f9b-751e8d23ff9d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1214,7 +1214,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e7ca7025-70e3-44bf-b799-db23a4850519</tstamps>
+      <tstamps>3724b6c1-9628-55c1-b1d9-18dbd4777c5a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1246,7 +1246,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fc6a70b4-3489-49ad-bb78-f40f7a579075</tstamps>
+      <tstamps>933819ac-c2d0-5424-a6cd-40547b79d5cc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1272,7 +1272,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0a6300b8-58a5-41a2-b306-1a53ef823934</tstamps>
+      <tstamps>9a8783a2-f606-58d5-9305-44221104630b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1297,7 +1297,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>98302940-9aa3-485f-b12b-060152d8a515</tstamps>
+      <tstamps>70977520-2b18-5982-8f6b-4eda1ce2aefd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1322,7 +1322,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6c443038-944b-491b-97c8-0f8d2d8f0a2c</tstamps>
+      <tstamps>5bbeb8d9-4ffc-5e5b-ad53-60ef570d9a47</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1346,7 +1346,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d4d33f8a-a0ec-4456-ba5a-2b4d3ca10ac2</tstamps>
+      <tstamps>51085e3e-5933-53a0-93b4-b869ee7e20b6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1370,7 +1370,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ce789d6e-8298-4711-a630-68962b1819a6</tstamps>
+      <tstamps>62268c2d-b99f-58e5-b496-09b781d62f9b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1394,7 +1394,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fea12736-ebfd-4304-8162-95d18d3a29e6</tstamps>
+      <tstamps>4189278b-aa7e-5f88-acf6-9680fc30db40</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1418,7 +1418,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>725f4578-663c-4604-b273-a31fe6c97b53</tstamps>
+      <tstamps>29758959-63fe-5e9c-acbb-3f5908dbc6c9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1442,7 +1442,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8a73f483-7ac7-450a-af70-150dbaa4abb7</tstamps>
+      <tstamps>2abc3018-49af-56db-b51d-6a2a3ea3b5ac</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1466,7 +1466,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>06670cc5-a586-4702-a353-f78ae8e48872</tstamps>
+      <tstamps>b26c7c28-091b-505b-a97e-fea50473d6fb</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1490,7 +1490,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1e4cf803-7310-4e84-bc82-bf50fcbadd36</tstamps>
+      <tstamps>fc7f6e15-d78f-523b-9d61-fd94c3a7f068</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1514,7 +1514,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>61f69968-1c7d-46b1-be88-91b6bd5b733d</tstamps>
+      <tstamps>fc105206-7639-549c-832e-2c9c698652ba</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1538,7 +1538,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>07b9827f-db5a-4899-b463-7ed4b9e49870</tstamps>
+      <tstamps>e72da1ee-0d39-589d-a779-06500750e03e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1562,7 +1562,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>093e1b79-c3d9-44cc-a272-87e49c5bbc0c</tstamps>
+      <tstamps>75810066-595c-58ab-9ad6-474d657073e9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1586,7 +1586,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>15419ce3-1ec0-4977-89f2-bb8adf6e8769</tstamps>
+      <tstamps>87c5cadd-75d4-58d8-a6b5-759b83ad587b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1610,7 +1610,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>59b6703b-58ca-4257-a727-d6807d534848</tstamps>
+      <tstamps>e85648ce-0d16-58eb-a9f7-31ba51e395b0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1634,7 +1634,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dded6cbc-b716-4631-8016-41543a0d9209</tstamps>
+      <tstamps>ffef09d8-c117-5dd3-8249-cf0bb7da5c6b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1658,7 +1658,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>54d76ac6-d16a-48de-9d9f-4c82777ce39b</tstamps>
+      <tstamps>1bf686f6-5d21-5b0c-8095-d51b795b6426</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1682,7 +1682,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e58cf203-d39c-41f5-8758-772aba6b746d</tstamps>
+      <tstamps>75c7b3d0-db72-511c-8620-7175085a14ff</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1706,7 +1706,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>87e88cb7-8925-4d3a-aa11-083d4e73342c</tstamps>
+      <tstamps>9426dc2e-615d-5ca4-b7b8-14b29d3044b2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1730,7 +1730,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8eec9489-9fe9-4bda-95a4-f37bbb6682b2</tstamps>
+      <tstamps>4aa5808b-be21-5381-b911-d780ad57c207</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1754,7 +1754,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>740b74ba-08ba-4544-9b1e-45c6d8806d63</tstamps>
+      <tstamps>1184783c-2bcd-5ae1-851e-a44d10368e47</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1778,7 +1778,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>674e9e59-b75c-4538-b8c5-e2d1c20d2286</tstamps>
+      <tstamps>2758eba9-fc80-5232-86e9-85bf5fd4f12f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1802,7 +1802,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9987ff8e-9f85-44bc-b11c-5929276a4150</tstamps>
+      <tstamps>212ae901-b8a3-5228-9b30-d447fce3b644</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1826,7 +1826,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>69348d20-d84b-4397-95ab-58c978181463</tstamps>
+      <tstamps>67a7eb8b-e4ec-5361-adb7-0fdc580452ca</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1850,7 +1850,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d23557bc-f19d-4078-ac6f-ae43cf74bd37</tstamps>
+      <tstamps>f921d6f4-975d-560b-8e13-5ace46489baf</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1874,7 +1874,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dd9f2f76-bb53-474d-8173-f803b5474f2d</tstamps>
+      <tstamps>237b7dd2-c805-55da-a9d5-a84d2d7f4f01</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1898,7 +1898,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1a30d262-edc5-40d4-9eab-be5be1d6ab3d</tstamps>
+      <tstamps>dca0ee77-c060-5638-9006-377fee79238b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1922,7 +1922,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>107a7f87-3e02-426c-8278-dd07cb3f63a3</tstamps>
+      <tstamps>dfbaef47-de3c-516c-8646-5160d341a7bd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1946,7 +1946,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>831db07f-c0dc-472f-be18-5ef5459286d3</tstamps>
+      <tstamps>05031e15-c89b-5cf4-947e-6d307d14552d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1970,7 +1970,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c00eff4b-7d10-40e3-af28-438c3d7b1e2e</tstamps>
+      <tstamps>a09e9311-ec43-564a-a33a-4f8d121a6982</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1994,7 +1994,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>43de8aec-d44f-408d-91fc-c3224c579094</tstamps>
+      <tstamps>f0b20b3b-cda3-5657-8cf3-a681dacd36fe</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2018,7 +2018,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ba926a2-c6ca-491f-b8d7-791bfa86932d</tstamps>
+      <tstamps>d59026d9-e042-5180-ad8a-92bbb6bfbdb7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2042,7 +2042,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>19a29456-4a6a-4b06-81ad-fe1dc187f00b</tstamps>
+      <tstamps>2266a201-cbaf-55ee-88b6-e7733fcccf60</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2066,7 +2066,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ef097d88-ce2b-428a-ae6f-8161e4f9d161</tstamps>
+      <tstamps>d1f9bc13-f757-58a9-a059-3c7d4cbbd706</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2090,7 +2090,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>96fe8c4c-dd3d-4cac-81a1-311e40e905f1</tstamps>
+      <tstamps>fb2ffc7c-000a-5683-b675-c356d40b3d5b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2114,7 +2114,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1d6af74f-287a-48be-acb0-422c9b46099e</tstamps>
+      <tstamps>5b3b3b1d-52d1-5d98-9b2e-eb623ec394b2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2138,7 +2138,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f7f9ce4b-0143-4b08-93c4-fc847c4c5c4d</tstamps>
+      <tstamps>20ef48c1-1133-5952-a5da-263ca512fe7b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2162,7 +2162,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f1accffd-bb16-493c-bd61-276074a14a2d</tstamps>
+      <tstamps>09adf24d-a83d-55fb-a827-c017d941deb8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2186,7 +2186,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cfd7c748-2192-4654-8556-00625df46d34</tstamps>
+      <tstamps>4195a5c6-c056-58c1-bf31-f8980f420f54</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2210,7 +2210,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0648341f-6bbe-47c9-9646-054434db8bd1</tstamps>
+      <tstamps>1181703b-e980-59b1-a257-86db8f920d8e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2234,7 +2234,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>22e3c212-808d-4b4b-bf32-2eb79e265760</tstamps>
+      <tstamps>de18562c-7806-56ae-b669-8e230cc9c42f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2258,7 +2258,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5a715f56-1f00-4614-a3b5-5f2c6a037891</tstamps>
+      <tstamps>1ce9ce58-6dfc-523d-9499-bf76ee878c91</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2282,7 +2282,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0dd7c1a6-36ff-4420-999e-efe93d6a0e24</tstamps>
+      <tstamps>d35c2501-c6e6-586d-a331-a0d7c82ce367</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2306,7 +2306,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cbf98880-79f7-47f2-a1ca-dcb58baa5108</tstamps>
+      <tstamps>a83c3f1a-0300-5ec2-bbfa-cdb994310a49</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2330,7 +2330,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4005dd93-3605-4ca3-b739-0370cac04632</tstamps>
+      <tstamps>bea9432f-20c2-5159-a5e7-99c266bf84f7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2353,7 +2353,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6cd1faf4-6227-4c01-a99d-341fe23cf543</tstamps>
+      <tstamps>0adb792f-5a4b-5471-85a3-44d155b43816</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2376,7 +2376,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f4e0e390-2329-4203-b37b-843a813b8259</tstamps>
+      <tstamps>d392c02f-7666-552e-8d1d-d344d6e9f994</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2399,7 +2399,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>601fe23d-ca79-4fd0-b464-cd1f1f239011</tstamps>
+      <tstamps>3b18167d-d30b-5c47-85ac-ffeaf3c4f9e9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2422,7 +2422,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>74d4eafc-1e1d-4a46-b9db-b4189adf2a49</tstamps>
+      <tstamps>f52b03d3-3ec6-51ce-b833-f3a6d46c4f05</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2445,7 +2445,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>90f83f35-7313-44e3-b956-a09991c1afd0</tstamps>
+      <tstamps>c0bef8e1-8ba7-5fd4-a193-0a9363852bec</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2468,7 +2468,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e2a3b850-1ac0-4569-a20e-62add56383ac</tstamps>
+      <tstamps>93ec5db4-f894-533a-adab-36f4fe314bee</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2491,7 +2491,168 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2969636c-d313-4979-8902-3eae1f73b099</tstamps>
+      <tstamps>0464a6ae-d433-5c9e-bd8d-08e7de0b0bd6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP9">
+      <value>5V_CAN_ISO</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cd7a8b26-8972-5d33-b663-0bbea832e783</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP10">
+      <value>3V3_PGOOD</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>189fade4-8b4f-529e-9861-497b93cc5e98</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP11">
+      <value>JETSON_PGOOD</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5a8dce65-379f-5b2a-ac8f-0105149e31bf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP12">
+      <value>JETSON_FAULT_N</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7588243-c5b8-5827-9e49-e79debeb3ce8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP13">
+      <value>U3_IMON</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8c7ef893-84a8-5f6b-9518-29cc1684933a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP14">
+      <value>ESTOP_A_MON</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5c9e7425-7003-5493-b531-2a191182a320</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP15">
+      <value>ESTOP_B_MON</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="MPN"/>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="controller" part="TESTPOINT" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value=""/>
+      <property name="Sheetname" value="controller"/>
+      <property name="Sheetfile" value="controller.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e148fb68-798f-52c1-b032-414878a62bab</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2515,7 +2676,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>04585795-0324-4419-8c4b-e54effacb288</tstamps>
+      <tstamps>604b1d18-8bd9-52bb-9405-9c9530ddac96</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2534,33 +2695,33 @@
       </units>
     </comp>
     <comp ref="U2">
-      <value>ISOLATED 48V-12V 240W (TBD)</value>
-      <footprint>WB:Isolated_48V_12V_240W_TBD</footprint>
-      <description>No compatible orderable MPN is frozen; generic 9-pin through-hole land pattern is a layout placeholder only</description>
+      <value>18-75V TO 12V 240W ISO</value>
+      <footprint>WB:Delta_Q36SR_QuarterBrick</footprint>
+      <datasheet>authorized-distributor record + DS_Q36SR12019 family mechanical drawing</datasheet>
+      <description>Negative-logic ON/OFF is tied to -VIN and local sense pins are tied at the module. Distributor catalogs identify the exact 12 V / 20 A variant; an exact manufacturer datasheet, lifecycle confirmation, authorized-channel quote, and heat-spreader review remain procurement gates.</description>
       <fields>
-        <field name="MPN">TBD_36_60V_TO_12V_240W_ISOLATED</field>
-        <field name="Footprint">WB:Isolated_48V_12V_240W_TBD</field>
-        <field name="Datasheet"/>
-        <field name="Description">No compatible orderable MPN is frozen; generic 9-pin through-hole land pattern is a layout placeholder only</field>
+        <field name="MPN">Q36SR12020NRFH</field>
+        <field name="Footprint">WB:Delta_Q36SR_QuarterBrick</field>
+        <field name="Datasheet">authorized-distributor record + DS_Q36SR12019 family mechanical drawing</field>
+        <field name="Description">Negative-logic ON/OFF is tied to -VIN and local sense pins are tied at the module. Distributor catalogs identify the exact 12 V / 20 A variant; an exact manufacturer datasheet, lifecycle confirmation, authorized-channel quote, and heat-spreader review remain procurement gates.</field>
       </fields>
-      <libsource lib="controller" part="ISOLATED_DC_DC_TBD" description="Workbench-1 controlled symbol"/>
-      <property name="MPN" value="TBD_36_60V_TO_12V_240W_ISOLATED"/>
+      <libsource lib="controller" part="DELTA_Q36SR" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value="Q36SR12020NRFH"/>
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>126407d8-5915-4bef-8101-096e78d5ebd2</tstamps>
+      <tstamps>250a40dc-3ea6-5d1f-998b-9e0a3f3b664d</tstamps>
       <units>
         <unit name="A">
           <pins>
             <pin num="1"/>
             <pin num="2"/>
             <pin num="3"/>
-            <pin num="7"/>
             <pin num="8"/>
-            <pin num="4"/>
-            <pin num="5"/>
+            <pin num="7"/>
             <pin num="6"/>
-            <pin num="9"/>
+            <pin num="5"/>
+            <pin num="4"/>
           </pins>
         </unit>
       </units>
@@ -2580,7 +2741,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>40ef25df-8346-4902-98e9-f880da2f76e5</tstamps>
+      <tstamps>cdf836f8-f56b-57f4-bf89-a4a18dde7398</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2628,7 +2789,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>09697997-775b-466c-9d90-3f1b77a5bd12</tstamps>
+      <tstamps>19168b34-3aa9-5e54-825e-ff8478052dbf</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2674,7 +2835,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>07afb886-c4a5-4369-90f1-50694d05dfc3</tstamps>
+      <tstamps>5bc1629d-979a-50ce-b80f-e29c72776d56</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2797,7 +2958,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>71763854-7336-4266-b403-52b0f6f19b69</tstamps>
+      <tstamps>c818b802-e58b-5708-9843-2611a812b3e2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2823,26 +2984,29 @@
     </comp>
     <comp ref="U7">
       <value>3V3-5V ISO 1W</value>
-      <footprint>Converter_DCDC:Converter_DCDC_muRata_MEJ1SxxxxSC_THT</footprint>
+      <footprint>WB:Murata_NXF1_MC</footprint>
+      <datasheet>KDC_NXF1.C01</datasheet>
+      <description>1 W regulated output; safety-owner review remains required for the system isolation target.</description>
       <fields>
-        <field name="MPN">Murata MEJ1S0305SC</field>
-        <field name="Footprint">Converter_DCDC:Converter_DCDC_muRata_MEJ1SxxxxSC_THT</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
+        <field name="MPN">NXF1S0305MC-R7</field>
+        <field name="Footprint">WB:Murata_NXF1_MC</field>
+        <field name="Datasheet">KDC_NXF1.C01</field>
+        <field name="Description">1 W regulated output; safety-owner review remains required for the system isolation target.</field>
       </fields>
-      <libsource lib="controller" part="MEJ1S0305SC" description="Workbench-1 controlled symbol"/>
-      <property name="MPN" value="Murata MEJ1S0305SC"/>
+      <libsource lib="controller" part="NXF1S0305MC" description="Workbench-1 controlled symbol"/>
+      <property name="MPN" value="NXF1S0305MC-R7"/>
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1c45882d-0efb-4104-ae8c-685e414245a7</tstamps>
+      <tstamps>bb8a97ed-28a3-5271-9129-043c2ae3e684</tstamps>
       <units>
         <unit name="A">
           <pins>
             <pin num="1"/>
-            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="14"/>
+            <pin num="8"/>
             <pin num="7"/>
-            <pin num="5"/>
           </pins>
         </unit>
       </units>
@@ -2861,7 +3025,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7f35cb8b-b003-46c6-aa82-61a4fcd81418</tstamps>
+      <tstamps>1f3bc27b-bde3-5c06-8a7c-f212a29583bc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2899,7 +3063,7 @@
       <property name="Sheetname" value="controller"/>
       <property name="Sheetfile" value="controller.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e84f93be-efab-4cba-a919-600f6560f7a7</tstamps>
+      <tstamps>7dfc0f70-4527-50e8-bceb-edbcdcdbc014</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3145,6 +3309,26 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="controller" part="DELTA_Q36SR">
+      <description>Workbench-1 controlled symbol</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DELTA_Q36SR</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Workbench-1 controlled symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+VIN" type="passive"/>
+        <pin num="2" name="ON/OFF" type="passive"/>
+        <pin num="3" name="-VIN" type="passive"/>
+        <pin num="4" name="-VOUT" type="passive"/>
+        <pin num="5" name="-SENSE" type="passive"/>
+        <pin num="6" name="TRIM" type="passive"/>
+        <pin num="7" name="+SENSE" type="passive"/>
+        <pin num="8" name="+VOUT" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="controller" part="DIODE">
       <description>Workbench-1 controlled symbol</description>
       <fields>
@@ -3201,27 +3385,6 @@
         <pin num="16" name="VCC2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="controller" part="ISOLATED_DC_DC_TBD">
-      <description>Workbench-1 controlled symbol</description>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">ISOLATED_DC_DC_TBD</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Workbench-1 controlled symbol</field>
-      </fields>
-      <pins>
-        <pin num="1" name="+IN" type="passive"/>
-        <pin num="2" name="-IN" type="passive"/>
-        <pin num="3" name="ENABLE" type="passive"/>
-        <pin num="4" name="+OUT" type="passive"/>
-        <pin num="5" name="-OUT" type="passive"/>
-        <pin num="6" name="TRIM" type="passive"/>
-        <pin num="7" name="AUX1" type="passive"/>
-        <pin num="8" name="AUX2" type="passive"/>
-        <pin num="9" name="AUX3" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="controller" part="LTC4368">
       <description>Workbench-1 controlled symbol</description>
       <fields>
@@ -3244,22 +3407,6 @@
         <pin num="10" name="GATE" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="controller" part="MEJ1S0305SC">
-      <description>Workbench-1 controlled symbol</description>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">MEJ1S0305SC</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Workbench-1 controlled symbol</field>
-      </fields>
-      <pins>
-        <pin num="1" name="+VIN" type="passive"/>
-        <pin num="2" name="-VIN" type="passive"/>
-        <pin num="5" name="-VOUT" type="passive"/>
-        <pin num="7" name="+VOUT" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="controller" part="NMOS">
       <description>Workbench-1 controlled symbol</description>
       <fields>
@@ -3273,6 +3420,23 @@
         <pin num="1" name="G" type="passive"/>
         <pin num="2" name="S" type="passive"/>
         <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="controller" part="NXF1S0305MC">
+      <description>Workbench-1 controlled symbol</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NXF1S0305MC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Workbench-1 controlled symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-VIN" type="passive"/>
+        <pin num="3" name="+VIN" type="passive"/>
+        <pin num="7" name="-VOUT" type="passive"/>
+        <pin num="8" name="+VOUT" type="passive"/>
+        <pin num="14" name="NC" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="controller" part="RESISTOR">
@@ -3476,9 +3640,10 @@
       <node ref="U5" pin="6" pinfunction="VBAT_6" pintype="passive"/>
       <node ref="U5" pin="75" pinfunction="VDD_75" pintype="passive"/>
       <node ref="U6" pin="1" pinfunction="VCC1_1" pintype="passive"/>
-      <node ref="U7" pin="1" pinfunction="+VIN_1" pintype="passive"/>
+      <node ref="U7" pin="3" pinfunction="+VIN_3" pintype="passive"/>
     </net>
     <net code="2" name="/3V3_PGOOD" class="Default">
+      <node ref="TP10" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U4" pin="20" pinfunction="PG_20" pintype="passive"/>
       <node ref="U4" pin="21" pinfunction="PG_21" pintype="passive"/>
     </net>
@@ -3486,9 +3651,10 @@
       <node ref="C41" pin="1" pinfunction="+_1" pintype="passive"/>
       <node ref="C43" pin="1" pinfunction="+_1" pintype="passive"/>
       <node ref="C44" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U6" pin="11" pinfunction="VCC2_11" pintype="passive"/>
       <node ref="U6" pin="16" pinfunction="VCC2_16" pintype="passive"/>
-      <node ref="U7" pin="7" pinfunction="+VOUT_7" pintype="passive"/>
+      <node ref="U7" pin="8" pinfunction="+VOUT_8" pintype="passive"/>
     </net>
     <net code="4" name="/12V_ISO" class="Default">
       <node ref="C3" pin="1" pinfunction="+_1" pintype="passive"/>
@@ -3500,7 +3666,8 @@
       <node ref="R46" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="R59" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="TP2" pin="1" pinfunction="TP_1" pintype="passive"/>
-      <node ref="U2" pin="4" pinfunction="+OUT_4" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="+SENSE_7" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="+VOUT_8" pintype="passive"/>
       <node ref="U3" pin="1" pinfunction="IN_1" pintype="passive"/>
       <node ref="U3" pin="2" pinfunction="IN_2" pintype="passive"/>
       <node ref="U3" pin="5" pinfunction="IN_SYS_5" pintype="passive"/>
@@ -3553,11 +3720,13 @@
     </net>
     <net code="14" name="/ESTOP_A_MON" class="Default">
       <node ref="R49" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP14" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U5" pin="57" pinfunction="PD10_57" pintype="passive"/>
       <node ref="U8" pin="16" pinfunction="C1_16" pintype="passive"/>
     </net>
     <net code="15" name="/ESTOP_B_MON" class="Default">
       <node ref="R50" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP15" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U5" pin="58" pinfunction="PD11_58" pintype="passive"/>
       <node ref="U8" pin="14" pinfunction="C2_14" pintype="passive"/>
     </net>
@@ -3639,7 +3808,8 @@
       <node ref="RFB2" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="RPG2" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="TP5" pin="1" pinfunction="TP_1" pintype="passive"/>
-      <node ref="U2" pin="5" pinfunction="-OUT_5" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="-VOUT_4" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="-SENSE_5" pintype="passive"/>
       <node ref="U3" pin="25" pinfunction="PowerPAD_25" pintype="passive"/>
       <node ref="U3" pin="7" pinfunction="PLIM_7" pintype="passive"/>
       <node ref="U3" pin="8" pinfunction="GND_8" pintype="passive"/>
@@ -3659,7 +3829,7 @@
       <node ref="U5" pin="99" pinfunction="VSS_99" pintype="passive"/>
       <node ref="U6" pin="2" pinfunction="GND1_2" pintype="passive"/>
       <node ref="U6" pin="8" pinfunction="GND1_8" pintype="passive"/>
-      <node ref="U7" pin="2" pinfunction="-VIN_2" pintype="passive"/>
+      <node ref="U7" pin="1" pinfunction="-VIN_1" pintype="passive"/>
       <node ref="U8" pin="13" pinfunction="E2_13" pintype="passive"/>
       <node ref="U8" pin="15" pinfunction="E1_15" pintype="passive"/>
     </net>
@@ -3674,7 +3844,7 @@
       <node ref="U6" pin="10" pinfunction="GND2_10" pintype="passive"/>
       <node ref="U6" pin="15" pinfunction="GND2_15" pintype="passive"/>
       <node ref="U6" pin="9" pinfunction="GND2_9" pintype="passive"/>
-      <node ref="U7" pin="5" pinfunction="-VOUT_5" pintype="passive"/>
+      <node ref="U7" pin="7" pinfunction="-VOUT_7" pintype="passive"/>
     </net>
     <net code="23" name="/GND_PWR" class="Default">
       <node ref="C1" pin="2" pinfunction="-_2" pintype="passive"/>
@@ -3685,7 +3855,8 @@
       <node ref="RUV3" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="GND_1" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="RETRY_2" pintype="passive"/>
-      <node ref="U2" pin="2" pinfunction="-IN_2" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="ON/OFF_2" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="-VIN_3" pintype="passive"/>
     </net>
     <net code="24" name="/I2C_SCL" class="Default">
       <node ref="J4" pin="16" pinfunction="16_16" pintype="passive"/>
@@ -3725,10 +3896,12 @@
     </net>
     <net code="31" name="/JETSON_FAULT_N" class="Default">
       <node ref="R47" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP12" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U3" pin="14" pinfunction="FLT_14" pintype="passive"/>
     </net>
     <net code="32" name="/JETSON_PGOOD" class="Default">
       <node ref="RPG3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP11" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U3" pin="16" pinfunction="PGOOD_16" pintype="passive"/>
     </net>
     <net code="33" name="/MCU_RESET" class="Default">
@@ -3889,6 +4062,7 @@
     </net>
     <net code="69" name="/U3_IMON" class="Default">
       <node ref="R51" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP13" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U3" pin="13" pinfunction="IMON_13" pintype="passive"/>
     </net>
     <net code="70" name="/U3_PGTH" class="Default">
@@ -3961,7 +4135,7 @@
       <node ref="RS1" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="TP1" pin="1" pinfunction="TP_1" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="VOUT_8" pintype="passive"/>
-      <node ref="U2" pin="1" pinfunction="+IN_1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="+VIN_1" pintype="passive"/>
     </net>
     <net code="85" name="/VBAT_RAW" class="Default">
       <node ref="F1" pin="1" pinfunction="IN_1" pintype="passive"/>
@@ -3977,271 +4151,262 @@
     <net code="88" name="unconnected-(U1-FAULT-Pad7)" class="Default">
       <node ref="U1" pin="7" pinfunction="FAULT_7" pintype="passive+no_connect"/>
     </net>
-    <net code="89" name="unconnected-(U2-AUX1-Pad7)" class="Default">
-      <node ref="U2" pin="7" pinfunction="AUX1_7" pintype="passive+no_connect"/>
-    </net>
-    <net code="90" name="unconnected-(U2-AUX2-Pad8)" class="Default">
-      <node ref="U2" pin="8" pinfunction="AUX2_8" pintype="passive+no_connect"/>
-    </net>
-    <net code="91" name="unconnected-(U2-AUX3-Pad9)" class="Default">
-      <node ref="U2" pin="9" pinfunction="AUX3_9" pintype="passive+no_connect"/>
-    </net>
-    <net code="92" name="unconnected-(U2-ENABLE-Pad3)" class="Default">
-      <node ref="U2" pin="3" pinfunction="ENABLE_3" pintype="passive+no_connect"/>
-    </net>
-    <net code="93" name="unconnected-(U2-TRIM-Pad6)" class="Default">
+    <net code="89" name="unconnected-(U2-TRIM-Pad6)" class="Default">
       <node ref="U2" pin="6" pinfunction="TRIM_6" pintype="passive+no_connect"/>
     </net>
-    <net code="94" name="unconnected-(U3-B_GATE-Pad3)" class="Default">
+    <net code="90" name="unconnected-(U3-B_GATE-Pad3)" class="Default">
       <node ref="U3" pin="3" pinfunction="B_GATE_3" pintype="passive+no_connect"/>
     </net>
-    <net code="95" name="unconnected-(U3-DRV-Pad4)" class="Default">
+    <net code="91" name="unconnected-(U3-DRV-Pad4)" class="Default">
       <node ref="U3" pin="4" pinfunction="DRV_4" pintype="passive+no_connect"/>
     </net>
-    <net code="96" name="unconnected-(U3-MODE-Pad11)" class="Default">
+    <net code="92" name="unconnected-(U3-MODE-Pad11)" class="Default">
       <node ref="U3" pin="11" pinfunction="MODE_11" pintype="passive+no_connect"/>
     </net>
-    <net code="97" name="unconnected-(U3-NC-Pad19)" class="Default">
+    <net code="93" name="unconnected-(U3-NC-Pad19)" class="Default">
       <node ref="U3" pin="19" pinfunction="NC_19" pintype="passive+no_connect"/>
     </net>
-    <net code="98" name="unconnected-(U3-NC-Pad20)" class="Default">
+    <net code="94" name="unconnected-(U3-NC-Pad20)" class="Default">
       <node ref="U3" pin="20" pinfunction="NC_20" pintype="passive+no_connect"/>
     </net>
-    <net code="99" name="unconnected-(U3-NC-Pad21)" class="Default">
+    <net code="95" name="unconnected-(U3-NC-Pad21)" class="Default">
       <node ref="U3" pin="21" pinfunction="NC_21" pintype="passive+no_connect"/>
     </net>
-    <net code="100" name="unconnected-(U3-NC-Pad22)" class="Default">
+    <net code="96" name="unconnected-(U3-NC-Pad22)" class="Default">
       <node ref="U3" pin="22" pinfunction="NC_22" pintype="passive+no_connect"/>
     </net>
-    <net code="101" name="unconnected-(U3-NC-Pad23)" class="Default">
+    <net code="97" name="unconnected-(U3-NC-Pad23)" class="Default">
       <node ref="U3" pin="23" pinfunction="NC_23" pintype="passive+no_connect"/>
     </net>
-    <net code="102" name="unconnected-(U3-NC-Pad24)" class="Default">
+    <net code="98" name="unconnected-(U3-NC-Pad24)" class="Default">
       <node ref="U3" pin="24" pinfunction="NC_24" pintype="passive+no_connect"/>
     </net>
-    <net code="103" name="unconnected-(U4-BST-Pad15)" class="Default">
+    <net code="99" name="unconnected-(U4-BST-Pad15)" class="Default">
       <node ref="U4" pin="15" pinfunction="BST_15" pintype="passive+no_connect"/>
     </net>
-    <net code="104" name="unconnected-(U4-SW-Pad7)" class="Default">
+    <net code="100" name="unconnected-(U4-SW-Pad7)" class="Default">
       <node ref="U4" pin="7" pinfunction="SW_7" pintype="passive+no_connect"/>
     </net>
-    <net code="105" name="unconnected-(U4-SW-Pad8)" class="Default">
+    <net code="101" name="unconnected-(U4-SW-Pad8)" class="Default">
       <node ref="U4" pin="8" pinfunction="SW_8" pintype="passive+no_connect"/>
     </net>
-    <net code="106" name="unconnected-(U4-SW-Pad13)" class="Default">
+    <net code="102" name="unconnected-(U4-SW-Pad13)" class="Default">
       <node ref="U4" pin="13" pinfunction="SW_13" pintype="passive+no_connect"/>
     </net>
-    <net code="107" name="unconnected-(U4-SW-Pad14)" class="Default">
+    <net code="103" name="unconnected-(U4-SW-Pad14)" class="Default">
       <node ref="U4" pin="14" pinfunction="SW_14" pintype="passive+no_connect"/>
     </net>
-    <net code="108" name="unconnected-(U4-SW-Pad23)" class="Default">
+    <net code="104" name="unconnected-(U4-SW-Pad23)" class="Default">
       <node ref="U4" pin="23" pinfunction="SW_23" pintype="passive+no_connect"/>
     </net>
-    <net code="109" name="unconnected-(U5-NC-Pad73)" class="Default">
+    <net code="105" name="unconnected-(U5-NC-Pad73)" class="Default">
       <node ref="U5" pin="73" pinfunction="NC_73" pintype="passive+no_connect"/>
     </net>
-    <net code="110" name="unconnected-(U5-PA0-Pad23)" class="Default">
+    <net code="106" name="unconnected-(U5-PA0-Pad23)" class="Default">
       <node ref="U5" pin="23" pinfunction="PA0_23" pintype="passive+no_connect"/>
     </net>
-    <net code="111" name="unconnected-(U5-PA1-Pad24)" class="Default">
+    <net code="107" name="unconnected-(U5-PA1-Pad24)" class="Default">
       <node ref="U5" pin="24" pinfunction="PA1_24" pintype="passive+no_connect"/>
     </net>
-    <net code="112" name="unconnected-(U5-PA2-Pad25)" class="Default">
+    <net code="108" name="unconnected-(U5-PA2-Pad25)" class="Default">
       <node ref="U5" pin="25" pinfunction="PA2_25" pintype="passive+no_connect"/>
     </net>
-    <net code="113" name="unconnected-(U5-PA3-Pad26)" class="Default">
+    <net code="109" name="unconnected-(U5-PA3-Pad26)" class="Default">
       <node ref="U5" pin="26" pinfunction="PA3_26" pintype="passive+no_connect"/>
     </net>
-    <net code="114" name="unconnected-(U5-PA4-Pad29)" class="Default">
+    <net code="110" name="unconnected-(U5-PA4-Pad29)" class="Default">
       <node ref="U5" pin="29" pinfunction="PA4_29" pintype="passive+no_connect"/>
     </net>
-    <net code="115" name="unconnected-(U5-PA8-Pad67)" class="Default">
+    <net code="111" name="unconnected-(U5-PA8-Pad67)" class="Default">
       <node ref="U5" pin="67" pinfunction="PA8_67" pintype="passive+no_connect"/>
     </net>
-    <net code="116" name="unconnected-(U5-PA11-Pad70)" class="Default">
+    <net code="112" name="unconnected-(U5-PA11-Pad70)" class="Default">
       <node ref="U5" pin="70" pinfunction="PA11_70" pintype="passive+no_connect"/>
     </net>
-    <net code="117" name="unconnected-(U5-PA12-Pad71)" class="Default">
+    <net code="113" name="unconnected-(U5-PA12-Pad71)" class="Default">
       <node ref="U5" pin="71" pinfunction="PA12_71" pintype="passive+no_connect"/>
     </net>
-    <net code="118" name="unconnected-(U5-PA15-Pad77)" class="Default">
+    <net code="114" name="unconnected-(U5-PA15-Pad77)" class="Default">
       <node ref="U5" pin="77" pinfunction="PA15_77" pintype="passive+no_connect"/>
     </net>
-    <net code="119" name="unconnected-(U5-PB2-Pad37)" class="Default">
+    <net code="115" name="unconnected-(U5-PB2-Pad37)" class="Default">
       <node ref="U5" pin="37" pinfunction="PB2_37" pintype="passive+no_connect"/>
     </net>
-    <net code="120" name="unconnected-(U5-PB3-Pad89)" class="Default">
+    <net code="116" name="unconnected-(U5-PB3-Pad89)" class="Default">
       <node ref="U5" pin="89" pinfunction="PB3_89" pintype="passive+no_connect"/>
     </net>
-    <net code="121" name="unconnected-(U5-PB4-Pad90)" class="Default">
+    <net code="117" name="unconnected-(U5-PB4-Pad90)" class="Default">
       <node ref="U5" pin="90" pinfunction="PB4_90" pintype="passive+no_connect"/>
     </net>
-    <net code="122" name="unconnected-(U5-PB8-Pad95)" class="Default">
+    <net code="118" name="unconnected-(U5-PB8-Pad95)" class="Default">
       <node ref="U5" pin="95" pinfunction="PB8_95" pintype="passive+no_connect"/>
     </net>
-    <net code="123" name="unconnected-(U5-PB9-Pad96)" class="Default">
+    <net code="119" name="unconnected-(U5-PB9-Pad96)" class="Default">
       <node ref="U5" pin="96" pinfunction="PB9_96" pintype="passive+no_connect"/>
     </net>
-    <net code="124" name="unconnected-(U5-PC0-Pad15)" class="Default">
+    <net code="120" name="unconnected-(U5-PC0-Pad15)" class="Default">
       <node ref="U5" pin="15" pinfunction="PC0_15" pintype="passive+no_connect"/>
     </net>
-    <net code="125" name="unconnected-(U5-PC1-Pad16)" class="Default">
+    <net code="121" name="unconnected-(U5-PC1-Pad16)" class="Default">
       <node ref="U5" pin="16" pinfunction="PC1_16" pintype="passive+no_connect"/>
     </net>
-    <net code="126" name="unconnected-(U5-PC2-Pad17)" class="Default">
+    <net code="122" name="unconnected-(U5-PC2-Pad17)" class="Default">
       <node ref="U5" pin="17" pinfunction="PC2_17" pintype="passive+no_connect"/>
     </net>
-    <net code="127" name="unconnected-(U5-PC3-Pad18)" class="Default">
+    <net code="123" name="unconnected-(U5-PC3-Pad18)" class="Default">
       <node ref="U5" pin="18" pinfunction="PC3_18" pintype="passive+no_connect"/>
     </net>
-    <net code="128" name="unconnected-(U5-PC4-Pad33)" class="Default">
+    <net code="124" name="unconnected-(U5-PC4-Pad33)" class="Default">
       <node ref="U5" pin="33" pinfunction="PC4_33" pintype="passive+no_connect"/>
     </net>
-    <net code="129" name="unconnected-(U5-PC5-Pad34)" class="Default">
+    <net code="125" name="unconnected-(U5-PC5-Pad34)" class="Default">
       <node ref="U5" pin="34" pinfunction="PC5_34" pintype="passive+no_connect"/>
     </net>
-    <net code="130" name="unconnected-(U5-PC6-Pad63)" class="Default">
+    <net code="126" name="unconnected-(U5-PC6-Pad63)" class="Default">
       <node ref="U5" pin="63" pinfunction="PC6_63" pintype="passive+no_connect"/>
     </net>
-    <net code="131" name="unconnected-(U5-PC7-Pad64)" class="Default">
+    <net code="127" name="unconnected-(U5-PC7-Pad64)" class="Default">
       <node ref="U5" pin="64" pinfunction="PC7_64" pintype="passive+no_connect"/>
     </net>
-    <net code="132" name="unconnected-(U5-PC8-Pad65)" class="Default">
+    <net code="128" name="unconnected-(U5-PC8-Pad65)" class="Default">
       <node ref="U5" pin="65" pinfunction="PC8_65" pintype="passive+no_connect"/>
     </net>
-    <net code="133" name="unconnected-(U5-PC9-Pad66)" class="Default">
+    <net code="129" name="unconnected-(U5-PC9-Pad66)" class="Default">
       <node ref="U5" pin="66" pinfunction="PC9_66" pintype="passive+no_connect"/>
     </net>
-    <net code="134" name="unconnected-(U5-PC10-Pad78)" class="Default">
+    <net code="130" name="unconnected-(U5-PC10-Pad78)" class="Default">
       <node ref="U5" pin="78" pinfunction="PC10_78" pintype="passive+no_connect"/>
     </net>
-    <net code="135" name="unconnected-(U5-PC11-Pad79)" class="Default">
+    <net code="131" name="unconnected-(U5-PC11-Pad79)" class="Default">
       <node ref="U5" pin="79" pinfunction="PC11_79" pintype="passive+no_connect"/>
     </net>
-    <net code="136" name="unconnected-(U5-PC12-Pad80)" class="Default">
+    <net code="132" name="unconnected-(U5-PC12-Pad80)" class="Default">
       <node ref="U5" pin="80" pinfunction="PC12_80" pintype="passive+no_connect"/>
     </net>
-    <net code="137" name="unconnected-(U5-PC13-Pad7)" class="Default">
+    <net code="133" name="unconnected-(U5-PC13-Pad7)" class="Default">
       <node ref="U5" pin="7" pinfunction="PC13_7" pintype="passive+no_connect"/>
     </net>
-    <net code="138" name="unconnected-(U5-PC14-Pad8)" class="Default">
+    <net code="134" name="unconnected-(U5-PC14-Pad8)" class="Default">
       <node ref="U5" pin="8" pinfunction="PC14_8" pintype="passive+no_connect"/>
     </net>
-    <net code="139" name="unconnected-(U5-PC15-Pad9)" class="Default">
+    <net code="135" name="unconnected-(U5-PC15-Pad9)" class="Default">
       <node ref="U5" pin="9" pinfunction="PC15_9" pintype="passive+no_connect"/>
     </net>
-    <net code="140" name="unconnected-(U5-PD2-Pad83)" class="Default">
+    <net code="136" name="unconnected-(U5-PD2-Pad83)" class="Default">
       <node ref="U5" pin="83" pinfunction="PD2_83" pintype="passive+no_connect"/>
     </net>
-    <net code="141" name="unconnected-(U5-PD3-Pad84)" class="Default">
+    <net code="137" name="unconnected-(U5-PD3-Pad84)" class="Default">
       <node ref="U5" pin="84" pinfunction="PD3_84" pintype="passive+no_connect"/>
     </net>
-    <net code="142" name="unconnected-(U5-PD4-Pad85)" class="Default">
+    <net code="138" name="unconnected-(U5-PD4-Pad85)" class="Default">
       <node ref="U5" pin="85" pinfunction="PD4_85" pintype="passive+no_connect"/>
     </net>
-    <net code="143" name="unconnected-(U5-PD5-Pad86)" class="Default">
+    <net code="139" name="unconnected-(U5-PD5-Pad86)" class="Default">
       <node ref="U5" pin="86" pinfunction="PD5_86" pintype="passive+no_connect"/>
     </net>
-    <net code="144" name="unconnected-(U5-PD6-Pad87)" class="Default">
+    <net code="140" name="unconnected-(U5-PD6-Pad87)" class="Default">
       <node ref="U5" pin="87" pinfunction="PD6_87" pintype="passive+no_connect"/>
     </net>
-    <net code="145" name="unconnected-(U5-PD7-Pad88)" class="Default">
+    <net code="141" name="unconnected-(U5-PD7-Pad88)" class="Default">
       <node ref="U5" pin="88" pinfunction="PD7_88" pintype="passive+no_connect"/>
     </net>
-    <net code="146" name="unconnected-(U5-PD12-Pad59)" class="Default">
+    <net code="142" name="unconnected-(U5-PD12-Pad59)" class="Default">
       <node ref="U5" pin="59" pinfunction="PD12_59" pintype="passive+no_connect"/>
     </net>
-    <net code="147" name="unconnected-(U5-PD13-Pad60)" class="Default">
+    <net code="143" name="unconnected-(U5-PD13-Pad60)" class="Default">
       <node ref="U5" pin="60" pinfunction="PD13_60" pintype="passive+no_connect"/>
     </net>
-    <net code="148" name="unconnected-(U5-PD14-Pad61)" class="Default">
+    <net code="144" name="unconnected-(U5-PD14-Pad61)" class="Default">
       <node ref="U5" pin="61" pinfunction="PD14_61" pintype="passive+no_connect"/>
     </net>
-    <net code="149" name="unconnected-(U5-PD15-Pad62)" class="Default">
+    <net code="145" name="unconnected-(U5-PD15-Pad62)" class="Default">
       <node ref="U5" pin="62" pinfunction="PD15_62" pintype="passive+no_connect"/>
     </net>
-    <net code="150" name="unconnected-(U5-PE0-Pad97)" class="Default">
+    <net code="146" name="unconnected-(U5-PE0-Pad97)" class="Default">
       <node ref="U5" pin="97" pinfunction="PE0_97" pintype="passive+no_connect"/>
     </net>
-    <net code="151" name="unconnected-(U5-PE1-Pad98)" class="Default">
+    <net code="147" name="unconnected-(U5-PE1-Pad98)" class="Default">
       <node ref="U5" pin="98" pinfunction="PE1_98" pintype="passive+no_connect"/>
     </net>
-    <net code="152" name="unconnected-(U5-PE2-Pad1)" class="Default">
+    <net code="148" name="unconnected-(U5-PE2-Pad1)" class="Default">
       <node ref="U5" pin="1" pinfunction="PE2_1" pintype="passive+no_connect"/>
     </net>
-    <net code="153" name="unconnected-(U5-PE3-Pad2)" class="Default">
+    <net code="149" name="unconnected-(U5-PE3-Pad2)" class="Default">
       <node ref="U5" pin="2" pinfunction="PE3_2" pintype="passive+no_connect"/>
     </net>
-    <net code="154" name="unconnected-(U5-PE4-Pad3)" class="Default">
+    <net code="150" name="unconnected-(U5-PE4-Pad3)" class="Default">
       <node ref="U5" pin="3" pinfunction="PE4_3" pintype="passive+no_connect"/>
     </net>
-    <net code="155" name="unconnected-(U5-PE5-Pad4)" class="Default">
+    <net code="151" name="unconnected-(U5-PE5-Pad4)" class="Default">
       <node ref="U5" pin="4" pinfunction="PE5_4" pintype="passive+no_connect"/>
     </net>
-    <net code="156" name="unconnected-(U5-PE6-Pad5)" class="Default">
+    <net code="152" name="unconnected-(U5-PE6-Pad5)" class="Default">
       <node ref="U5" pin="5" pinfunction="PE6_5" pintype="passive+no_connect"/>
     </net>
-    <net code="157" name="unconnected-(U5-PE7-Pad38)" class="Default">
+    <net code="153" name="unconnected-(U5-PE7-Pad38)" class="Default">
       <node ref="U5" pin="38" pinfunction="PE7_38" pintype="passive+no_connect"/>
     </net>
-    <net code="158" name="unconnected-(U5-PE8-Pad39)" class="Default">
+    <net code="154" name="unconnected-(U5-PE8-Pad39)" class="Default">
       <node ref="U5" pin="39" pinfunction="PE8_39" pintype="passive+no_connect"/>
     </net>
-    <net code="159" name="unconnected-(U5-PE9-Pad40)" class="Default">
+    <net code="155" name="unconnected-(U5-PE9-Pad40)" class="Default">
       <node ref="U5" pin="40" pinfunction="PE9_40" pintype="passive+no_connect"/>
     </net>
-    <net code="160" name="unconnected-(U5-PE10-Pad41)" class="Default">
+    <net code="156" name="unconnected-(U5-PE10-Pad41)" class="Default">
       <node ref="U5" pin="41" pinfunction="PE10_41" pintype="passive+no_connect"/>
     </net>
-    <net code="161" name="unconnected-(U5-PE11-Pad42)" class="Default">
+    <net code="157" name="unconnected-(U5-PE11-Pad42)" class="Default">
       <node ref="U5" pin="42" pinfunction="PE11_42" pintype="passive+no_connect"/>
     </net>
-    <net code="162" name="unconnected-(U5-PE12-Pad43)" class="Default">
+    <net code="158" name="unconnected-(U5-PE12-Pad43)" class="Default">
       <node ref="U5" pin="43" pinfunction="PE12_43" pintype="passive+no_connect"/>
     </net>
-    <net code="163" name="unconnected-(U5-PE13-Pad44)" class="Default">
+    <net code="159" name="unconnected-(U5-PE13-Pad44)" class="Default">
       <node ref="U5" pin="44" pinfunction="PE13_44" pintype="passive+no_connect"/>
     </net>
-    <net code="164" name="unconnected-(U5-PE14-Pad45)" class="Default">
+    <net code="160" name="unconnected-(U5-PE14-Pad45)" class="Default">
       <node ref="U5" pin="45" pinfunction="PE14_45" pintype="passive+no_connect"/>
     </net>
-    <net code="165" name="unconnected-(U5-PE15-Pad46)" class="Default">
+    <net code="161" name="unconnected-(U5-PE15-Pad46)" class="Default">
       <node ref="U5" pin="46" pinfunction="PE15_46" pintype="passive+no_connect"/>
     </net>
-    <net code="166" name="unconnected-(U6-NC-Pad4)" class="Default">
+    <net code="162" name="unconnected-(U6-NC-Pad4)" class="Default">
       <node ref="U6" pin="4" pinfunction="NC_4" pintype="passive+no_connect"/>
     </net>
-    <net code="167" name="unconnected-(U6-NC-Pad6)" class="Default">
+    <net code="163" name="unconnected-(U6-NC-Pad6)" class="Default">
       <node ref="U6" pin="6" pinfunction="NC_6" pintype="passive+no_connect"/>
     </net>
-    <net code="168" name="unconnected-(U6-NC-Pad7)" class="Default">
+    <net code="164" name="unconnected-(U6-NC-Pad7)" class="Default">
       <node ref="U6" pin="7" pinfunction="NC_7" pintype="passive+no_connect"/>
     </net>
-    <net code="169" name="unconnected-(U6-NC-Pad14)" class="Default">
+    <net code="165" name="unconnected-(U6-NC-Pad14)" class="Default">
       <node ref="U6" pin="14" pinfunction="NC_14" pintype="passive+no_connect"/>
     </net>
-    <net code="170" name="unconnected-(U8-A3-Pad5)" class="Default">
+    <net code="166" name="unconnected-(U7-NC-Pad14)" class="Default">
+      <node ref="U7" pin="14" pinfunction="NC_14" pintype="passive+no_connect"/>
+    </net>
+    <net code="167" name="unconnected-(U8-A3-Pad5)" class="Default">
       <node ref="U8" pin="5" pinfunction="A3_5" pintype="passive+no_connect"/>
     </net>
-    <net code="171" name="unconnected-(U8-A4-Pad7)" class="Default">
+    <net code="168" name="unconnected-(U8-A4-Pad7)" class="Default">
       <node ref="U8" pin="7" pinfunction="A4_7" pintype="passive+no_connect"/>
     </net>
-    <net code="172" name="unconnected-(U8-C3-Pad12)" class="Default">
+    <net code="169" name="unconnected-(U8-C3-Pad12)" class="Default">
       <node ref="U8" pin="12" pinfunction="C3_12" pintype="passive+no_connect"/>
     </net>
-    <net code="173" name="unconnected-(U8-C4-Pad10)" class="Default">
+    <net code="170" name="unconnected-(U8-C4-Pad10)" class="Default">
       <node ref="U8" pin="10" pinfunction="C4_10" pintype="passive+no_connect"/>
     </net>
-    <net code="174" name="unconnected-(U8-E3-Pad11)" class="Default">
+    <net code="171" name="unconnected-(U8-E3-Pad11)" class="Default">
       <node ref="U8" pin="11" pinfunction="E3_11" pintype="passive+no_connect"/>
     </net>
-    <net code="175" name="unconnected-(U8-E4-Pad9)" class="Default">
+    <net code="172" name="unconnected-(U8-E4-Pad9)" class="Default">
       <node ref="U8" pin="9" pinfunction="E4_9" pintype="passive+no_connect"/>
     </net>
-    <net code="176" name="unconnected-(U8-K3-Pad6)" class="Default">
+    <net code="173" name="unconnected-(U8-K3-Pad6)" class="Default">
       <node ref="U8" pin="6" pinfunction="K3_6" pintype="passive+no_connect"/>
     </net>
-    <net code="177" name="unconnected-(U8-K4-Pad8)" class="Default">
+    <net code="174" name="unconnected-(U8-K4-Pad8)" class="Default">
       <node ref="U8" pin="8" pinfunction="K4_8" pintype="passive+no_connect"/>
     </net>
   </nets>

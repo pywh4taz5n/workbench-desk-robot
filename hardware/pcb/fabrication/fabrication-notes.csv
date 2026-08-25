@@ -3,4 +3,5 @@ FAB-001,entire PCB,Build revision EVT1 with ENIG surface finish,Supplier CAM con
 FAB-002,finished laminate and copper,Thickness 1.60 +/- 0.16 mm excluding solder mask; supplier shall retune dielectric values while preserving eight-layer order,Supplier stackup drawing approved
 FAB-003,U3 exposed-pad thermal array,Provide 9 laser microvias F.Cu-In1.Cu at 0.45/0.15 mm; copper fill cap and planarize selectively despite general via defaults,Supplier HDI process and assembly voiding plan approved
 FAB-004,CAN FD pairs,Field-solve 120 ohm differential geometry against supplier materials and include impedance coupon,Supplier impedance report approved
-FAB-005,U2,Do not fit or order until a 36-60 V to regulated 12 V isolated 240 W-class MPN and exact land pattern are frozen,ECO and AVL approval complete
+FAB-005,U2,Fit only Q36SR12020NRFH after exact 20A manufacturer datasheet lifecycle authorized-channel quote heat-spreader review and AVL are approved,Electrical and Procurement Owners approve exact evidence
+FAB-006,U7,NXF1S0305MC-R7 board pad-edge gap is 4.08mm and does not close the 8mm system isolation target,Safety Owner approves system insulation use or requires redesign

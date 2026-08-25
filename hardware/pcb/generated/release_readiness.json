@@ -26,7 +26,7 @@
     "approval_signatures_bound_to_current_bom_and_revision": true,
     "board_connectivity_audit_pass": true,
     "board_layout_hard_gates_pass": true,
-    "eight_testpoints_have_measurement_coverage": true,
+    "fifteen_testpoints_have_measurement_coverage": true,
     "fabrication_metadata_controlled": true
   },
   "evt_prototype_order": {
@@ -38,19 +38,18 @@
       "safety_design_analysis_approved": false,
       "supplier_dfm_closed": false,
       "component_mpn_and_avl_closed": false,
-      "isolated_power_excluded_part_absent_and_tbd_placeholders_consistent": true,
-      "isolated_power_mpn_and_land_pattern_frozen": false,
-      "critical_test_access_design_closed": false,
+      "isolated_power_candidate_and_land_pattern_consistent": true,
+      "isolated_power_exact_manufacturer_evidence_and_avl_closed": false,
+      "critical_test_access_design_closed": true,
       "u7_system_isolation_target_met": false
     },
-    "blocker_count": 7,
+    "blocker_count": 6,
     "blockers": [
       "all_bom_roles_signed",
       "safety_design_analysis_approved",
       "supplier_dfm_closed",
       "component_mpn_and_avl_closed",
-      "isolated_power_mpn_and_land_pattern_frozen",
-      "critical_test_access_design_closed",
+      "isolated_power_exact_manufacturer_evidence_and_avl_closed",
       "u7_system_isolation_target_met"
     ],
     "note": "Physical bring-up is downstream evidence and is intentionally not an EVT prototype-order gate."
@@ -82,9 +81,9 @@
     "supplier_dfm_closed": false,
     "harness_release_checks_closed": false,
     "component_mpn_and_avl_closed": false,
-    "isolated_power_excluded_part_absent_and_tbd_placeholders_consistent": true,
-    "isolated_power_mpn_and_land_pattern_frozen": false,
-    "critical_test_access_design_closed": false,
+    "isolated_power_candidate_and_land_pattern_consistent": true,
+    "isolated_power_exact_manufacturer_evidence_and_avl_closed": false,
+    "critical_test_access_design_closed": true,
     "critical_test_access_physically_verified": false,
     "u7_system_isolation_target_met": false
   },
@@ -173,20 +172,20 @@
     },
     "required_signature_count": 161,
     "signature_row_count": 161,
-    "approved_signature_count": 0,
+    "approved_signature_count": 2,
     "fully_approved_references": [],
     "all_references_fully_approved": false,
     "hardware_revision": "EVT1",
-    "bom_sha256": "8bd6e5783d06f4d9843280ec2a9fefa463ba92380c1dc87a954b52f28e142c0f"
+    "bom_sha256": "641aa677b7da8f71aaec47c7467b7d23e32a90c39661ddd0fe281ee040dd60f7"
   },
   "approval_baseline": {
     "hardware_revision": "EVT1",
     "bom_path": "hardware/pcb/fabrication/bom.csv",
-    "bom_sha256": "8bd6e5783d06f4d9843280ec2a9fefa463ba92380c1dc87a954b52f28e142c0f"
+    "bom_sha256": "641aa677b7da8f71aaec47c7467b7d23e32a90c39661ddd0fe281ee040dd60f7"
   },
   "component_counts": {
-    "board_footprints": 114,
-    "bom_references": 114
+    "board_footprints": 121,
+    "bom_references": 121
   },
   "layout_status": {
     "status": "LAYOUT_HARD_GATES_PASS_RISKS_OPEN",
@@ -206,20 +205,27 @@
   },
   "isolated_power_guard": {
     "pass": true,
-    "required_placeholder": "TBD_36_60V_TO_12V_240W_ISOLATED",
-    "required_land_pattern_placeholder": "WB:Isolated_48V_12V_240W_TBD",
-    "component_matrix_uses_tbd": true,
-    "approval_register_uses_tbd": true,
-    "fabrication_bom_uses_tbd": true,
-    "incompatible_markers": [
+    "design_candidate": "Q36SR12020NRFH",
+    "implemented_land_pattern": "WB:Delta_Q36SR_QuarterBrick",
+    "component_matrix_uses_candidate": true,
+    "approval_register_uses_candidate": true,
+    "fabrication_bom_uses_candidate": true,
+    "stale_markers": [
       "DCM3623",
-      "Vicor_DCM3623"
+      "Vicor_DCM3623",
+      "TBD_36_60V_TO_12V_240W_ISOLATED",
+      "Isolated_48V_12V_240W_TBD",
+      "ISOLATED_DC_DC_TBD",
+      "U2 LAND PATTERN TBD",
+      "DO NOT FIT"
     ],
-    "incompatible_occurrences": {},
-    "missing_placeholder_markers": {},
-    "u2_board_is_dnp": true,
-    "u2_schematic_is_dnp": true,
-    "note": "The former DCM3623 selection is excluded. U2 remains a requirement envelope until an orderable 36-60 V to regulated 12 V isolated 240 W-class MPN and its land pattern are frozen by ECO."
+    "stale_occurrences": {},
+    "missing_candidate_markers": {},
+    "u2_board_is_dnp": false,
+    "u2_schematic_is_dnp": false,
+    "matrix_procurement_gate_open": true,
+    "procurement_evidence_closed": false,
+    "note": "Q36SR12020NRFH and its Q36SR family land pattern are implemented as the design candidate. The local manufacturer PDF is for the 12 V/19 A family variant, so the exact 20 A manufacturer datasheet, lifecycle confirmation, authorized-channel quote, heat-spreader review, and AVL remain open."
   },
   "connector_limit_semantics": {
     "pass": true,
@@ -292,7 +298,7 @@
   },
   "fixture_access_plan": {
     "pass": true,
-    "design_ready": false,
+    "design_ready": true,
     "release_ready": false,
     "required_nets": [
       "3V3_PGOOD",
@@ -311,7 +317,8 @@
     "missing_nets": [],
     "duplicate_nets": [],
     "invalid_rows": [],
-    "eco_required_nets": [
+    "eco_required_nets": [],
+    "implemented_pad_nets": [
       "3V3_PGOOD",
       "5V_CAN_ISO",
       "ESTOP_A_MON",
@@ -339,9 +346,10 @@
     "pass": true,
     "required_source_ids": [
       "SRC-ADI-LTC4368",
+      "SRC-DELTA-Q36SR12020-DISTRIBUTOR",
       "SRC-INF-BSC093N15NS5",
       "SRC-LITTELFUSE-1206L",
-      "SRC-MURATA-MEJ1S",
+      "SRC-MURATA-NXF1",
       "SRC-NEXPERIA-PESD2CANFD",
       "SRC-PANASONIC-SFM4",
       "SRC-RECOM-RPL5",
@@ -349,7 +357,6 @@
       "SRC-TI-ISO1042",
       "SRC-TI-TPS2663",
       "SRC-TOSHIBA-TLP293-4",
-      "SRC-VICOR-DCM3623-EXCLUSION",
       "SRC-VISHAY-WSL3637",
       "SRC-WCH-CH32V307"
     ],
@@ -359,11 +366,10 @@
     "unreferenced_source_ids": [
       "SRC-NVIDIA-CARRIER",
       "SRC-NVIDIA-POWER",
-      "SRC-NVIDIA-THERMAL"
+      "SRC-NVIDIA-THERMAL",
+      "SRC-VICOR-DCM3623-EXCLUSION"
     ],
-    "excluded_source_users": [
-      "U2"
-    ],
+    "excluded_source_users": [],
     "excluded_source_use_pass": true
   },
   "copper_layers": {
@@ -398,5 +404,5 @@
       "B.Cu"
     ]
   },
-  "note": "The checked-in schematic is component-level and its ERC is clean. U2 is not selected, and any stale excluded-part data fails the engineering guard until an ECO replaces the schematic, BOM, footprint, placement, routing and thermal model. Every required role signs independently against the current revision and BOM hash. Physical evidence remains a production-release gate, not a prerequisite for ordering the prototypes needed to collect that evidence."
+  "note": "The checked-in schematic is component-level and its ERC is clean. Q36SR12020NRFH is implemented as the U2 design candidate, but exact 20 A manufacturer evidence, lifecycle, quote, heat-spreader review, and AVL remain procurement gates. Every required role signs independently against the current revision and BOM hash. Physical evidence remains a production-release gate, not a prerequisite for ordering the prototypes needed to collect that evidence."
 }

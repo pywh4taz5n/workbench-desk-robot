@@ -96,11 +96,11 @@ RAW_CAN_BLIND_VIAS_PER_NET = 2
 U6_LOGIC_PAD_NUMBERS = {str(number) for number in range(1, 9)}
 U6_FIELD_PAD_NUMBERS = {str(number) for number in range(9, 17)}
 U6_KEEPOUT_GEOMETRY_TOLERANCE_MM = 0.01
-U7_LOGIC_PAD_NUMBERS = {"1", "2"}
-U7_FIELD_PAD_NUMBERS = {"5", "7"}
+U7_LOGIC_PAD_NUMBERS = {"1", "3"}
+U7_FIELD_PAD_NUMBERS = {"7", "8"}
 U2_VIA_ARRAYS = {
-    "4": {"net": "12V_ISO", "description": "isolated 12 V source transfer"},
-    "5": {"net": "GND", "description": "isolated 12 V return transfer"},
+    "8": {"net": "12V_ISO", "description": "isolated 12 V source transfer"},
+    "4": {"net": "GND", "description": "isolated 12 V return transfer"},
 }
 U2_VIA_ARRAY_DIMENSION = 3
 U2_VIA_ARRAY_PITCH_MM = 1.5
@@ -1176,9 +1176,9 @@ def audit(board_path: str | Path | None = None) -> dict[str, Any]:
             "machine_verifiable": False,
             "board_pad_edge_clearance_mm": u7_keepout_details.get("pad_edge_clearance_mm"),
             "note": (
-                "The full-layer board keepout preserves the available U7 pad-row gap, but the MEJ1S0305SC "
-                "candidate specifies only 2 mm creepage/clearance and 200 Vrms working voltage. It cannot close "
-                "the 8 mm reinforced system-isolation target without a replacement or documented safety decision."
+                "The full-layer board keepout preserves the NXF1S0305MC-R7 land-pattern gap, but board geometry "
+                "alone does not establish system creepage, clearance, material group, pollution degree, or "
+                "reinforced-insulation compliance. The 8 mm system target remains open for safety review."
             ),
         },
     }

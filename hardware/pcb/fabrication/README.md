@@ -38,22 +38,23 @@ fan out through four parallel 0.8/0.4 mm plated through vias to the Jetson 12 V
 plane; the layout audit hard-gates both via structures.
 
 U6 and U7 isolation corridors are rule areas on all eight copper layers. U6
-provides 8.1 mm pad-edge copper clearance. U7 preserves the candidate footprint's
-5.87 mm board gap, but the candidate module's 2 mm creepage/clearance and 200 Vrms
-working rating remain an open safety and vendor gate.
+provides 8.1 mm pad-edge copper clearance. NXF1 U7 preserves a 4.08 mm board
+pad-edge gap, which does not meet the 8 mm system target; safety suitability
+remains an open gate.
 
 KiCad DRC and ERC reports are in `../generated/`; both contain zero violations.
 This package is suitable for supplier DFM quotation and bare-board fabrication
-review. The 77 grouped BOM lines cover all 110 electrical components and the four
-mounting holes. All 68 procurement-controlled groups remain blocked until the required
+review. The grouped BOM covers all 117 electrical components and the four
+mounting holes. Procurement-controlled groups remain blocked until the required
 owners complete their independent `component-approval-signatures.csv` rows with
 an MPN, datasheet revision, identity, date, and evidence bound to this BOM hash.
 
 Do not place a PCB or assembly order from this directory. The schematic and PCB
-are detailed engineering candidates, but U2 is a visible `DO NOT FIT` placeholder;
-U2, RPL and SFM4 land patterns still need vendor drawing closure. Run
+are detailed engineering candidates; U2 still needs exact 20 A manufacturer,
+lifecycle, quote, heat-spreader and AVL closure, while RPL and SFM4 land patterns
+still need vendor drawing closure. Run
 `python hardware/pcb/tools/release_readiness.py`;
 the expected current result is `PRODUCTION_RELEASE_BLOCKED` with
-`EVT_PROTOTYPE_ORDER_BLOCKED` nested beneath it. Human, supplier, U2/U7, and
-test-access design gates block EVT ordering; physical bring-up and fixture evidence
+`EVT_PROTOTYPE_ORDER_BLOCKED` nested beneath it. Independent role, supplier and
+U2/U7 gates block EVT ordering; physical bring-up and fixture evidence
 remain downstream production gates.

@@ -60,16 +60,16 @@
             "length_mm": 1.3000000000000007
           },
           {
+            "width_mm": 0.2,
+            "length_mm": 0.7460733744076383
+          },
+          {
             "width_mm": 0.8014,
             "length_mm": 1.107999999999997
           },
           {
             "width_mm": 0.8014,
             "length_mm": 0.21354624791833707
-          },
-          {
-            "width_mm": 0.2,
-            "length_mm": 0.7460733744076383
           }
         ],
         "violations": []
@@ -96,27 +96,11 @@
         "accepted_neckdowns": [
           {
             "width_mm": 0.651,
-            "length_mm": 1.846899999999998
-          },
-          {
-            "width_mm": 0.651,
-            "length_mm": 1.2699999999999996
-          },
-          {
-            "width_mm": 0.651,
-            "length_mm": 0.49384337598068695
-          },
-          {
-            "width_mm": 0.651,
-            "length_mm": 0.6819337797763099
-          },
-          {
-            "width_mm": 0.651,
-            "length_mm": 1.2699999999999996
-          },
-          {
-            "width_mm": 0.651,
             "length_mm": 0.30560000000000187
+          },
+          {
+            "width_mm": 0.651,
+            "length_mm": 1.2699999999999996
           },
           {
             "width_mm": 0.651,
@@ -124,11 +108,11 @@
           },
           {
             "width_mm": 0.651,
-            "length_mm": 0.02913279938488569
+            "length_mm": 0.6819337797763099
           },
           {
             "width_mm": 0.651,
-            "length_mm": 1.2700000000000031
+            "length_mm": 0.02913279938488569
           },
           {
             "width_mm": 0.651,
@@ -137,6 +121,22 @@
           {
             "width_mm": 0.9016,
             "length_mm": 0.4289309734677599
+          },
+          {
+            "width_mm": 0.651,
+            "length_mm": 0.49384337598068695
+          },
+          {
+            "width_mm": 0.651,
+            "length_mm": 1.846899999999998
+          },
+          {
+            "width_mm": 0.651,
+            "length_mm": 1.2699999999999996
+          },
+          {
+            "width_mm": 0.651,
+            "length_mm": 1.2700000000000031
           }
         ],
         "violations": []
@@ -144,14 +144,14 @@
       "INPUT_SENSE": {
         "pass": true,
         "target_width_mm": 2.0,
-        "segment_count": 10,
+        "segment_count": 15,
         "min_width_mm": 0.2,
         "zone_count": 1,
         "state": "bounded_neckdown",
-        "nominal_width_coverage_pct": 40.593,
-        "total_route_length_mm": 21.7156,
-        "nominal_width_length_mm": 8.815,
-        "neckdown_total_length_mm": 12.9006,
+        "nominal_width_coverage_pct": 80.801,
+        "total_route_length_mm": 64.4977,
+        "nominal_width_length_mm": 52.115,
+        "neckdown_total_length_mm": 12.3827,
         "minimum_width_ratio": 0.1,
         "neckdown_rule": {
           "min_width_mm": 0.2,
@@ -163,19 +163,23 @@
         "accepted_neckdowns": [
           {
             "width_mm": 0.2,
-            "length_mm": 1.8999999999999986
-          },
-          {
-            "width_mm": 0.2,
             "length_mm": 3.2015621187164243
           },
           {
             "width_mm": 0.2,
-            "length_mm": 2.6999999999999993
+            "length_mm": 1.3999999999999986
           },
           {
             "width_mm": 0.2,
-            "length_mm": 5.0990195135927845
+            "length_mm": 4.0
+          },
+          {
+            "width_mm": 0.2,
+            "length_mm": 1.5811388300841898
+          },
+          {
+            "width_mm": 0.2,
+            "length_mm": 2.1999999999999993
           }
         ],
         "violations": []
@@ -183,14 +187,14 @@
       "VBAT_PROTECTED": {
         "pass": true,
         "target_width_mm": 2.0,
-        "segment_count": 14,
+        "segment_count": 33,
         "min_width_mm": 0.2,
         "zone_count": 1,
         "state": "bounded_neckdown",
-        "nominal_width_coverage_pct": 93.353,
-        "total_route_length_mm": 100.0656,
-        "nominal_width_length_mm": 93.414,
-        "neckdown_total_length_mm": 6.6516,
+        "nominal_width_coverage_pct": 98.926,
+        "total_route_length_mm": 176.8341,
+        "nominal_width_length_mm": 174.9341,
+        "neckdown_total_length_mm": 1.9,
         "minimum_width_ratio": 0.1,
         "neckdown_rule": {
           "min_width_mm": 0.2,
@@ -202,15 +206,7 @@
         "accepted_neckdowns": [
           {
             "width_mm": 0.2,
-            "length_mm": 3.8999999999999986
-          },
-          {
-            "width_mm": 0.2,
-            "length_mm": 1.8000000000000007
-          },
-          {
-            "width_mm": 0.2,
-            "length_mm": 0.9516013451020329
+            "length_mm": 1.8999999999999986
           }
         ],
         "violations": []
@@ -218,13 +214,13 @@
       "GND_PWR": {
         "pass": true,
         "target_width_mm": 2.0,
-        "segment_count": 25,
+        "segment_count": 41,
         "min_width_mm": 0.8014,
         "zone_count": 3,
         "state": "bounded_neckdown",
-        "nominal_width_coverage_pct": 98.48,
-        "total_route_length_mm": 122.9162,
-        "nominal_width_length_mm": 121.0484,
+        "nominal_width_coverage_pct": 98.899,
+        "total_route_length_mm": 169.6683,
+        "nominal_width_length_mm": 167.8005,
         "neckdown_total_length_mm": 1.8678,
         "minimum_width_ratio": 0.4007,
         "neckdown_rule": {
@@ -253,14 +249,14 @@
       "12V_ISO": {
         "pass": true,
         "target_width_mm": 2.5,
-        "segment_count": 42,
+        "segment_count": 53,
         "min_width_mm": 0.250199,
         "zone_count": 1,
         "state": "bounded_neckdown",
-        "nominal_width_coverage_pct": 93.568,
-        "total_route_length_mm": 211.7574,
-        "nominal_width_length_mm": 198.1375,
-        "neckdown_total_length_mm": 13.62,
+        "nominal_width_coverage_pct": 93.943,
+        "total_route_length_mm": 226.2234,
+        "nominal_width_length_mm": 212.5218,
+        "neckdown_total_length_mm": 13.7015,
         "minimum_width_ratio": 0.1001,
         "neckdown_rule": {
           "min_width_mm": 0.2,
@@ -271,56 +267,52 @@
         },
         "accepted_neckdowns": [
           {
-            "width_mm": 0.250199,
-            "length_mm": 0.8844491619081323
-          },
-          {
-            "width_mm": 0.250199,
-            "length_mm": 0.018950461735791735
+            "width_mm": 0.5,
+            "length_mm": 0.5687046685231304
           },
           {
             "width_mm": 0.8014,
             "length_mm": 0.771877762343235
           },
           {
+            "width_mm": 1.875,
+            "length_mm": 0.12760000000000105
+          },
+          {
             "width_mm": 1.25,
             "length_mm": 1.7395999999999958
-          },
-          {
-            "width_mm": 1.0018,
-            "length_mm": 0.002899999999996794
-          },
-          {
-            "width_mm": 0.8014,
-            "length_mm": 0.4949747468305903
-          },
-          {
-            "width_mm": 1.0018,
-            "length_mm": 3.4496
-          },
-          {
-            "width_mm": 0.3002,
-            "length_mm": 1.7753999999999976
           },
           {
             "width_mm": 0.250199,
             "length_mm": 1.7887000000000057
           },
           {
+            "width_mm": 1.0018,
+            "length_mm": 3.4496
+          },
+          {
+            "width_mm": 0.250199,
+            "length_mm": 0.8844491619081323
+          },
+          {
+            "width_mm": 1.0018,
+            "length_mm": 0.002899999999996794
+          },
+          {
+            "width_mm": 0.250199,
+            "length_mm": 0.018950461735791735
+          },
+          {
             "width_mm": 0.250199,
             "length_mm": 0.5
           },
           {
-            "width_mm": 1.875,
-            "length_mm": 0.12760000000000105
+            "width_mm": 0.8,
+            "length_mm": 1.8741664813991354
           },
           {
-            "width_mm": 2.3998,
-            "length_mm": 1.5005000000000024
-          },
-          {
-            "width_mm": 2.3998,
-            "length_mm": 0.5654025822367621
+            "width_mm": 0.8,
+            "length_mm": 1.9750000000000014
           }
         ],
         "violations": []
@@ -328,13 +320,13 @@
       "JETSON_12V": {
         "pass": true,
         "target_width_mm": 1.5,
-        "segment_count": 21,
+        "segment_count": 17,
         "min_width_mm": 0.250199,
         "zone_count": 3,
         "state": "bounded_neckdown",
-        "nominal_width_coverage_pct": 97.567,
-        "total_route_length_mm": 141.8943,
-        "nominal_width_length_mm": 138.4413,
+        "nominal_width_coverage_pct": 97.301,
+        "total_route_length_mm": 127.9115,
+        "nominal_width_length_mm": 124.4585,
         "neckdown_total_length_mm": 3.453,
         "minimum_width_ratio": 0.1668,
         "neckdown_rule": {
@@ -346,10 +338,6 @@
         },
         "accepted_neckdowns": [
           {
-            "width_mm": 1.1,
-            "length_mm": 1.7749999999999986
-          },
-          {
             "width_mm": 0.8014,
             "length_mm": 0.6844000000000001
           },
@@ -360,6 +348,10 @@
           {
             "width_mm": 0.250199,
             "length_mm": 0.5
+          },
+          {
+            "width_mm": 1.1,
+            "length_mm": 1.7749999999999986
           }
         ],
         "violations": []
@@ -379,12 +371,12 @@
       },
       "usage_length_by_category_mm": {
         "In4.Cu": {
-          "low_speed_signal": 458.35899990335207,
-          "ground": 82.39817752296611
+          "low_speed_signal": 458.358999903352,
+          "ground": 132.4231775229661
         },
         "In1.Cu": {
-          "low_speed_signal": 490.4705697355853,
-          "ground": 163.41737467981739
+          "low_speed_signal": 508.9213454839547,
+          "ground": 215.8539052511814
         }
       },
       "violations": []
@@ -534,10 +526,10 @@
         {
           "pass": false,
           "bounds_mm": [
-            135.415,
-            23.125,
-            141.285,
-            24.875
+            134.73,
+            18.15,
+            138.81,
+            29.85
           ],
           "layers_complete": true,
           "missing_copper_layers": [],
@@ -552,9 +544,27 @@
         {
           "pass": false,
           "bounds_mm": [
+            152.0,
+            122.0,
+            160.0,
+            130.0
+          ],
+          "layers_complete": true,
+          "missing_copper_layers": [],
+          "restrictions": {
+            "tracks": true,
+            "vias": true,
+            "pads": true,
+            "copperpour": true
+          },
+          "geometry_matches": false
+        },
+        {
+          "pass": false,
+          "bounds_mm": [
+            152.0,
             0.0,
-            0.0,
-            8.0,
+            160.0,
             8.0
           ],
           "layers_complete": true,
@@ -588,27 +598,9 @@
         {
           "pass": false,
           "bounds_mm": [
-            152.0,
-            122.0,
-            160.0,
-            130.0
-          ],
-          "layers_complete": true,
-          "missing_copper_layers": [],
-          "restrictions": {
-            "tracks": true,
-            "vias": true,
-            "pads": true,
-            "copperpour": true
-          },
-          "geometry_matches": false
-        },
-        {
-          "pass": false,
-          "bounds_mm": [
-            152.0,
             0.0,
-            160.0,
+            0.0,
+            8.0,
             8.0
           ],
           "layers_complete": true,
@@ -626,13 +618,13 @@
     "u7_full_copper_isolation_keepout": {
       "pass": true,
       "reference": "U7",
-      "pad_edge_clearance_mm": 5.87,
+      "pad_edge_clearance_mm": 4.08,
       "minimum_pad_edge_clearance_mm": 0.0,
       "expected_bounds_mm": [
-        135.415,
-        23.125,
-        141.285,
-        24.875
+        134.73,
+        18.15,
+        138.81,
+        29.85
       ],
       "required_layers": [
         "B.Cu",
@@ -672,10 +664,10 @@
         {
           "pass": true,
           "bounds_mm": [
-            135.415,
-            23.125,
-            141.285,
-            24.875
+            134.73,
+            18.15,
+            138.81,
+            29.85
           ],
           "layers_complete": true,
           "missing_copper_layers": [],
@@ -690,9 +682,27 @@
         {
           "pass": false,
           "bounds_mm": [
+            152.0,
+            122.0,
+            160.0,
+            130.0
+          ],
+          "layers_complete": true,
+          "missing_copper_layers": [],
+          "restrictions": {
+            "tracks": true,
+            "vias": true,
+            "pads": true,
+            "copperpour": true
+          },
+          "geometry_matches": false
+        },
+        {
+          "pass": false,
+          "bounds_mm": [
+            152.0,
             0.0,
-            0.0,
-            8.0,
+            160.0,
             8.0
           ],
           "layers_complete": true,
@@ -726,27 +736,9 @@
         {
           "pass": false,
           "bounds_mm": [
-            152.0,
-            122.0,
-            160.0,
-            130.0
-          ],
-          "layers_complete": true,
-          "missing_copper_layers": [],
-          "restrictions": {
-            "tracks": true,
-            "vias": true,
-            "pads": true,
-            "copperpour": true
-          },
-          "geometry_matches": false
-        },
-        {
-          "pass": false,
-          "bounds_mm": [
-            152.0,
             0.0,
-            160.0,
+            0.0,
+            8.0,
             8.0
           ],
           "layers_complete": true,
@@ -764,13 +756,13 @@
       "system_target_met": false
     },
     "u2_source_return_via_arrays": {
-      "U2.4": {
+      "U2.8": {
         "pass": true,
         "net": "12V_ISO",
         "description": "isolated 12 V source transfer",
         "pad_center_mm": [
-          81.0,
-          21.0
+          93.4,
+          18.38
         ],
         "required_shape": "3x3 ring around the THT pad",
         "pitch_mm": 1.5,
@@ -782,8 +774,8 @@
         "matched_vias": [
           {
             "position_mm": [
-              79.5,
-              19.5
+              91.9,
+              16.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -791,8 +783,8 @@
           },
           {
             "position_mm": [
-              81.0,
-              19.5
+              93.4,
+              16.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -800,8 +792,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              19.5
+              94.9,
+              16.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -809,8 +801,8 @@
           },
           {
             "position_mm": [
-              79.5,
-              21.0
+              91.9,
+              18.38
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -818,8 +810,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              21.0
+              94.9,
+              18.38
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -827,8 +819,8 @@
           },
           {
             "position_mm": [
-              79.5,
-              22.5
+              91.9,
+              19.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -836,8 +828,8 @@
           },
           {
             "position_mm": [
-              81.0,
-              22.5
+              93.4,
+              19.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -845,8 +837,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              22.5
+              94.9,
+              19.88
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -855,13 +847,13 @@
         ],
         "missing_positions_mm": []
       },
-      "U2.5": {
+      "U2.4": {
         "pass": true,
         "net": "GND",
         "description": "isolated 12 V return transfer",
         "pad_center_mm": [
-          81.0,
-          33.0
+          93.4,
+          33.62
         ],
         "required_shape": "3x3 ring around the THT pad",
         "pitch_mm": 1.5,
@@ -873,8 +865,8 @@
         "matched_vias": [
           {
             "position_mm": [
-              79.5,
-              31.5
+              91.9,
+              32.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -882,8 +874,8 @@
           },
           {
             "position_mm": [
-              81.0,
-              31.5
+              93.4,
+              32.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -891,8 +883,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              31.5
+              94.9,
+              32.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -900,8 +892,8 @@
           },
           {
             "position_mm": [
-              79.5,
-              33.0
+              91.9,
+              33.62
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -909,8 +901,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              33.0
+              94.9,
+              33.62
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -918,8 +910,8 @@
           },
           {
             "position_mm": [
-              79.5,
-              34.5
+              91.9,
+              35.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -927,8 +919,8 @@
           },
           {
             "position_mm": [
-              81.0,
-              34.5
+              93.4,
+              35.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -936,8 +928,8 @@
           },
           {
             "position_mm": [
-              82.5,
-              34.5
+              94.9,
+              35.12
             ],
             "position_error_mm": 0.0,
             "diameter_mm": 0.8,
@@ -1054,13 +1046,13 @@
         {
           "position_mm": [
             113.5,
-            8.8
+            8.1
           ]
         },
         {
           "position_mm": [
             113.5,
-            8.1
+            8.8
           ]
         },
         {
@@ -1122,16 +1114,16 @@
           "matched_vias": [
             {
               "position_mm": [
-                141.0,
-                40.0
+                139.7,
+                49.05
               ],
               "diameter_mm": 0.6,
               "drill_mm": 0.3
             },
             {
               "position_mm": [
-                139.7,
-                49.05
+                141.0,
+                40.0
               ],
               "diameter_mm": 0.6,
               "drill_mm": 0.3
@@ -1684,8 +1676,8 @@
           "target_width_mm": 2.0,
           "minimum_width_mm": 0.2,
           "minimum_width_ratio": 0.1,
-          "neckdown_total_length_mm": 12.9006,
-          "accepted_neckdown_count": 4,
+          "neckdown_total_length_mm": 12.3827,
+          "accepted_neckdown_count": 5,
           "allowed_use": "Kelvin sense branch from RS1 to LTC4368 SENSE"
         },
         "VBAT_PROTECTED": {
@@ -1693,8 +1685,8 @@
           "target_width_mm": 2.0,
           "minimum_width_mm": 0.2,
           "minimum_width_ratio": 0.1,
-          "neckdown_total_length_mm": 6.6516,
-          "accepted_neckdown_count": 3,
+          "neckdown_total_length_mm": 1.9,
+          "accepted_neckdown_count": 1,
           "allowed_use": "LTC4368 VOUT monitor branch and package escapes"
         },
         "GND_PWR": {
@@ -1711,8 +1703,8 @@
           "target_width_mm": 2.5,
           "minimum_width_mm": 0.250199,
           "minimum_width_ratio": 0.1001,
-          "neckdown_total_length_mm": 13.62,
-          "accepted_neckdown_count": 13,
+          "neckdown_total_length_mm": 13.7015,
+          "accepted_neckdown_count": 12,
           "allowed_use": "parallel eFuse pins, decoupling, feedback, and control branches"
         },
         "JETSON_12V": {
@@ -1733,7 +1725,7 @@
       "review_threshold_mm": 250.0,
       "low_speed_route_length_mm": {
         "In4.Cu": 458.359,
-        "In1.Cu": 490.4706
+        "In1.Cu": 508.9213
       },
       "note": "Low-speed routing on a reference layer can fragment return-current copper even when net categories pass."
     },
@@ -1750,8 +1742,8 @@
     "u7_isolated_power_safety_suitability": {
       "status": "OPEN_SAFETY_AND_VENDOR_REVIEW_REQUIRED",
       "machine_verifiable": false,
-      "board_pad_edge_clearance_mm": 5.87,
-      "note": "The full-layer board keepout preserves the available U7 pad-row gap, but the MEJ1S0305SC candidate specifies only 2 mm creepage/clearance and 200 Vrms working voltage. It cannot close the 8 mm reinforced system-isolation target without a replacement or documented safety decision."
+      "board_pad_edge_clearance_mm": 4.08,
+      "note": "The full-layer board keepout preserves the NXF1S0305MC-R7 land-pattern gap, but board geometry alone does not establish system creepage, clearance, material group, pollution degree, or reinforced-insulation compliance. The 8 mm system target remains open for safety review."
     }
   },
   "warnings": [
@@ -1768,14 +1760,14 @@
     "u7_isolated_power_safety_suitability"
   ],
   "metrics": {
-    "segment_count": 1070,
-    "via_count": 180,
+    "segment_count": 1154,
+    "via_count": 222,
     "zone_count": 31,
     "net_segment_counts": {
-      "12V_ISO": 42,
-      "3V3_LOGIC": 132,
-      "3V3_PGOOD": 2,
-      "5V_CAN_ISO": 19,
+      "12V_ISO": 53,
+      "3V3_LOGIC": 128,
+      "3V3_PGOOD": 6,
+      "5V_CAN_ISO": 24,
       "BOOT0": 9,
       "CANH": 22,
       "CANH_RAW": 4,
@@ -1785,25 +1777,25 @@
       "CAN_TERM": 1,
       "CAN_TX": 5,
       "ESTOP_12V": 3,
-      "ESTOP_A_MON": 13,
-      "ESTOP_B_MON": 10,
+      "ESTOP_A_MON": 17,
+      "ESTOP_B_MON": 14,
       "ESTOP_CH_A_RETURN": 11,
       "ESTOP_CH_B_RETURN": 12,
       "ESTOP_SENSE": 22,
       "FET_COMMON": 19,
       "FET_GATE": 8,
-      "GND": 197,
-      "GND_CAN_ISO": 27,
-      "GND_PWR": 25,
+      "GND": 208,
+      "GND_CAN_ISO": 30,
+      "GND_PWR": 41,
       "I2C_SCL": 16,
       "I2C_SCL_MCU": 8,
       "I2C_SDA": 11,
       "I2C_SDA_MCU": 8,
-      "INPUT_SENSE": 10,
-      "JETSON_12V": 21,
+      "INPUT_SENSE": 15,
+      "JETSON_12V": 17,
       "JETSON_ENABLE_REQ": 4,
-      "JETSON_FAULT_N": 11,
-      "JETSON_PGOOD": 9,
+      "JETSON_FAULT_N": 13,
+      "JETSON_PGOOD": 14,
       "MCU_RESET": 18,
       "MOTOR_CS0": 8,
       "MOTOR_CS0_MCU": 4,
@@ -1840,7 +1832,7 @@
       "U1_SHDN": 2,
       "U3_DVDT": 2,
       "U3_ILIM": 5,
-      "U3_IMON": 4,
+      "U3_IMON": 7,
       "U3_PGTH": 11,
       "U3_UVLO": 6,
       "U4_CTRL": 5,
@@ -1855,36 +1847,37 @@
       "UART_TX_MCU": 6,
       "UV_SET": 7,
       "VBAT_FUSED": 22,
-      "VBAT_PROTECTED": 14,
+      "VBAT_PROTECTED": 33,
       "VBAT_RAW": 5
     },
     "net_via_counts": {
-      "12V_ISO": 10,
-      "3V3_LOGIC": 9,
-      "5V_CAN_ISO": 1,
+      "12V_ISO": 12,
+      "3V3_LOGIC": 13,
+      "3V3_PGOOD": 2,
+      "5V_CAN_ISO": 2,
       "BOOT0": 2,
       "CANH_RAW": 2,
       "CANL_RAW": 2,
       "CAN_RX": 2,
       "CAN_TX": 2,
-      "ESTOP_A_MON": 3,
-      "ESTOP_B_MON": 3,
+      "ESTOP_A_MON": 5,
+      "ESTOP_B_MON": 5,
       "ESTOP_CH_B_RETURN": 1,
       "ESTOP_SENSE": 2,
       "FET_COMMON": 2,
       "FET_GATE": 2,
-      "GND": 38,
-      "GND_CAN_ISO": 5,
-      "GND_PWR": 1,
+      "GND": 40,
+      "GND_CAN_ISO": 6,
+      "GND_PWR": 10,
       "I2C_SCL": 2,
       "I2C_SCL_MCU": 2,
       "I2C_SDA": 2,
       "I2C_SDA_MCU": 2,
-      "INPUT_SENSE": 2,
+      "INPUT_SENSE": 4,
       "JETSON_12V": 6,
       "JETSON_ENABLE_REQ": 1,
-      "JETSON_FAULT_N": 2,
-      "JETSON_PGOOD": 2,
+      "JETSON_FAULT_N": 4,
+      "JETSON_PGOOD": 4,
       "MCU_RESET": 3,
       "MOTOR_CS0": 1,
       "MOTOR_CS0_MCU": 2,
@@ -1911,7 +1904,9 @@
       "SWCLK": 1,
       "SWDIO": 1,
       "U1_GATE": 2,
+      "U1_SHDN": 1,
       "U3_ILIM": 2,
+      "U3_IMON": 2,
       "U3_PGTH": 2,
       "U3_UVLO": 2,
       "U4_CTRL": 2,
@@ -1923,8 +1918,8 @@
       "UART_TX": 1,
       "UART_TX_MCU": 2,
       "UV_SET": 2,
-      "VBAT_FUSED": 3,
-      "VBAT_PROTECTED": 5,
+      "VBAT_FUSED": 4,
+      "VBAT_PROTECTED": 12,
       "VBAT_RAW": 1
     }
   }

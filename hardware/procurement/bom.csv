@@ -1,8 +1,8 @@
 item_id,category,description,qty,unit,candidate_mpn_or_class,quote_status,approved_mpn,supplier,unit_cost_usd,lead_time_days,source,evidence_required,owner,release_status
-PCB-U2,power,isolated 48V-to-12V 240W module,1,ea,240W isolated module class,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,datasheet+AVL+thermal test,Electrical Owner,ORDER_BLOCKED
+PCB-U2,power,isolated 48V-to-12V 240W module,1,ea,Q36SR12020NRFH design candidate,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,exact 20A manufacturer datasheet+lifecycle+authorized quote+AVL+thermal review,Electrical and Procurement Owners,ORDER_BLOCKED
 PCB-U3,power,protected 12V 5A Jetson branch,1,ea,6A minimum e-fuse/load switch class,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,load-trip test+AVL,Electrical Owner,ORDER_BLOCKED
 PCB-U4,power,12V-to-3.3V synchronous buck 20W,1,ea,6A synchronous buck class,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,ripple+thermal test+AVL,Electrical Owner,ORDER_BLOCKED
-PCB-U7,isolation,isolated 5V CAN-side power module,1,ea,reinforced isolated 1W module class,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,isolation+loaded-voltage test,Electrical Owner,ORDER_BLOCKED
+PCB-U7,isolation,isolated 5V CAN-side power module,1,ea,NXF1S0305MC-R7 design candidate,QUOTE_REQUIRED,,,,,hardware/pcb/component-selection-matrix.csv,loaded-voltage test+system isolation safety review+AVL,Electrical Safety and Procurement Owners,ORDER_BLOCKED
 PCB-PCBA,pcb,controller PCB EVT assembly,1,ea,controller eight-layer EVT release,QUOTE_REQUIRED,,,,,hardware/pcb/fabrication/README.md,DFM quote+AOI+electrical test,Manufacturing Owner,ORDER_BLOCKED
 MECH-ENC,enclosure,desk-robot enclosure assembly,1,ea,generated mechanical envelope,QUOTE_REQUIRED,,,,,hardware/mechanical/design-spec.json,supplier DFM+fit inspection,Mechanical Owner,ORDER_BLOCKED
 MECH-BUMPER,mechanical,impact bumper set,1,set,generated impact bumper parts,QUOTE_REQUIRED,,,,,hardware/mechanical/generated/bom.csv,material cert+drop test,Mechanical Owner,ORDER_BLOCKED

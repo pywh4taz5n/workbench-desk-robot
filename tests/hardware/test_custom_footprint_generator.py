@@ -170,7 +170,8 @@ def test_all_custom_footprints_have_type_silkscreen_pin1_and_courtyard(monkeypat
         "microfit": generator.pcbnew.FP_THROUGH_HOLE,
         "fuse_4510": generator.pcbnew.FP_SMD,
         "sense_3637": generator.pcbnew.FP_SMD,
-        "isolated_power_tbd": generator.pcbnew.FP_THROUGH_HOLE,
+        "delta_q36sr": generator.pcbnew.FP_THROUGH_HOLE,
+        "murata_nxf1_mc": generator.pcbnew.FP_SMD,
         "rpl_5": generator.pcbnew.FP_SMD,
         "tps26633": generator.pcbnew.FP_SMD,
         "iso1042_dw16_hv": generator.pcbnew.FP_SMD,
@@ -216,28 +217,48 @@ def test_polarity_and_connector_key_markers_add_dedicated_silk(monkeypatch) -> N
 
     generator.fuse_4510()
     generator.can_tvs()
-    generator.isolated_power_tbd()
+    generator.delta_q36sr()
     generator.microfit()
-    assert polarity_calls == ["CAN_TVS", "Isolated_48V_12V_240W_TBD"]
+    assert polarity_calls == ["CAN_TVS", "Delta_Q36SR_QuarterBrick"]
     assert key_calls == ["MicroFit_2x2"]
 
 
-def test_isolated_power_placeholder_is_nine_pin_tht_and_not_production(monkeypatch) -> None:
+def test_delta_q36sr_land_pattern_has_eight_quarter_brick_pins(monkeypatch) -> None:
     generator = load_generator(monkeypatch)
 
     assert not hasattr(generator, "dcm3623")
-    footprint = generator.isolated_power_tbd()
+    assert not hasattr(generator, "isolated_power_tbd")
+    footprint = generator.delta_q36sr()
     pads = {int(pad.number): pad for pad in footprint.Pads()}
 
-    assert footprint.value_text == "Isolated_48V_12V_240W_TBD"
+    assert footprint.value_text == "Delta_Q36SR_QuarterBrick"
     assert footprint.attributes == generator.pcbnew.FP_THROUGH_HOLE
-    assert set(pads) == set(range(1, 10))
+    assert set(pads) == set(range(1, 9))
     assert all(pad.attribute == generator.pcbnew.PAD_ATTRIB_PTH for pad in pads.values())
     assert all(pad.drill.x > 0 and pad.drill.y > 0 for pad in pads.values())
-    assert "NOT FOR PRODUCTION" in footprint.description
+    assert pads[1].position.x == -25.4
+    assert pads[8].position.x == 25.4
+    assert pads[1].position.y == pads[8].position.y == -7.62
+    assert pads[4].position.y == 7.62
+    assert "verify the exact" in footprint.description.lower()
 
     silk = [item for item in footprint.items if isinstance(item, Shape) and item.layer == "F.SilkS"]
     assert len(silk) >= 6  # body, pin-1 marker, and the dedicated polarity marker
+
+
+def test_murata_nxf1_mc_land_pattern_matches_five_pad_drawing(monkeypatch) -> None:
+    generator = load_generator(monkeypatch)
+    footprint = generator.murata_nxf1_mc()
+    pads = {int(pad.number): pad for pad in footprint.Pads()}
+
+    assert footprint.value_text == "Murata_NXF1_MC"
+    assert footprint.attributes == generator.pcbnew.FP_SMD
+    assert set(pads) == {1, 3, 7, 8, 14}
+    assert pads[1].position.x == pads[14].position.x == -3.81
+    assert pads[7].position.x == pads[8].position.x == 3.81
+    assert pads[1].position.y == pads[3].position.y == pads[7].position.y == -4.70
+    assert pads[8].position.y == pads[14].position.y == 4.70
+    assert all(pad.size.x == 1.0 and pad.size.y == 2.3 for pad in pads.values())
 
 
 def test_iso1042_hv_land_pattern_preserves_ti_clearance(monkeypatch) -> None:

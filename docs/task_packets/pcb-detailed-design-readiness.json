@@ -5,6 +5,7 @@
   "allowed_paths": [
     "hardware/pcb/**",
     "hardware/procurement/bom.csv",
+    "hardware/procurement/quote-register.csv",
     "tests/hardware/**",
     "docs/task_packets/pcb-detailed-design-readiness.json"
   ],

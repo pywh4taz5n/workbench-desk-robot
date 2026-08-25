@@ -16,11 +16,19 @@ if str(TOOLS) not in sys.path:
 from initialize_approval_signatures import board_revision, sha256_file, validate_signature_register
 
 EXPECTED_COPPER_LAYERS = ["F.Cu", *[f"In{index}.Cu" for index in range(1, 7)], "B.Cu"]
-ISOLATED_POWER_TBD = "TBD_36_60V_TO_12V_240W_ISOLATED"
-ISOLATED_POWER_TBD_LAND_PATTERN = "WB:Isolated_48V_12V_240W_TBD"
-ISOLATED_POWER_TBD_FOOTPRINT = "Isolated_48V_12V_240W_TBD"
-ISOLATED_POWER_TBD_SYMBOL = "ISOLATED_DC_DC_TBD"
-INCOMPATIBLE_ISOLATED_POWER_MARKERS = ("DCM3623", "Vicor_DCM3623")
+ISOLATED_POWER_CANDIDATE = "Q36SR12020NRFH"
+ISOLATED_POWER_LAND_PATTERN = "WB:Delta_Q36SR_QuarterBrick"
+ISOLATED_POWER_FOOTPRINT = "Delta_Q36SR_QuarterBrick"
+ISOLATED_POWER_SYMBOL = "DELTA_Q36SR"
+STALE_ISOLATED_POWER_MARKERS = (
+    "DCM3623",
+    "Vicor_DCM3623",
+    "TBD_36_60V_TO_12V_240W_ISOLATED",
+    "Isolated_48V_12V_240W_TBD",
+    "ISOLATED_DC_DC_TBD",
+    "U2 LAND PATTERN TBD",
+    "DO NOT FIT",
+)
 REQUIRED_BRINGUP_TEST_IDS = {
     "SAFE_RESISTANCE",
     "INRUSH_36V",
@@ -54,7 +62,7 @@ CRITICAL_TEST_ACCESS_NETS = {
     "ESTOP_A_MON",
     "ESTOP_B_MON",
 }
-TEST_ACCESS_DESIGN_STATES = {"CONNECTOR_ACCESS_CONFIRMED", "ECO_REQUIRED"}
+TEST_ACCESS_DESIGN_STATES = {"CONNECTOR_ACCESS_CONFIRMED", "DEDICATED_PAD_IMPLEMENTED", "ECO_REQUIRED"}
 TEST_ACCESS_VERIFICATION_STATES = {"NOT_BUILT", "PHYSICAL_VALIDATION_REQUIRED", "VERIFIED"}
 SOURCE_REQUIRED_FIELDS = {"id", "vendor", "title", "url", "claim", "confidence", "freeze_status", "owner"}
 
@@ -158,12 +166,14 @@ def check_fixture_access_plan(
     rows: list[dict[str, str]],
     pinout: list[dict[str, str]],
     fixtures: list[dict[str, str]],
+    testpoints: list[dict[str, str]],
 ) -> dict[str, object]:
     nets = [row.get("net", "") for row in rows]
     missing_nets = sorted(CRITICAL_TEST_ACCESS_NETS - set(nets))
     duplicate_nets = sorted({net for net in nets if nets.count(net) > 1})
     fixture_ids = {row.get("fixture_id", "") for row in fixtures if row.get("fixture_id") != "TOTAL"}
     connector_access = {f"{row['reference']}.{row['pin']}": row["net"] for row in pinout}
+    testpoint_access = {row.get("reference", ""): row.get("net", "") for row in testpoints}
     invalid_rows: list[dict[str, str]] = []
     eco_accesses: set[str] = set()
     for row in rows:
@@ -184,9 +194,14 @@ def check_fixture_access_plan(
             access_points = planned_access.split("|")
             if not access_points or any(connector_access.get(point) != net for point in access_points):
                 reason = "connector_access_does_not_match_net"
+        elif design_state == "DEDICATED_PAD_IMPLEMENTED":
+            if not re.fullmatch(r"TP\d+", planned_access):
+                reason = "invalid_implemented_testpoint"
+            elif testpoint_access.get(planned_access) != net:
+                reason = "implemented_testpoint_does_not_match_net"
         elif not re.fullmatch(r"ECO-TP\d+", planned_access):
             reason = "invalid_eco_testpoint"
-        elif int(planned_access.removeprefix("ECO-TP")) <= 8:
+        elif int(planned_access.removeprefix("ECO-TP")) <= 15:
             reason = "eco_testpoint_collides_with_existing_pad"
         elif planned_access in eco_accesses:
             reason = "duplicate_eco_testpoint"
@@ -214,6 +229,9 @@ def check_fixture_access_plan(
         "duplicate_nets": duplicate_nets,
         "invalid_rows": invalid_rows,
         "eco_required_nets": sorted(row.get("net", "") for row in rows if row.get("design_state") == "ECO_REQUIRED"),
+        "implemented_pad_nets": sorted(
+            row.get("net", "") for row in rows if row.get("design_state") == "DEDICATED_PAD_IMPLEMENTED"
+        ),
         "physical_validation_required_nets": sorted(
             row.get("net", "") for row in rows if row.get("verification_state") != "VERIFIED"
         ),
@@ -244,9 +262,7 @@ def check_source_baseline(
     exclusion_users = sorted(
         row["reference"] for row in component_matrix if row.get("source_id") == "SRC-VICOR-DCM3623-EXCLUSION"
     )
-    exclusion_use_pass = exclusion_users == ["U2"] and any(
-        row.get("reference") == "U2" and row.get("primary_candidate") == ISOLATED_POWER_TBD for row in component_matrix
-    )
+    exclusion_use_pass = not exclusion_users
     passed = not duplicate_source_ids and not missing_source_ids and not invalid_sources and exclusion_use_pass
     return {
         "pass": passed,
@@ -260,7 +276,7 @@ def check_source_baseline(
     }
 
 
-def check_isolated_power_tbd_guard(
+def check_isolated_power_candidate_guard(
     component_matrix: list[dict[str, str]],
     approval_register: list[dict[str, str]],
     bom: list[dict[str, str]],
@@ -269,61 +285,81 @@ def check_isolated_power_tbd_guard(
     matrix_rows = [row for row in component_matrix if row["reference"] == "U2"]
     approval_rows = [row for row in approval_register if row["reference"] == "U2"]
     bom_rows = [row for row in bom if row["reference"] == "U2"]
-    matrix_uses_tbd = len(matrix_rows) == 1 and matrix_rows[0]["primary_candidate"] == ISOLATED_POWER_TBD
-    approval_uses_tbd = len(approval_rows) == 1 and approval_rows[0]["candidate"] == ISOLATED_POWER_TBD
-    bom_uses_tbd = (
-        len(bom_rows) == 1
-        and bom_rows[0]["design_candidate"] == ISOLATED_POWER_TBD
-        and bom_rows[0]["package_or_module"] == ISOLATED_POWER_TBD_LAND_PATTERN
+    matrix_uses_candidate = (
+        len(matrix_rows) == 1 and matrix_rows[0]["primary_candidate"] == ISOLATED_POWER_CANDIDATE
     )
-    incompatible_occurrences = {
-        name: [marker for marker in INCOMPATIBLE_ISOLATED_POWER_MARKERS if marker in text]
+    approval_uses_candidate = (
+        len(approval_rows) == 1 and approval_rows[0]["candidate"] == ISOLATED_POWER_CANDIDATE
+    )
+    bom_uses_candidate = (
+        len(bom_rows) == 1
+        and bom_rows[0]["design_candidate"] == ISOLATED_POWER_CANDIDATE
+        and bom_rows[0]["package_or_module"] == ISOLATED_POWER_LAND_PATTERN
+    )
+    stale_occurrences = {
+        name: [marker for marker in STALE_ISOLATED_POWER_MARKERS if marker in text]
         for name, text in artifact_texts.items()
     }
-    incompatible_occurrences = {name: markers for name, markers in incompatible_occurrences.items() if markers}
+    stale_occurrences = {name: markers for name, markers in stale_occurrences.items() if markers}
     required_artifact_markers = {
-        "design_data.py": [ISOLATED_POWER_TBD, ISOLATED_POWER_TBD_FOOTPRINT, ISOLATED_POWER_TBD_SYMBOL],
-        "controller.kicad_pcb": [ISOLATED_POWER_TBD_FOOTPRINT, "U2 LAND PATTERN TBD", "DO NOT FIT"],
-        "controller.kicad_sch": [ISOLATED_POWER_TBD, ISOLATED_POWER_TBD_FOOTPRINT, ISOLATED_POWER_TBD_SYMBOL],
-        "controller.kicad_sym": [ISOLATED_POWER_TBD_SYMBOL],
-        "controller.ses": [ISOLATED_POWER_TBD_FOOTPRINT],
-        "controller.net": [ISOLATED_POWER_TBD, ISOLATED_POWER_TBD_FOOTPRINT],
-        "fabrication/positions.csv": [ISOLATED_POWER_TBD_FOOTPRINT],
-        "WB.pretty": [ISOLATED_POWER_TBD_FOOTPRINT],
+        "design_data.py": [ISOLATED_POWER_CANDIDATE, ISOLATED_POWER_FOOTPRINT, ISOLATED_POWER_SYMBOL],
+        "controller.kicad_pcb": [ISOLATED_POWER_FOOTPRINT, "U2 Q36SR 12V / 20A", "VERIFY EXACT DATASHEET + AVL"],
+        "controller.kicad_sch": [ISOLATED_POWER_CANDIDATE, ISOLATED_POWER_FOOTPRINT, ISOLATED_POWER_SYMBOL],
+        "controller.kicad_sym": [ISOLATED_POWER_SYMBOL],
+        "controller.ses": [ISOLATED_POWER_FOOTPRINT],
+        "controller.net": [ISOLATED_POWER_CANDIDATE, ISOLATED_POWER_FOOTPRINT],
+        "fabrication/positions.csv": [ISOLATED_POWER_FOOTPRINT],
+        "WB.pretty": [ISOLATED_POWER_FOOTPRINT],
     }
-    missing_placeholder_markers = {
+    missing_candidate_markers = {
         name: [marker for marker in markers if marker not in artifact_texts.get(name, "")]
         for name, markers in required_artifact_markers.items()
     }
-    missing_placeholder_markers = {name: markers for name, markers in missing_placeholder_markers.items() if markers}
+    missing_candidate_markers = {name: markers for name, markers in missing_candidate_markers.items() if markers}
     board_u2_block = _reference_block(artifact_texts.get("controller.kicad_pcb", ""), "U2", "(footprint ")
     schematic_u2_block = _reference_block(artifact_texts.get("controller.kicad_sch", ""), "U2", "  (symbol ")
     u2_board_is_dnp = bool(re.search(r"\(attr[^\n]*\bdnp\b", board_u2_block))
     u2_schematic_is_dnp = "(dnp yes)" in schematic_u2_block
+    matrix_procurement_open = bool(matrix_rows) and matrix_rows[0].get("procurement_status") != "APPROVED"
+    approval_evidence_complete = bool(approval_rows) and all(
+        approval_rows[0].get(field, "").strip()
+        for field in ("approved_mpn", "datasheet_revision", "approved_by", "approved_at", "evidence_ref")
+    )
+    procurement_evidence_closed = (
+        bool(matrix_rows)
+        and matrix_rows[0].get("procurement_status") == "APPROVED"
+        and bool(approval_rows)
+        and approval_rows[0].get("decision") == "APPROVED"
+        and approval_rows[0].get("approved_mpn") == ISOLATED_POWER_CANDIDATE
+        and approval_evidence_complete
+    )
     passed = (
-        matrix_uses_tbd
-        and approval_uses_tbd
-        and bom_uses_tbd
-        and not incompatible_occurrences
-        and not missing_placeholder_markers
-        and u2_board_is_dnp
-        and u2_schematic_is_dnp
+        matrix_uses_candidate
+        and approval_uses_candidate
+        and bom_uses_candidate
+        and not stale_occurrences
+        and not missing_candidate_markers
+        and not u2_board_is_dnp
+        and not u2_schematic_is_dnp
     )
     return {
         "pass": passed,
-        "required_placeholder": ISOLATED_POWER_TBD,
-        "required_land_pattern_placeholder": ISOLATED_POWER_TBD_LAND_PATTERN,
-        "component_matrix_uses_tbd": matrix_uses_tbd,
-        "approval_register_uses_tbd": approval_uses_tbd,
-        "fabrication_bom_uses_tbd": bom_uses_tbd,
-        "incompatible_markers": list(INCOMPATIBLE_ISOLATED_POWER_MARKERS),
-        "incompatible_occurrences": incompatible_occurrences,
-        "missing_placeholder_markers": missing_placeholder_markers,
+        "design_candidate": ISOLATED_POWER_CANDIDATE,
+        "implemented_land_pattern": ISOLATED_POWER_LAND_PATTERN,
+        "component_matrix_uses_candidate": matrix_uses_candidate,
+        "approval_register_uses_candidate": approval_uses_candidate,
+        "fabrication_bom_uses_candidate": bom_uses_candidate,
+        "stale_markers": list(STALE_ISOLATED_POWER_MARKERS),
+        "stale_occurrences": stale_occurrences,
+        "missing_candidate_markers": missing_candidate_markers,
         "u2_board_is_dnp": u2_board_is_dnp,
         "u2_schematic_is_dnp": u2_schematic_is_dnp,
+        "matrix_procurement_gate_open": matrix_procurement_open,
+        "procurement_evidence_closed": procurement_evidence_closed,
         "note": (
-            "The former DCM3623 selection is excluded. U2 remains a requirement envelope until an orderable "
-            "36-60 V to regulated 12 V isolated 240 W-class MPN and its land pattern are frozen by ECO."
+            "Q36SR12020NRFH and its Q36SR family land pattern are implemented as the design candidate. The local "
+            "manufacturer PDF is for the 12 V/19 A family variant, so the exact 20 A manufacturer datasheet, "
+            "lifecycle confirmation, authorized-channel quote, heat-spreader review, and AVL remain open."
         ),
     }
 
@@ -393,7 +429,7 @@ def audit() -> dict[str, object]:
         ROOT.parents[1],
     )
     fully_approved_references = set(approval_signature_report["fully_approved_references"])
-    isolated_power_guard = check_isolated_power_tbd_guard(
+    isolated_power_guard = check_isolated_power_candidate_guard(
         component_matrix,
         approval_register,
         bom,
@@ -413,7 +449,7 @@ def audit() -> dict[str, object]:
         connectors, harness_rows, motor_spec, interface_text, wiring_text
     )
     bringup_plan = check_bringup_plan(bringup_rows)
-    fixture_access_plan = check_fixture_access_plan(fixture_access_rows, pinout, fixture_rows)
+    fixture_access_plan = check_fixture_access_plan(fixture_access_rows, pinout, fixture_rows, testpoint_coverage)
     source_baseline_report = check_source_baseline(component_matrix, source_baseline)
 
     engineering_checks = {
@@ -462,8 +498,8 @@ def audit() -> dict[str, object]:
         ),
         "board_connectivity_audit_pass": connectivity_report["pass"],
         "board_layout_hard_gates_pass": layout_report["hard_gate_pass"],
-        "eight_testpoints_have_measurement_coverage": len(testpoint_coverage) == 8
-        and {row["reference"] for row in testpoint_coverage} == {f"TP{index}" for index in range(1, 9)},
+        "fifteen_testpoints_have_measurement_coverage": len(testpoint_coverage) == 15
+        and {row["reference"] for row in testpoint_coverage} == {f"TP{index}" for index in range(1, 16)},
         "fabrication_metadata_controlled": '(rev "EVT1")' in board
         and '(copper_finish "ENIG")' in board
         and gerber_job["GeneralSpecs"]["ProjectId"]["Revision"] == "EVT1"
@@ -477,8 +513,10 @@ def audit() -> dict[str, object]:
         "safety_design_analysis_approved": False,
         "supplier_dfm_closed": False,
         "component_mpn_and_avl_closed": all(row["procurement_status"] == "APPROVED" for row in component_matrix),
-        "isolated_power_excluded_part_absent_and_tbd_placeholders_consistent": isolated_power_guard["pass"],
-        "isolated_power_mpn_and_land_pattern_frozen": False,
+        "isolated_power_candidate_and_land_pattern_consistent": isolated_power_guard["pass"],
+        "isolated_power_exact_manufacturer_evidence_and_avl_closed": isolated_power_guard[
+            "procurement_evidence_closed"
+        ],
         "critical_test_access_design_closed": fixture_access_plan["design_ready"],
         "u7_system_isolation_target_met": layout_report["details"]["u7_full_copper_isolation_keepout"].get(
             "system_target_met", False
@@ -528,11 +566,11 @@ def audit() -> dict[str, object]:
             "supplier_dfm_closed": evt_prototype_order_checks["supplier_dfm_closed"],
             "harness_release_checks_closed": production_release_checks["harness_physical_release_checks_closed"],
             "component_mpn_and_avl_closed": evt_prototype_order_checks["component_mpn_and_avl_closed"],
-            "isolated_power_excluded_part_absent_and_tbd_placeholders_consistent": evt_prototype_order_checks[
-                "isolated_power_excluded_part_absent_and_tbd_placeholders_consistent"
+            "isolated_power_candidate_and_land_pattern_consistent": evt_prototype_order_checks[
+                "isolated_power_candidate_and_land_pattern_consistent"
             ],
-            "isolated_power_mpn_and_land_pattern_frozen": evt_prototype_order_checks[
-                "isolated_power_mpn_and_land_pattern_frozen"
+            "isolated_power_exact_manufacturer_evidence_and_avl_closed": evt_prototype_order_checks[
+                "isolated_power_exact_manufacturer_evidence_and_avl_closed"
             ],
             "critical_test_access_design_closed": evt_prototype_order_checks["critical_test_access_design_closed"],
             "critical_test_access_physically_verified": production_release_checks[
@@ -569,11 +607,11 @@ def audit() -> dict[str, object]:
             "stackup": stackup_layers,
         },
         "note": (
-            "The checked-in schematic is component-level and its ERC is clean. U2 is not selected, and any stale "
-            "excluded-part data fails the engineering guard until an ECO replaces the schematic, "
-            "BOM, footprint, placement, routing and thermal model. Every required role signs independently against "
-            "the current revision and BOM hash. Physical evidence remains a production-release gate, not a "
-            "prerequisite for ordering the prototypes needed to collect that evidence."
+            "The checked-in schematic is component-level and its ERC is clean. Q36SR12020NRFH is implemented as "
+            "the U2 design candidate, but exact 20 A manufacturer evidence, lifecycle, quote, heat-spreader review, "
+            "and AVL remain procurement gates. Every required role signs independently against the current revision "
+            "and BOM hash. Physical evidence remains a production-release gate, not a prerequisite for ordering the "
+            "prototypes needed to collect that evidence."
         ),
     }
 

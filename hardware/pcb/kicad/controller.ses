@@ -24,7 +24,7 @@
       (place J10 710000 -910000 front 0)
       (place J6 1495000 -760000 front 0)
       (place J5 1495000 -640000 front 0)
-      (place J3 1023900 -107750 front 0)
+      (place J3 1175000 -325000 front 0)
       (place J2 1180000 -760000 front 0)
       (place J1 110000 -145000 front 0)
     )
@@ -64,7 +64,7 @@
       (place R48 1080000 -180000 front 0)
       (place R60 1120000 -260000 front 0)
       (place R59 1080000 -260000 front 0)
-      (place RSH1 360000 -340000 front 0)
+      (place RSH1 360000 -340000 back 0)
       (place RUV3 180000 -305000 front 0)
       (place RUV2 140000 -265000 front 0)
       (place RG1 220000 -265000 front 0)
@@ -98,8 +98,8 @@
       (place L1 1440000 -480000 front 0)
     )
     (component "C_0805_2012Metric"
-      (place C43 1447000 -180000 front 0)
-      (place C42 1332500 -180000 front 0)
+      (place C43 1447000 -140000 front 0)
+      (place C42 1325000 -145000 front 180)
       (place C17 1080000 -915000 front 0)
       (place C4 1105000 -65000 front 0)
     )
@@ -123,8 +123,8 @@
       (place C10 955000 -1025000 front 270)
       (place C9 955000 -993000 front 270)
     )
-    (component "Converter_DCDC_muRata_MEJ1SxxxxSC_THT"
-      (place U7 1320000 -240000 front 0)
+    (component "Murata_NXF1_MC"
+      (place U7 1355000 -240000 front 0)
     )
     (component "PinHeader_2x10_P2.54mm_Vertical"
       (place J4 820000 -970000 front 0)
@@ -141,7 +141,7 @@
     (component "C_1210_3225Metric"
       (place C8 930000 -565000 front 0)
       (place C7 875000 -565000 front 0)
-      (place C6 920000 -435000 front 0)
+      (place C6 920000 -435000 back 0)
       (place C1 310000 -360000 front 0)
     )
     (component "RPL-5.0_QFN24"
@@ -154,19 +154,19 @@
       (place U3 1118250 -118250 front 0)
     )
     (component "CP_Radial_D12.5mm_P5.00mm"
-      (place C3 930000 -270000 front 90)
+      (place C3 1050000 -390000 front 90)
     )
     (component "C_2220_5750Metric"
-      (place C2 420000 -315000 front 270)
+      (place C2 420000 -510000 back 270)
     )
-    (component "Isolated_48V_12V_240W_TBD"
-      (place U2 660000 -270000 front 0)
+    (component "Delta_Q36SR_QuarterBrick"
+      (place U2 680000 -260000 front 0)
     )
     (component "MSOP-10_3x3mm_P0.5mm"
       (place U1 345000 -277000 front 0)
     )
     (component "Sense_3637"
-      (place RS1 395000 -210000 front 0)
+      (place RS1 395000 -430000 back 0)
     )
     (component "Infineon_PG-TDSON-8_6.15x5.15mm"
       (place Q2 300000 -210000 front 0)

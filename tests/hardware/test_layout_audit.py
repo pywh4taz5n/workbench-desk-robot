@@ -41,15 +41,15 @@ def u2_footprint(
     x: float = 50.0,
     y: float = 50.0,
     angle: float = 0.0,
-    pad5_x: float = 0.0,
-    pad5_y: float = 5.0,
+    pad4_x: float = 0.0,
+    pad4_y: float = 5.0,
 ) -> str:
     return f"""(footprint "TEST:U2"
         (layer "F.Cu")
         (at {x} {y} {angle})
         (property "Reference" "U2" (at 0 0 0) (layer "F.SilkS"))
-        (pad "4" thru_hole circle (at 0 0) (size 4 4) (drill 1.1) (layers "*.Cu" "*.Mask") (net "12V_ISO"))
-        (pad "5" thru_hole circle (at {pad5_x} {pad5_y}) (size 4 4) (drill 1.1) (layers "*.Cu" "*.Mask") (net "GND"))
+        (pad "8" thru_hole circle (at 0 0) (size 4 4) (drill 1.1) (layers "*.Cu" "*.Mask") (net "12V_ISO"))
+        (pad "4" thru_hole circle (at {pad4_x} {pad4_y}) (size 4 4) (drill 1.1) (layers "*.Cu" "*.Mask") (net "GND"))
     )"""
 
 
@@ -168,10 +168,11 @@ def u7_footprint(x: float = 90.0, y: float = 70.0) -> str:
         (layer "F.Cu")
         (at {x} {y})
         (property "Reference" "U7" (at 0 0 0) (layer "F.SilkS"))
-        (pad "1" thru_hole circle (at 0 0) (size 1.75 1.75) (drill 1.075) (layers "*.Cu" "*.Mask"))
-        (pad "2" thru_hole circle (at 2.54 0) (size 1.75 1.75) (drill 1.075) (layers "*.Cu" "*.Mask"))
-        (pad "5" thru_hole circle (at 10.16 0) (size 1.75 1.75) (drill 1.075) (layers "*.Cu" "*.Mask"))
-        (pad "7" thru_hole circle (at 15.24 0) (size 1.75 1.75) (drill 1.075) (layers "*.Cu" "*.Mask"))
+        (pad "1" smd rect (at -3.81 -4.7) (size 1 2.3) (layers "F.Cu"))
+        (pad "3" smd rect (at -1.27 -4.7) (size 1 2.3) (layers "F.Cu"))
+        (pad "7" smd rect (at 3.81 -4.7) (size 1 2.3) (layers "F.Cu"))
+        (pad "8" smd rect (at 3.81 4.7) (size 1 2.3) (layers "F.Cu"))
+        (pad "14" smd rect (at -3.81 4.7) (size 1 2.3) (layers "F.Cu"))
     )"""
 
 
@@ -182,10 +183,10 @@ def u7_keepout(
     layers: tuple[str, ...] = ("F.Cu", "In1.Cu", "In2.Cu", "In3.Cu", "In4.Cu", "In5.Cu", "In6.Cu", "B.Cu"),
     x_shift: float = 0.0,
 ) -> str:
-    left = x + 3.415 + x_shift
-    right = x + 9.285 + x_shift
-    top = y - 0.875
-    bottom = y + 0.875
+    left = x - 0.77 + x_shift
+    right = x + 3.31 + x_shift
+    top = y - 5.85
+    bottom = y + 5.85
     layer_text = " ".join(f'"{layer}"' for layer in layers)
     return f"""(zone
         (layers {layer_text})
@@ -309,8 +310,8 @@ class LayoutAuditTests(unittest.TestCase):
         report = self.run_audit(board_text())
         self.assertTrue(report["checks"]["u2_source_return_via_arrays"])
         details = report["details"]["u2_source_return_via_arrays"]
+        self.assertEqual(details["U2.8"]["matched_via_count"], 8)
         self.assertEqual(details["U2.4"]["matched_via_count"], 8)
-        self.assertEqual(details["U2.5"]["matched_via_count"], 8)
 
         incomplete = [
             u2_footprint(),
@@ -320,7 +321,7 @@ class LayoutAuditTests(unittest.TestCase):
         report = self.run_audit(board_text(u2_parts=incomplete))
         self.assertFalse(report["checks"]["u2_source_return_via_arrays"])
         self.assertFalse(report["hard_gate_pass"])
-        self.assertEqual(report["details"]["u2_source_return_via_arrays"]["U2.4"]["matched_via_count"], 7)
+        self.assertEqual(report["details"]["u2_source_return_via_arrays"]["U2.8"]["matched_via_count"], 7)
 
     def test_u3_requires_complete_exposed_pad_microvia_array(self) -> None:
         report = self.run_audit(board_text())
@@ -398,14 +399,14 @@ class LayoutAuditTests(unittest.TestCase):
         report = self.run_audit(board_text())
         self.assertTrue(report["checks"]["u7_full_copper_isolation_keepout"])
         details = report["details"]["u7_full_copper_isolation_keepout"]
-        self.assertEqual(details["pad_edge_clearance_mm"], 5.87)
-        self.assertEqual(details["expected_bounds_mm"], [93.415, 69.125, 99.285, 70.875])
+        self.assertEqual(details["pad_edge_clearance_mm"], 4.08)
+        self.assertEqual(details["expected_bounds_mm"], [89.23, 64.15, 93.31, 75.85])
         self.assertFalse(details["system_target_met"])
 
         risk = report["risks"]["u7_isolated_power_safety_suitability"]
         self.assertEqual(risk["status"], "OPEN_SAFETY_AND_VENDOR_REVIEW_REQUIRED")
         self.assertFalse(risk["machine_verifiable"])
-        self.assertIn("200 Vrms", risk["note"])
+        self.assertIn("NXF1S0305MC-R7", risk["note"])
 
         missing_layer = [
             u7_footprint(),
@@ -480,7 +481,7 @@ class LayoutAuditTests(unittest.TestCase):
         ]
         report = self.run_audit(board_text(u2_parts=wrong_diameter))
         self.assertFalse(report["checks"]["u2_source_return_via_arrays"])
-        self.assertEqual(report["details"]["u2_source_return_via_arrays"]["U2.4"]["matched_via_count"], 0)
+        self.assertEqual(report["details"]["u2_source_return_via_arrays"]["U2.8"]["matched_via_count"], 0)
 
     def test_u2_via_array_tracks_kicad_footprint_rotation(self) -> None:
         expected_centers = {
@@ -492,14 +493,14 @@ class LayoutAuditTests(unittest.TestCase):
         for angle, center in expected_centers.items():
             with self.subTest(angle=angle):
                 rotated = [
-                    u2_footprint(angle=angle, pad5_x=2.0, pad5_y=5.0),
+                    u2_footprint(angle=angle, pad4_x=2.0, pad4_y=5.0),
                     *via_array("12V_ISO", 50, 50),
                     *via_array("GND", *center),
                 ]
                 report = self.run_audit(board_text(u2_parts=rotated))
                 self.assertTrue(report["checks"]["u2_source_return_via_arrays"])
                 self.assertEqual(
-                    report["details"]["u2_source_return_via_arrays"]["U2.5"]["pad_center_mm"],
+                    report["details"]["u2_source_return_via_arrays"]["U2.4"]["pad_center_mm"],
                     list(center),
                 )
 

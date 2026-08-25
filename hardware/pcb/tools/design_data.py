@@ -157,11 +157,11 @@ CUSTOM_SYMBOLS: dict[str, tuple[str, list[Pin]]] = {
             [("10", "GATE"), ("9", "SENSE"), ("8", "VOUT"), ("7", "FAULT"), ("6", "SHDN")],
         ),
     ),
-    "ISOLATED_DC_DC_TBD": (
+    "DELTA_Q36SR": (
         "U",
         box_pins(
-            [("1", "+IN"), ("2", "-IN"), ("3", "ENABLE"), ("7", "AUX1"), ("8", "AUX2")],
-            [("4", "+OUT"), ("5", "-OUT"), ("6", "TRIM"), ("9", "AUX3")],
+            [("1", "+VIN"), ("2", "ON/OFF"), ("3", "-VIN")],
+            [("8", "+VOUT"), ("7", "+SENSE"), ("6", "TRIM"), ("5", "-SENSE"), ("4", "-VOUT")],
         ),
     ),
     "TPS26633RGE": (
@@ -260,7 +260,10 @@ CUSTOM_SYMBOLS: dict[str, tuple[str, list[Pin]]] = {
             ],
         ),
     ),
-    "MEJ1S0305SC": ("U", box_pins([("1", "+VIN"), ("2", "-VIN")], [("7", "+VOUT"), ("5", "-VOUT")])),
+    "NXF1S0305MC": (
+        "U",
+        box_pins([("1", "-VIN"), ("3", "+VIN"), ("14", "NC")], [("8", "+VOUT"), ("7", "-VOUT")]),
+    ),
     "CAN_CMC": ("L", box_pins([("1", "CANH_IN"), ("2", "CANL_IN")], [("4", "CANH_OUT"), ("3", "CANL_OUT")])),
     "CAN_TVS": ("D", box_pins([("1", "CANH"), ("2", "CANL")], [("3", "GND"), ("4", "GND")])),
     "TLP293_4": (
@@ -419,16 +422,26 @@ COMPONENTS: list[Component] = [
     ),
     comp(
         "U2",
-        "ISOLATED_DC_DC_TBD",
-        "ISOLATED 48V-12V 240W (TBD)",
-        "WB:Isolated_48V_12V_240W_TBD",
+        "DELTA_Q36SR",
+        "18-75V TO 12V 240W ISO",
+        "WB:Delta_Q36SR_QuarterBrick",
         "ISOLATED POWER",
-        {1: "VBAT_PROTECTED", 2: "GND_PWR", 3: None, 4: "12V_ISO", 5: "GND", 6: None, 7: None, 8: None, 9: None},
-        mpn="TBD_36_60V_TO_12V_240W_ISOLATED",
-        dnp=True,
+        {
+            1: "VBAT_PROTECTED",
+            2: "GND_PWR",
+            3: "GND_PWR",
+            4: "GND",
+            5: "GND",
+            6: None,
+            7: "12V_ISO",
+            8: "12V_ISO",
+        },
+        mpn="Q36SR12020NRFH",
+        datasheet="authorized-distributor record + DS_Q36SR12019 family mechanical drawing",
         note=(
-            "No compatible orderable MPN is frozen; generic 9-pin through-hole land pattern is a layout "
-            "placeholder only"
+            "Negative-logic ON/OFF is tied to -VIN and local sense pins are tied at the module. Distributor "
+            "catalogs identify the exact 12 V / 20 A variant; an exact manufacturer datasheet, lifecycle "
+            "confirmation, authorized-channel quote, and heat-spreader review remain procurement gates."
         ),
     ),
     comp(
@@ -803,12 +816,14 @@ COMPONENTS.extend(
         ),
         comp(
             "U7",
-            "MEJ1S0305SC",
+            "NXF1S0305MC",
             "3V3-5V ISO 1W",
-            "Converter_DCDC:Converter_DCDC_muRata_MEJ1SxxxxSC_THT",
+            "WB:Murata_NXF1_MC",
             "ISOLATED CAN FD",
-            {1: "3V3_LOGIC", 2: "GND", 5: "GND_CAN_ISO", 7: "5V_CAN_ISO"},
-            mpn="Murata MEJ1S0305SC",
+            {1: "GND", 3: "3V3_LOGIC", 7: "GND_CAN_ISO", 8: "5V_CAN_ISO", 14: None},
+            mpn="NXF1S0305MC-R7",
+            datasheet="KDC_NXF1.C01",
+            note="1 W regulated output; safety-owner review remains required for the system isolation target.",
         ),
         comp(
             "C40",
@@ -1074,6 +1089,13 @@ for reference, net in [
     ("TP6", "CANH"),
     ("TP7", "CANL"),
     ("TP8", "MCU_RESET"),
+    ("TP9", "5V_CAN_ISO"),
+    ("TP10", "3V3_PGOOD"),
+    ("TP11", "JETSON_PGOOD"),
+    ("TP12", "JETSON_FAULT_N"),
+    ("TP13", "U3_IMON"),
+    ("TP14", "ESTOP_A_MON"),
+    ("TP15", "ESTOP_B_MON"),
 ]:
     COMPONENTS.append(comp(reference, "TESTPOINT", net, "TestPoint:TestPoint_Pad_D1.5mm", "TEST ACCESS", {1: net}))
 

@@ -204,18 +204,47 @@ def sense_3637():
     return finish_footprint(footprint, 9.5, 7.0)
 
 
-def isolated_power_tbd():
-    """Nine-pin THT placeholder; not for production until an exact MPN is approved."""
-    footprint = new_footprint("Isolated_48V_12V_240W_TBD", 38.0, 25.0, attribute=pcbnew.FP_THROUGH_HOLE)
+def delta_q36sr():
+    """Delta Q36SR quarter-brick family land pattern from the vendor drawing."""
+    footprint = new_footprint("Delta_Q36SR_QuarterBrick", 58.4, 36.8, attribute=pcbnew.FP_THROUGH_HOLE)
     footprint.SetLibDescription(
-        "PLACEHOLDER - NOT FOR PRODUCTION. Replace with the approved 36-60 V input, "
-        "regulated 12 V isolated-power module land pattern."
+        "Delta Q36SR quarter-brick, 58.4 x 36.8 mm body, 50.8 mm pin-column spacing. "
+        "The land pattern follows the Q36SR family mechanical drawing; verify the exact "
+        "Q36SR12020NRFH manufacturer revision before purchase."
     )
-    for number, x, y in [(1, -15, -6), (2, -15, 6), (3, -15, 0), (4, 15, -6), (5, 15, 6), (6, 15, 0)]:
-        add_pad(footprint, number, x, y, 4.0, 4.0, drill=1.1)
-    for number, x, y in [(7, 0, -9), (8, 0, 0), (9, 0, 9)]:
-        add_pad(footprint, number, x, y, 3.0, 3.0, drill=1.0)
-    return finish_footprint(footprint, 38.0, 25.0, polarized=True)
+    pin_positions = [
+        (1, -25.4, -7.62),
+        (2, -25.4, 0.0),
+        (3, -25.4, 7.62),
+        (4, 25.4, 7.62),
+        (5, 25.4, 3.81),
+        (6, 25.4, 0.0),
+        (7, 25.4, -3.81),
+        (8, 25.4, -7.62),
+    ]
+    for number, x, y in pin_positions:
+        if number in {4, 8}:
+            add_pad(footprint, number, x, y, 3.8, 3.8, drill=1.8)
+        else:
+            add_pad(footprint, number, x, y, 2.8, 2.8, drill=1.3)
+    return finish_footprint(footprint, 58.4, 36.8, polarized=True)
+
+
+def murata_nxf1_mc():
+    """Murata NXF1 MC five-pad SMD land pattern from KDC_NXF1.C01."""
+    footprint = new_footprint("Murata_NXF1_MC", 15.24, 10.67, attribute=pcbnew.FP_SMD)
+    footprint.SetLibDescription(
+        "Murata NXF1 MC regulated 1 W DC-DC converter; KDC_NXF1.C01 recommended five-pad land pattern."
+    )
+    for number, x, y in [
+        (1, -3.81, -4.70),
+        (3, -1.27, -4.70),
+        (7, 3.81, -4.70),
+        (8, 3.81, 4.70),
+        (14, -3.81, 4.70),
+    ]:
+        add_pad(footprint, number, x, y, 1.0, 2.3)
+    return finish_footprint(footprint, 15.24, 10.67)
 
 
 def rpl_5():
@@ -283,7 +312,8 @@ def main() -> None:
         microfit(),
         fuse_4510(),
         sense_3637(),
-        isolated_power_tbd(),
+        delta_q36sr(),
+        murata_nxf1_mc(),
         rpl_5(),
         tps26633(),
         iso1042_dw16_hv(),

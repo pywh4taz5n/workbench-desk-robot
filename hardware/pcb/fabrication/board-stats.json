@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "date": "2026-08-21T23:31:15",
+    "date": "2026-08-25T17:45:05",
     "generator": "KiCad 10.0.5",
     "project": "controller",
     "board_name": "controller"
@@ -10,55 +10,55 @@
     "width": "160.0000 mm",
     "height": "130.0000 mm",
     "area": "20800.00 mm²",
-    "front_component_density": "25.34",
-    "back_component_density": "2.52",
-    "front_copper_area": "11610.64 mm²",
-    "back_copper_area": "6898.549 mm²",
+    "front_component_density": "30.68",
+    "back_component_density": "3.10",
+    "front_copper_area": "11533.78 mm²",
+    "back_copper_area": "6940.916 mm²",
     "min_track_clearance": "0.1517 mm",
     "min_track_width": "0.1874 mm",
     "min_drill_diameter": "0.1500 mm",
     "board_thickness": "1.6200 mm",
-    "front_footprint_area": "5270.581 mm²",
-    "back_footprint_area": "524.843 mm²",
-    "front_footprint_density": "25.34",
-    "back_footprint_density": "2.52"
+    "front_footprint_area": "6381.602 mm²",
+    "back_footprint_area": "644.359 mm²",
+    "front_footprint_density": "30.68",
+    "back_footprint_density": "3.10"
   },
   "pads": {
-    "通孔": 95,
-    "贴片": 401,
+    "通孔": 90,
+    "贴片": 413,
     "连接器": 0,
     "非电镀孔_(npth)": 4,
     "半孔": 0,
     "压接": 0
   },
   "vias": {
-    "total": 180
+    "total": 222
   },
   "components": {
     "直插_(tht)": {
-      "front": 17,
+      "front": 16,
       "back": 0,
-      "total": 17
+      "total": 16
     },
     "贴片": {
-      "front": 85,
-      "back": 0,
-      "total": 85
+      "front": 79,
+      "back": 7,
+      "total": 86
     },
     "未指定": {
-      "front": 12,
+      "front": 19,
       "back": 0,
-      "total": 12
+      "total": 19
     },
     "total": {
       "front": 114,
-      "back": 0,
-      "total": 114
+      "back": 7,
+      "total": 121
     }
   },
   "drill_holes": [
     {
-      "count": 131,
+      "count": 150,
       "shape": "圆形",
       "x_size": "0.3000 mm",
       "y_size": "0.3000 mm",
@@ -68,7 +68,17 @@
       "stop_layer": "B.Cu"
     },
     {
-      "count": 51,
+      "count": 56,
+      "shape": "圆形",
+      "x_size": "0.4000 mm",
+      "y_size": "0.4000 mm",
+      "plated": true,
+      "source": "过孔",
+      "start_layer": "F.Cu",
+      "stop_layer": "B.Cu"
+    },
+    {
+      "count": 48,
       "shape": "圆形",
       "x_size": "1.0000 mm",
       "y_size": "1.0000 mm",
@@ -78,22 +88,12 @@
       "stop_layer": "B.Cu"
     },
     {
-      "count": 38,
+      "count": 32,
       "shape": "圆形",
       "x_size": "1.1000 mm",
       "y_size": "1.1000 mm",
       "plated": true,
       "source": "焊盘",
-      "start_layer": "F.Cu",
-      "stop_layer": "B.Cu"
-    },
-    {
-      "count": 34,
-      "shape": "圆形",
-      "x_size": "0.4000 mm",
-      "y_size": "0.4000 mm",
-      "plated": true,
-      "source": "过孔",
       "start_layer": "F.Cu",
       "stop_layer": "B.Cu"
     },
@@ -108,6 +108,16 @@
       "stop_layer": "In1.Cu"
     },
     {
+      "count": 6,
+      "shape": "圆形",
+      "x_size": "1.3000 mm",
+      "y_size": "1.3000 mm",
+      "plated": true,
+      "source": "焊盘",
+      "start_layer": "F.Cu",
+      "stop_layer": "B.Cu"
+    },
+    {
       "count": 4,
       "shape": "圆形",
       "x_size": "3.2000 mm",
@@ -116,16 +126,6 @@
       "source": "焊盘",
       "start_layer": "N/A",
       "stop_layer": "N/A"
-    },
-    {
-      "count": 4,
-      "shape": "圆形",
-      "x_size": "1.0750 mm",
-      "y_size": "1.0750 mm",
-      "plated": true,
-      "source": "焊盘",
-      "start_layer": "F.Cu",
-      "stop_layer": "B.Cu"
     },
     {
       "count": 4,
@@ -148,14 +148,24 @@
       "stop_layer": "B.Cu"
     },
     {
-      "count": 1,
+      "count": 2,
+      "shape": "圆形",
+      "x_size": "1.8000 mm",
+      "y_size": "1.8000 mm",
+      "plated": true,
+      "source": "焊盘",
+      "start_layer": "F.Cu",
+      "stop_layer": "B.Cu"
+    },
+    {
+      "count": 2,
       "shape": "圆形",
       "x_size": "0.3000 mm",
       "y_size": "0.3000 mm",
       "plated": true,
       "source": "过孔",
       "start_layer": "F.Cu",
-      "stop_layer": "In2.Cu"
+      "stop_layer": "In1.Cu"
     },
     {
       "count": 1,
@@ -165,16 +175,16 @@
       "plated": true,
       "source": "过孔",
       "start_layer": "F.Cu",
-      "stop_layer": "In1.Cu"
+      "stop_layer": "In2.Cu"
     }
   ],
   "kicad_raw_via_summary": {
     "unlabeled": 9
   },
   "design_counts": {
-    "footprints": 114,
-    "track_segments": 1070,
-    "vias": 180,
+    "footprints": 121,
+    "track_segments": 1154,
+    "vias": 222,
     "zones": 31,
     "copper_layers": [
       "F.Cu",
